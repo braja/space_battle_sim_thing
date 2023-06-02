@@ -44,7 +44,7 @@ func _physics_process(_delta: float) -> void:
 		if distance_to_target <= flee_distance:
 			change_state(State.EVADING)
 			state_label.text = "evading"
-			move(-target_pos)
+			move(target_pos, true)  # Pass true for evade
 		elif distance_to_target > flee_distance and distance_to_target <= attack_range:
 			change_state(State.ATTACKING)
 			state_label.text = "attacking"
@@ -74,11 +74,15 @@ func wander():
 	apply_central_impulse(transform.x * acceleration)
 
 
-func move(target_position: Vector2) -> void:
+func move(target_position: Vector2, evade: bool = false) -> void:
 	var direction = (target_position - position).normalized()
+	if evade:
+		var random_angle = deg_to_rad(randi_range(-90, 90)) # Change this range for more drastic evasion
+		direction = Vector2(direction.x * cos(random_angle) - direction.y * sin(random_angle), direction.x * sin(random_angle) + direction.y * cos(random_angle))
 	var target_angle = atan2(direction.y, direction.x)
 	rotate_to_target(target_angle)
 	apply_central_impulse(transform.x * acceleration)
+
 
 
 func find_closest_enemy() -> Node2D:
