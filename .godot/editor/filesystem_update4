@@ -4,3 +4,4 @@ res://fighterest.tscn
 res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.tscn
 res://scenes/projectiles/fleet_2_bullet/fleet_2_bullet.tscn
 res://scenes/projectiles/fleet_3_bullet/fleet_3_bullet.tscn
+res://fighterest.gd

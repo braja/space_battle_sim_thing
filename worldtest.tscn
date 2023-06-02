@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ciloouie8le06"]
+[gd_scene load_steps=6 format=3 uid="uid://bhg7g7ur6iemx"]
 
-[ext_resource type="PackedScene" uid="uid://d30edqc4bdypw" path="res://fighterest.tscn" id="1_t8euf"]
+[ext_resource type="PackedScene" uid="uid://d2dnyvn705mw3" path="res://scenes/fighter_base/fighter_base.tscn" id="1_t8euf"]
 [ext_resource type="PackedScene" uid="uid://cqdv1xd2pscgs" path="res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.tscn" id="2_n2mj2"]
 [ext_resource type="PackedScene" uid="uid://lexnbldtkhnh" path="res://scenes/projectiles/fleet_2_bullet/fleet_2_bullet.tscn" id="3_5v76u"]
 [ext_resource type="PackedScene" uid="uid://b11qc6i3s4pem" path="res://scenes/projectiles/fleet_3_bullet/fleet_3_bullet.tscn" id="4_i8s8p"]
-[ext_resource type="Script" path="res://Camera2D.gd" id="5_7o83b"]
+[ext_resource type="Script" path="res://scenes/utility/MainCamera.gd" id="5_j4eas"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -47,4 +47,4 @@ projectile = ExtResource("4_i8s8p")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(571, 311)
 zoom = Vector2(0.5, 0.5)
-script = ExtResource("5_7o83b")
+script = ExtResource("5_j4eas")
