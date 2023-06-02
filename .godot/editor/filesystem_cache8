@@ -1,7 +1,7 @@
 2a60927148abd1d33b818b535e306557
-::res://::1685718637
+::res://::1685721213
 icon.svg::CompressedTexture2D::828541556056723239::1685718196::1685718263::1::::<><>::
-worldtest.tscn::PackedScene::7624997203714924872::1685718649::0::1::::<><>::uid://d2dnyvn705mw3<>uid://cqdv1xd2pscgs<>uid://lexnbldtkhnh<>uid://b11qc6i3s4pem<>res://scenes/utility/Camera2D.gd
+worldtest.tscn::PackedScene::2892084226673083663::1685718649::0::1::::<><>::uid://d2dnyvn705mw3<>uid://cqdv1xd2pscgs<>uid://lexnbldtkhnh<>uid://b11qc6i3s4pem<>res://scenes/utility/MainCamera.gd
 ::res://assets/::1685718196
 ::res://assets/fleet_1/::1685718196
 Kla'ed - Ships Preview.png::CompressedTexture2D::185943598473238332::1685718196::1685718196::1::::<><>::
@@ -242,6 +242,6 @@ fleet_2_bullet.tscn::PackedScene::781754566867284605::1685718506::0::1::::<><>::
 ::res://scenes/projectiles/fleet_3_bullet/::1685718506
 fleet_3_bullet.gd::GDScript::-1::1685718196::0::1::::<>Area2D<>::
 fleet_3_bullet.tscn::PackedScene::4265981125239263448::1685718506::0::1::::<><>::res://scenes/projectiles/fleet_3_bullet/fleet_3_bullet.gd<>uid://dpj1yqsqn1yf8
-::res://scenes/utility/::1685718637
-Camera2D.gd::GDScript::-1::1685718196::0::1::::<>Camera2D<>::
+::res://scenes/utility/::1685718649
+MainCamera.gd::GDScript::-1::1685718196::0::1::::<>Camera2D<>::
 ::res://scripts/::1685718495
