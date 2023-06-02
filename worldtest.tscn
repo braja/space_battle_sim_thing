@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://ciloouie8le06"]
+
+[ext_resource type="PackedScene" uid="uid://d30edqc4bdypw" path="res://fighterest.tscn" id="1_t8euf"]
+[ext_resource type="PackedScene" uid="uid://cqdv1xd2pscgs" path="res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.tscn" id="2_n2mj2"]
+[ext_resource type="PackedScene" uid="uid://lexnbldtkhnh" path="res://scenes/projectiles/fleet_2_bullet/fleet_2_bullet.tscn" id="3_5v76u"]
+[ext_resource type="PackedScene" uid="uid://b11qc6i3s4pem" path="res://scenes/projectiles/fleet_3_bullet/fleet_3_bullet.tscn" id="4_i8s8p"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="5_7o83b"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Fighter" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(50, 64)
+faction = "fleet_1"
+ship_type = "fighter"
+projectile = ExtResource("2_n2mj2")
+
+[node name="Fighter2" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(48, 133)
+faction = "fleet_1"
+ship_type = "fighter"
+projectile = ExtResource("2_n2mj2")
+
+[node name="Fighter3" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(1008, 86)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter4" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(917, 369)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter5" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(522, 615)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Fighter6" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(573, 622)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(571, 311)
+zoom = Vector2(0.5, 0.5)
+script = ExtResource("5_7o83b")

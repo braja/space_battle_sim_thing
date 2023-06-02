@@ -1,0 +1,247 @@
+2a60927148abd1d33b818b535e306557
+::res://::1685717472
+Camera2D.gd::GDScript::-1::1685166136::0::1::::<>Camera2D<>::
+fighterest.gd::GDScript::-1::1685200588::0::1::::<>RigidBody2D<>::
+fighterest.tscn::PackedScene::9176408186930805820::1685505312::0::1::::<><>::uid://dnwhs0cyjsi1s<>res://fighterest.gd
+icon.svg::CompressedTexture2D::828541556056723239::1684905297::1684905312::1::::<><>::
+play.gd::GDScript::-1::1684982600::0::1::::<>CharacterBody2D<>::
+worldtest.tscn::PackedScene::5357936373850234601::1685505312::0::1::::<><>::uid://d30edqc4bdypw<>uid://cqdv1xd2pscgs<>uid://lexnbldtkhnh<>uid://b11qc6i3s4pem<>res://Camera2D.gd
+::res://assets/::1684905391
+::res://assets/fleet_1/::1684987888
+Kla'ed - Ships Preview.png::CompressedTexture2D::185943598473238332::1646904948::1684905425::1::::<><>::
+Readme.txt::TextFile::-1::1660842887::0::1::::<><>::
+::res://assets/fleet_1/fleet_1/::1660841341
+::res://assets/fleet_1/fleet_1/Base/::1660841341
+::res://assets/fleet_1/fleet_1/Base/Aseprite/::1660841341
+::res://assets/fleet_1/fleet_1/Base/PNGs/::1684987897
+fighter.png::CompressedTexture2D::8117591809479249862::1647011840::1684987897::1::::<><>::
+Kla'ed - Battlecruiser - Base.png::CompressedTexture2D::8003256333292953397::1647011787::1684987897::1::::<><>::
+Kla'ed - Bomber - Base.png::CompressedTexture2D::13851545924011227::1647011807::1684987897::1::::<><>::
+Kla'ed - Dreadnought - Base.png::CompressedTexture2D::1392037988342352577::1647011823::1684987897::1::::<><>::
+Kla'ed - Frigate - Base.png::CompressedTexture2D::5714725313659615041::1647011858::1684987897::1::::<><>::
+Kla'ed - Scout - Base.png::CompressedTexture2D::8935381056349426927::1647011870::1684987897::1::::<><>::
+Kla'ed - Support ship - Base.png::CompressedTexture2D::811187708736293933::1647011875::1684987897::1::::<><>::
+Kla'ed - Torpedo Ship - Base.png::CompressedTexture2D::1802218689501994550::1647011803::1684987897::1::::<><>::
+::res://assets/fleet_1/fleet_1/Destruction/::1660841341
+::res://assets/fleet_1/fleet_1/Destruction/Aseprite/::1660841341
+::res://assets/fleet_1/fleet_1/Destruction/PNGs/::1684987979
+fighter.png::CompressedTexture2D::90266594106583692::1647012004::1684987979::1::::<><>::
+Kla'ed - Battlecruiser - Destruction.png::CompressedTexture2D::1752912338081515725::1647012059::1684987897::1::::<><>::
+Kla'ed - Bomber - Destruction.png::CompressedTexture2D::2318155470414953638::1647012076::1684987897::1::::<><>::
+Kla'ed - Dreadnought - Destruction.png::CompressedTexture2D::284152532019641837::1647012082::1684987897::1::::<><>::
+Kla'ed - Frigate - Destruction.png::CompressedTexture2D::105726027880904577::1647012013::1684987897::1::::<><>::
+Kla'ed - Scout - Destruction.png::CompressedTexture2D::7209692102540242746::1647012022::1684987897::1::::<><>::
+Kla'ed - Support ship - Destruction.png::CompressedTexture2D::2395973042959016776::1647012028::1684987897::1::::<><>::
+Kla'ed - Torpedo Ship - Destruction.png::CompressedTexture2D::2614952319381941580::1647012036::1684987897::1::::<><>::
+::res://assets/fleet_1/fleet_1/Engine/::1660841341
+::res://assets/fleet_1/fleet_1/Engine/Aseprite/::1660841341
+::res://assets/fleet_1/fleet_1/Engine/PNGs/::1684987897
+Kla'ed - Battlecruiser - Engine.png::CompressedTexture2D::7878959346258931645::1647012133::1684987897::1::::<><>::
+Kla'ed - Bomber - Engine.png::CompressedTexture2D::326829795261119729::1647012318::1684987897::1::::<><>::
+Kla'ed - Dreadnought - Engine.png::CompressedTexture2D::3969222165334113355::1647012137::1684987897::1::::<><>::
+Kla'ed - Fighter - Engine.png::CompressedTexture2D::8012771732823222276::1647012205::1684987897::1::::<><>::
+Kla'ed - Frigate - Engine.png::CompressedTexture2D::6320643553810402592::1647012211::1684987897::1::::<><>::
+Kla'ed - Scout - Engine.png::CompressedTexture2D::4447184725737327554::1647012229::1684987897::1::::<><>::
+Kla'ed - Support ship - Engine.png::CompressedTexture2D::5717468999628063482::1647012247::1684987897::1::::<><>::
+Kla'ed - Torpedo Ship - Engine.png::CompressedTexture2D::1317927275922535050::1647012300::1684987897::1::::<><>::
+::res://assets/fleet_1/fleet_1/Projectiles/::1660841341
+::res://assets/fleet_1/fleet_1/Projectiles/Aseprite/::1660841341
+::res://assets/fleet_1/fleet_1/Projectiles/PNGs/::1684987897
+Kla'ed - Big Bullet.png::CompressedTexture2D::709241975355648244::1647012375::1684987897::1::::<><>::
+Kla'ed - Bullet.png::CompressedTexture2D::1838971165273676067::1647012397::1684987897::1::::<><>::
+Kla'ed - Ray.png::CompressedTexture2D::1555381897044825923::1647012404::1684987897::1::::<><>::
+Kla'ed - Torpedo.png::CompressedTexture2D::1681022395729882472::1647012422::1684987897::1::::<><>::
+Kla'ed - Wave.png::CompressedTexture2D::1023477647786752000::1647012393::1684987897::1::::<><>::
+::res://assets/fleet_1/fleet_1/Shield/::1660841341
+::res://assets/fleet_1/fleet_1/Shield/Aseprite/::1660841341
+::res://assets/fleet_1/fleet_1/Shield/PNGs/::1684987897
+Kla'ed - Battlecruiser - Shield.png::CompressedTexture2D::261616404331027743::1647012462::1684987897::1::::<><>::
+Kla'ed - Bomber - Shield.png::CompressedTexture2D::6449861139259542750::1647012476::1684987897::1::::<><>::
+Kla'ed - Dreadnought - Shield.png::CompressedTexture2D::6076408492357085684::1647012483::1684987897::1::::<><>::
+Kla'ed - Fighter - Shield.png::CompressedTexture2D::1155169981040335096::1647012517::1684987897::1::::<><>::
+Kla'ed - Frigate - Shield.png::CompressedTexture2D::2578655684274437429::1647012536::1684987897::1::::<><>::
+Kla'ed - Scout - Shield.png::CompressedTexture2D::2004886260260725135::1647012550::1684987897::1::::<><>::
+Kla'ed - Torpedo Ship - Shield.png::CompressedTexture2D::2121804455948691542::1647012588::1684987897::1::::<><>::
+::res://assets/fleet_1/fleet_1/Weapons/::1660841341
+::res://assets/fleet_1/fleet_1/Weapons/Aseprite/::1660841341
+::res://assets/fleet_1/fleet_1/Weapons/PNGs/::1684987897
+Kla'ed - Battlecruiser - Weapons.png::CompressedTexture2D::816862487671077356::1647012897::1684987897::1::::<><>::
+Kla'ed - Dreadnought - Weapons.png::CompressedTexture2D::8496483803241892721::1647012910::1684987897::1::::<><>::
+Kla'ed - Fighter - Weapons.png::CompressedTexture2D::2575531041099721428::1647012939::1684987897::1::::<><>::
+Kla'ed - Frigate - Weapons.png::CompressedTexture2D::5774260458818344179::1647012948::1684987897::1::::<><>::
+Kla'ed - Scout - Weapons.png::CompressedTexture2D::4392455127473491240::1647012877::1684987897::1::::<><>::
+Kla'ed - Torpedo Ship - Weapons.png::CompressedTexture2D::3332852810766521024::1647012887::1684987897::1::::<><>::
+::res://assets/fleet_1/_Previews/::1660841374
+::res://assets/fleet_1/_Previews/Kla'ed/::1660841368
+::res://assets/fleet_1/_Previews/Kla'ed/Bases/::1684905425
+Kla'ed - Battlecruiser - Base.png::CompressedTexture2D::392892009462283548::1647011195::1684905425::1::::<><>::
+Kla'ed - Bomber - Base.png::CompressedTexture2D::466014735247784176::1647011192::1684905425::1::::<><>::
+Kla'ed - Dreadnought - Base.png::CompressedTexture2D::9094877538908939314::1647011218::1684905425::1::::<><>::
+Kla'ed - Fighter - Base.png::CompressedTexture2D::5500935602681459298::1647011214::1684905425::1::::<><>::
+Kla'ed - Frigate - Base.png::CompressedTexture2D::2354344146100963850::1647011209::1684905425::1::::<><>::
+Kla'ed - Scout - Base.png::CompressedTexture2D::8334575064930844882::1647011206::1684905425::1::::<><>::
+Kla'ed - Support ship - Base.png::CompressedTexture2D::2313942430867479640::1647011201::1684905425::1::::<><>::
+Kla'ed - Torpedo Ship - Base.png::CompressedTexture2D::2506995184498996822::1647011198::1684905425::1::::<><>::
+::res://assets/fleet_1/_Previews/Kla'ed/Destruction/::1660841368
+::res://assets/fleet_1/_Previews/Kla'ed/Engine/::1660841368
+::res://assets/fleet_1/_Previews/Kla'ed/Projectiles/::1660841368
+::res://assets/fleet_1/_Previews/Kla'ed/Shield/::1660841368
+::res://assets/fleet_1/_Previews/Kla'ed/Weapons/::1660841368
+::res://assets/fleet_2/::1684988305
+Nairan - Ships Preview.png::CompressedTexture2D::3022714461158771815::1646905143::1684905424::1::::<><>::
+Readme.txt::TextFile::-1::1660842898::0::1::::<><>::
+::res://assets/fleet_2/fleet_2/::1685129320
+::res://assets/fleet_2/fleet_2/Base/::1660842020
+::res://assets/fleet_2/fleet_2/Base/Aseprite/::1660842020
+::res://assets/fleet_2/fleet_2/Base/PNGs/::1685129333
+fighter.png::CompressedTexture2D::4063692404454232933::1647013108::1685129333::1::::<><>::
+Nairan - Battlecruiser - Base.png::CompressedTexture2D::1951133293541730574::1647013131::1685129333::1::::<><>::
+Nairan - Bomber - Base.png::CompressedTexture2D::1977827099253321432::1647013136::1685129333::1::::<><>::
+Nairan - Dreadnought - Base.png::CompressedTexture2D::1640388221318109363::1647013126::1685129333::1::::<><>::
+Nairan - Frigate - Base.png::CompressedTexture2D::7776431814146186392::1647013008::1685129333::1::::<><>::
+Nairan - Scout - Base.png::CompressedTexture2D::6418729437435503004::1647013039::1685129333::1::::<><>::
+Nairan - Support Ship - Base.png::CompressedTexture2D::6283831087482968588::1647013052::1685129333::1::::<><>::
+Nairan - Torpedo Ship - Base.png::CompressedTexture2D::7124105177148048506::1647013068::1685129333::1::::<><>::
+::res://assets/fleet_2/fleet_2/Destruction/::1660842020
+::res://assets/fleet_2/fleet_2/Destruction/Aseprite/::1660842020
+::res://assets/fleet_2/fleet_2/Destruction/PNGs/::1684988369
+fighter.png::CompressedTexture2D::3171075061475269811::1647013192::1684988369::1::::<><>::
+Nairan - Battlecruiser  -  Destruction.png::CompressedTexture2D::8927978318986052179::1647013171::1684988312::1::::<><>::
+Nairan - Bomber -  Destruction.png::CompressedTexture2D::6995554018992819807::1647013178::1684988311::1::::<><>::
+Nairan - Dreadnought -  Destruction.png::CompressedTexture2D::4804045547229153742::1647013186::1684988312::1::::<><>::
+Nairan - Frigate -  Destruction.png::CompressedTexture2D::773754775209553873::1647013199::1684988311::1::::<><>::
+Nairan - Scout -  Destruction.png::CompressedTexture2D::7060453774442171840::1647013207::1684988312::1::::<><>::
+Nairan - Support Ship -  Destruction.png::CompressedTexture2D::7462837004722115472::1647013214::1684988311::1::::<><>::
+Nairan - Torpedo Ship -  Destruction.png::CompressedTexture2D::5103014356504590710::1647013220::1684988311::1::::<><>::
+::res://assets/fleet_2/fleet_2/Engine Effects/::1660842020
+::res://assets/fleet_2/fleet_2/Engine Effects/Aseprite/::1660842020
+::res://assets/fleet_2/fleet_2/Engine Effects/PNGs/::1684988312
+Nairan - Battlecruiser - Engine.png::CompressedTexture2D::1825140363110368895::1647013264::1684988312::1::::<><>::
+Nairan - Bomber - Engine.png::CompressedTexture2D::7721393256583453434::1647013283::1684988312::1::::<><>::
+Nairan - Dreadnought - Engine.png::CompressedTexture2D::5775232113993362240::1647013292::1684988312::1::::<><>::
+Nairan - Fighter - Engine.png::CompressedTexture2D::6276640774596424835::1647013302::1684988312::1::::<><>::
+Nairan - Frigate - Engine.png::CompressedTexture2D::3249904916396465573::1647013309::1684988312::1::::<><>::
+Nairan - Scout - Engine.png::CompressedTexture2D::1939041706756603905::1647013245::1684988311::1::::<><>::
+Nairan - Support Ship - Engine.png::CompressedTexture2D::6896219208174227253::1647013251::1684988311::1::::<><>::
+Nairan - Torpedo Ship - Engine.png::CompressedTexture2D::5850196782288405398::1647013257::1684988311::1::::<><>::
+::res://assets/fleet_2/fleet_2/Shields/::1660842020
+::res://assets/fleet_2/fleet_2/Shields/Aseprite/::1660842020
+::res://assets/fleet_2/fleet_2/Shields/PNGs/::1684988311
+Nairan - Battlecruiser - Shield.png::CompressedTexture2D::4882157588189226191::1647013365::1684988311::1::::<><>::
+Nairan - Bomber - Shield.png::CompressedTexture2D::3977780969514085106::1647013372::1684988311::1::::<><>::
+Nairan - Dreadnought - Shield.png::CompressedTexture2D::6317638884479453803::1647013377::1684988311::1::::<><>::
+Nairan - Fighter - Shield.png::CompressedTexture2D::5238925441403246449::1647013337::1684988311::1::::<><>::
+Nairan - Frigate - Shield.png::CompressedTexture2D::3046882056400111547::1647013342::1684988311::1::::<><>::
+Nairan - Scout - Shield.png::CompressedTexture2D::9202319973383080338::1647013348::1684988311::1::::<><>::
+Nairan - Torpedo Ship - Shield.png::CompressedTexture2D::5745972156914159504::1647013357::1684988311::1::::<><>::
+::res://assets/fleet_2/fleet_2/Weapon Effects - Projectiles/::1660842020
+::res://assets/fleet_2/fleet_2/Weapon Effects - Projectiles/Aseprite/::1660842020
+::res://assets/fleet_2/fleet_2/Weapon Effects - Projectiles/PNGs/::1684988311
+Nairan - Bolt.png::CompressedTexture2D::5334316746750678753::1647013398::1684988311::1::::<><>::
+Nairan - Ray.png::CompressedTexture2D::3049230800640000848::1647013410::1684988311::1::::<><>::
+Nairan - Rocket.png::CompressedTexture2D::8824131200292310915::1647013415::1684988311::1::::<><>::
+Nairan - Torpedo.png::CompressedTexture2D::6760909894915507296::1647013406::1684988311::1::::<><>::
+::res://assets/fleet_2/fleet_2/Weapons/::1660842020
+::res://assets/fleet_2/fleet_2/Weapons/Aseprite/::1660842020
+::res://assets/fleet_2/fleet_2/Weapons/PNGs/::1684988311
+Nairan - Battlecruiser - Weapons.png::CompressedTexture2D::5798437121888722440::1647013443::1684988311::1::::<><>::
+Nairan - Dreadnought - Weapons.png::CompressedTexture2D::7459772981853504508::1647013454::1684988311::1::::<><>::
+Nairan - Fighter - Weapons.png::CompressedTexture2D::8684126935190981285::1647013464::1684988311::1::::<><>::
+Nairan - Frigate - Weapons.png::CompressedTexture2D::2842135488280173092::1647013472::1684988311::1::::<><>::
+Nairan - Scout - Weapons.png::CompressedTexture2D::6016849276917980856::1647013479::1684988311::1::::<><>::
+Nairan - Torpedo Ship - Weapons.png::CompressedTexture2D::1329996200641255663::1647013490::1684988311::1::::<><>::
+::res://assets/fleet_2/_Previews/::1660842030
+::res://assets/fleet_2/_Previews/Nairan/::1660842025
+::res://assets/fleet_2/_Previews/Nairan/Bases/::1660842025
+::res://assets/fleet_2/_Previews/Nairan/Destruction/::1660842025
+::res://assets/fleet_2/_Previews/Nairan/Engines/::1660842025
+::res://assets/fleet_2/_Previews/Nairan/Projectiles/::1660842025
+::res://assets/fleet_2/_Previews/Nairan/Shields/::1660842025
+::res://assets/fleet_2/_Previews/Nairan/Weapons/::1660842025
+::res://assets/fleet_3/::1684988707
+Nautolan - Ships Preview.png::CompressedTexture2D::1355174318415516392::1646905342::1684905424::1::::<><>::
+Readme.txt::TextFile::-1::1660842908::0::1::::<><>::
+::res://assets/fleet_3/fleet_3/::1685129312
+::res://assets/fleet_3/fleet_3/Base/::1660842063
+::res://assets/fleet_3/fleet_3/Base/Aseprite/::1660842063
+::res://assets/fleet_3/fleet_3/Base/PNGs/::1685129333
+fighter.png::CompressedTexture2D::7141644645699112998::1647013564::1685129333::1::::<><>::
+Nautolan Ship - Battlecruiser - Base.png::CompressedTexture2D::381541445909858907::1647013539::1685129333::1::::<><>::
+Nautolan Ship - Bomber - Base.png::CompressedTexture2D::4902151786050550766::1647013544::1685129333::1::::<><>::
+Nautolan Ship - Dreadnought - Base.png::CompressedTexture2D::6510286839607788354::1647013555::1685129333::1::::<><>::
+Nautolan Ship - Frigate - Base.png::CompressedTexture2D::2837897242499856067::1647013572::1685129333::1::::<><>::
+Nautolan Ship - Scout - Base.png::CompressedTexture2D::8686209104712369004::1647013584::1685129333::1::::<><>::
+Nautolan Ship - Support - Base.png::CompressedTexture2D::4162629096407038854::1647013592::1685129333::1::::<><>::
+Nautolan Ship - Torpedo Ship.png::CompressedTexture2D::8376755537402018510::1647013602::1685129333::1::::<><>::
+::res://assets/fleet_3/fleet_3/Destruction/::1660842063
+::res://assets/fleet_3/fleet_3/Destruction/Aseprite/::1660842063
+::res://assets/fleet_3/fleet_3/Destruction/PNGs/::1684988709
+fighter.png::CompressedTexture2D::7320874739277352295::1647013655::1684988709::1::::<><>::
+Nautolan Ship - Battlecruiser.png::CompressedTexture2D::6830253010443243174::1647013633::1684988709::1::::<><>::
+Nautolan Ship - Bomber.png::CompressedTexture2D::475942289852563128::1647013640::1684988709::1::::<><>::
+Nautolan Ship - Dreadnought.png::CompressedTexture2D::2704607290489928518::1647013649::1684988709::1::::<><>::
+Nautolan Ship - Frigate.png::CompressedTexture2D::8196425381690059922::1647013663::1684988709::1::::<><>::
+Nautolan Ship - Scout.png::CompressedTexture2D::3724098864031930293::1647013671::1684988709::1::::<><>::
+Nautolan Ship - Support.png::CompressedTexture2D::7199232248605055763::1647013676::1684988709::1::::<><>::
+Nautolan Ship - Torpedo Ship.png::CompressedTexture2D::5539000802628977915::1647013683::1684988709::1::::<><>::
+::res://assets/fleet_3/fleet_3/Engine Effects/::1660842064
+::res://assets/fleet_3/fleet_3/Engine Effects/Aseprite/::1660842064
+::res://assets/fleet_3/fleet_3/Engine Effects/PNGs/::1684988709
+Nautolan Ship - Battlecruiser - Engine Effect.png::CompressedTexture2D::1680407776397283128::1647013726::1684988709::1::::<><>::
+Nautolan Ship - Bomber - Engine Effect.png::CompressedTexture2D::9033637544082556922::1647013733::1684988709::1::::<><>::
+Nautolan Ship - Dreadnought - Engine Effect.png::CompressedTexture2D::4115478537537885909::1647013740::1684988709::1::::<><>::
+Nautolan Ship - Fighter - Engine Effect.png::CompressedTexture2D::1964410007251697660::1647013747::1684988709::1::::<><>::
+Nautolan Ship - Frigate - Engine Effect.png::CompressedTexture2D::582835719140681913::1647013754::1684988709::1::::<><>::
+Nautolan Ship - Scout - Engine Effect.png::CompressedTexture2D::1288426693882722489::1647013768::1684988709::1::::<><>::
+Nautolan Ship - Support - Engine Effect.png::CompressedTexture2D::5741953194090697681::1647013777::1684988709::1::::<><>::
+Nautolan Ship - Torpedo Ship - Engine Effect.png::CompressedTexture2D::7587058065202916191::1647013784::1684988709::1::::<><>::
+::res://assets/fleet_3/fleet_3/Shields/::1660842064
+::res://assets/fleet_3/fleet_3/Shields/Aseprite/::1660842064
+::res://assets/fleet_3/fleet_3/Shields/PNGs/::1684988709
+Nautolan Ship - Battlecruiser - Shield.png::CompressedTexture2D::271312361011882386::1647013876::1684988709::1::::<><>::
+Nautolan Ship - Bomber - Shield.png::CompressedTexture2D::5151949952618863994::1647013906::1684988709::1::::<><>::
+Nautolan Ship - Dreadnought - Shield.png::CompressedTexture2D::6778625103302293920::1647013917::1684988709::1::::<><>::
+Nautolan Ship - Fighter - Shield.png::CompressedTexture2D::8485618588879238834::1647013926::1684988709::1::::<><>::
+Nautolan Ship - Frigate - Shield.png::CompressedTexture2D::5173147879758397592::1647013885::1684988709::1::::<><>::
+Nautolan Ship - Scout - Shield.png::CompressedTexture2D::2267891303949512075::1647013893::1684988709::1::::<><>::
+Nautolan Ship - Torpedo Ship - Shield.png::CompressedTexture2D::2903013808222643656::1647013899::1684988709::1::::<><>::
+::res://assets/fleet_3/fleet_3/Weapon Effects - Projectiles/::1660842064
+::res://assets/fleet_3/fleet_3/Weapon Effects - Projectiles/Aseprite/::1660842064
+::res://assets/fleet_3/fleet_3/Weapon Effects - Projectiles/PNGs/::1684988709
+Nautolan - Bomb.png::CompressedTexture2D::7508658190564836748::1647013970::1684988709::1::::<><>::
+Nautolan - Bullet.png::CompressedTexture2D::8232296475227443275::1647013975::1684988709::1::::<><>::
+Nautolan - Ray.png::CompressedTexture2D::4540659188630452566::1647013981::1684988709::1::::<><>::
+Nautolan - Rocket.png::CompressedTexture2D::6637293804223361708::1647013987::1684988709::1::::<><>::
+Nautolan - Spinning Bullet.png::CompressedTexture2D::6755387487113365243::1647013996::1684988709::1::::<><>::
+Nautolan - Wave.png::CompressedTexture2D::1345877310054914253::1647014002::1684988709::1::::<><>::
+::res://assets/fleet_3/fleet_3/Weapons/::1660842064
+::res://assets/fleet_3/fleet_3/Weapons/Aseprite/::1660842064
+::res://assets/fleet_3/fleet_3/Weapons/PNGs/::1684988709
+Nautolan Ship - Battlecruiser - Weapons.png::CompressedTexture2D::6266869477423865830::1647014041::1684988709::1::::<><>::
+Nautolan Ship - Dreadnought - Weapons.png::CompressedTexture2D::2196403138917445015::1647014047::1684988709::1::::<><>::
+Nautolan Ship - Fighter - Weapons.png::CompressedTexture2D::5985311215540762828::1647014053::1684988709::1::::<><>::
+Nautolan Ship - Frigate - Weapons.png::CompressedTexture2D::7959584307273991686::1647014058::1684988709::1::::<><>::
+Nautolan Ship - Scout - Weapons.png::CompressedTexture2D::5034532929201002823::1647014065::1684988709::1::::<><>::
+Nautolan Ship - Torpedo Ship - Weapons.png::CompressedTexture2D::3615967820445189913::1647014076::1684988709::1::::<><>::
+::res://assets/fleet_3/_Previews/::1660842077
+::res://assets/fleet_3/_Previews/Nautolan/::1660842072
+::res://assets/fleet_3/_Previews/Nautolan/Bases/::1660842072
+::res://assets/fleet_3/_Previews/Nautolan/Destruction/::1660842072
+::res://assets/fleet_3/_Previews/Nautolan/Engines/::1660842072
+::res://assets/fleet_3/_Previews/Nautolan/Projectiles/::1660842072
+::res://assets/fleet_3/_Previews/Nautolan/Shields/::1660842072
+::res://assets/fleet_3/_Previews/Nautolan/Weapons/::1660842072
+::res://scenes/::1685136814
+::res://scenes/fighter_base/::1685505312
+fighter_base.gd::GDScript::-1::1684994982::0::1::::<>CharacterBody2D<>::
+fighter_base.tscn::PackedScene::5971304616290222959::1685505312::0::1::::<><>::res://scenes/fighter_base/fighter_base.gd<>uid://bjyxblb0toci<>uid://dmfpgd2ioi0fw<>uid://qptql271qbau
+::res://scenes/projectiles/::1685149623
+::res://scenes/projectiles/fleet_1_bullet/::1685505312
+fleet_1_bullet.gd::GDScript::-1::1685139327::0::1::::<>Area2D<>::
+fleet_1_bullet.tscn::PackedScene::5903378700265500678::1685505312::0::1::::<><>::res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.gd<>uid://1g2t65pqrrlb
+::res://scenes/projectiles/fleet_2_bullet/::1685505312
+fleet_2_bullet.gd::GDScript::-1::1685149625::0::1::::<>Area2D<>::
+fleet_2_bullet.tscn::PackedScene::781754566867284605::1685505312::0::1::::<><>::uid://ch88ogucioms4<>res://scenes/projectiles/fleet_2_bullet/fleet_2_bullet.gd
+::res://scenes/projectiles/fleet_3_bullet/::1685505312
+fleet_3_bullet.gd::GDScript::-1::1685149763::0::1::::<>Area2D<>::
+fleet_3_bullet.tscn::PackedScene::4265981125239263448::1685505312::0::1::::<><>::res://scenes/projectiles/fleet_3_bullet/fleet_3_bullet.gd<>uid://dpj1yqsqn1yf8

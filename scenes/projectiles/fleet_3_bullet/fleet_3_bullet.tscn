@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://b11qc6i3s4pem"]
+
+[ext_resource type="Script" path="res://scenes/projectiles/fleet_3_bullet/fleet_3_bullet.gd" id="1_n2iyd"]
+[ext_resource type="Texture2D" uid="uid://dpj1yqsqn1yf8" path="res://assets/fleet_3/fleet_3/Weapon Effects - Projectiles/PNGs/Nautolan - Bullet.png" id="1_qstjq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s6xeq"]
+radius = 3.0
+
+[sub_resource type="Animation" id="Animation_0uj3a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_gath7"]
+resource_name = "bullet"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i0dds"]
+_data = {
+"RESET": SubResource("Animation_0uj3a"),
+"bullet": SubResource("Animation_gath7")
+}
+
+[node name="fleet_3_bullet" type="Area2D"]
+script = ExtResource("1_n2iyd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_s6xeq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_i0dds")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qstjq")
+hframes = 8
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://lexnbldtkhnh"]
+
+[ext_resource type="Texture2D" uid="uid://ch88ogucioms4" path="res://assets/fleet_2/fleet_2/Weapon Effects - Projectiles/PNGs/Nairan - Bolt.png" id="1_cfg4w"]
+[ext_resource type="Script" path="res://scenes/projectiles/fleet_2_bullet/fleet_2_bullet.gd" id="1_efq0r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dmrah"]
+radius = 2.23607
+
+[sub_resource type="Animation" id="Animation_4prbi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_a26ip"]
+resource_name = "bullet"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2v012"]
+_data = {
+"RESET": SubResource("Animation_4prbi"),
+"bullet": SubResource("Animation_a26ip")
+}
+
+[node name="fleet_2_bullet" type="Area2D"]
+script = ExtResource("1_efq0r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cfg4w")
+hframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dmrah")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2v012")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

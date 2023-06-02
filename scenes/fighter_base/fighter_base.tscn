@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://crcsrq5kij7v4"]
+
+[ext_resource type="Script" path="res://scenes/fighter_base/fighter_base.gd" id="1_gyece"]
+[ext_resource type="Texture2D" uid="uid://bjyxblb0toci" path="res://assets/fleet_1/fleet_1/Destruction/PNGs/fighter.png" id="1_t2xgm"]
+[ext_resource type="Texture2D" uid="uid://dmfpgd2ioi0fw" path="res://assets/fleet_1/fleet_1/Engine/PNGs/Kla'ed - Fighter - Engine.png" id="2_gcjl2"]
+[ext_resource type="Texture2D" uid="uid://qptql271qbau" path="res://assets/fleet_1/fleet_1/Shield/PNGs/Kla'ed - Fighter - Shield.png" id="3_1rjda"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1sh5p"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rjv3t"]
+radius = 474.001
+
+[node name="FighterBase" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_gyece")
+
+[node name="Ship" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_t2xgm")
+hframes = 9
+
+[node name="Engine" type="Sprite2D" parent="."]
+visible = false
+rotation = 1.5708
+texture = ExtResource("2_gcjl2")
+hframes = 10
+
+[node name="Shield" type="Sprite2D" parent="."]
+visible = false
+rotation = 1.5708
+texture = ExtResource("3_1rjda")
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1sh5p")
+
+[node name="Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+shape = SubResource("CircleShape2D_rjv3t")
+
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
