@@ -44,7 +44,7 @@ func _physics_process(_delta: float) -> void:
 		if distance_to_target <= flee_distance:
 			change_state(State.EVADING)
 			state_label.text = "evading"
-			move(target_pos, true)  # Pass true for evade
+			evade(target_pos)  # Pass true for evade
 		elif distance_to_target > flee_distance and distance_to_target <= attack_range:
 			change_state(State.ATTACKING)
 			state_label.text = "attacking"
@@ -84,6 +84,15 @@ func move(target_position: Vector2, evade: bool = false) -> void:
 	apply_central_impulse(transform.x * acceleration)
 
 
+func evade(target_position: Vector2) -> void:
+	var direction = (position - target_position).normalized() 
+	var random_angle = deg_to_rad(randi_range(-45, 45)) # Random angle for variation in evasion
+	direction = Vector2(direction.x * cos(random_angle) - direction.y * sin(random_angle), direction.x * sin(random_angle) + direction.y * cos(random_angle))
+	var target_angle = atan2(direction.y, direction.x)
+	rotate_to_target(target_angle)
+	apply_central_impulse(transform.x * acceleration)
+
+
 
 func find_closest_enemy() -> Node2D:
 	var closest_distance := 1e9
@@ -106,15 +115,17 @@ func rotate_to_target(target_angle: float) -> void:
 
 
 func attack():
-	if not projectile:
+	if not projectile or not is_instance_valid(target):
 		return
-	if not attacking && currentState != State.EVADING:
-		if is_instance_valid(target):
-			var proj = projectile.instantiate()
-			proj.transform = projectile_spawner.global_transform
-			owner.add_child(proj)
-			attacking = true
-			attack_timer.start()
+	if not attacking and currentState != State.EVADING:
+		var proj = projectile.instantiate()
+		var predicted_target_position = target.global_position + target.linear_velocity
+		var direction = (predicted_target_position - position).normalized()
+		proj.global_transform = Transform2D(atan2(direction.y, direction.x), projectile_spawner.global_position)
+		owner.add_child(proj)
+		attacking = true
+		attack_timer.start()
+
 
 
 func stop_attack():
