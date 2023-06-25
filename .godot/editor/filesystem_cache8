@@ -1,7 +1,7 @@
 2a60927148abd1d33b818b535e306557
-::res://::1687359616
+::res://::1687704596
 icon.svg::CompressedTexture2D::828541556056723239::1685718196::1685718263::1::::<><>::
-worldtest.tscn::PackedScene::2892084226673083663::1685722404::0::1::::<><>::uid://d2dnyvn705mw3<>uid://cqdv1xd2pscgs<>uid://lexnbldtkhnh<>uid://b11qc6i3s4pem<>res://scenes/utility/MainCamera.gd
+worldtest.tscn::PackedScene::2892084226673083663::1687360434::0::1::::<><>::uid://d2dnyvn705mw3<>uid://cqdv1xd2pscgs<>uid://lexnbldtkhnh<>uid://b11qc6i3s4pem<>res://scenes/utility/MainCamera.gd
 ::res://assets/::1685718196
 ::res://assets/fleet_1/::1685718196
 Kla'ed - Ships Preview.png::CompressedTexture2D::185943598473238332::1685718196::1685718196::1::::<><>::
@@ -229,13 +229,13 @@ Nautolan Ship - Torpedo Ship - Weapons.png::CompressedTexture2D::361596782044518
 ::res://assets/fleet_3/_Previews/Nautolan/Weapons/::1685718196
 ::res://resources/::1685718491
 ::res://scenes/::1685718630
-::res://scenes/fighter_base/::1685722404
-fighter_base.gd::GDScript::-1::1685722404::0::1::::<>RigidBody2D<>::
+::res://scenes/fighter_base/::1687360355
+fighter_base.gd::GDScript::-1::1687360355::0::1::::<>RigidBody2D<>::
 fighter_base.tscn::PackedScene::9061387267089384568::1685718585::0::1::::<><>::res://scenes/fighter_base/fighter_base.gd<>uid://dnwhs0cyjsi1s
 ::res://scenes/projectiles/::1685718196
-::res://scenes/projectiles/fleet_1_bullet/::1685722404
+::res://scenes/projectiles/fleet_1_bullet/::1687360434
 fleet_1_bullet.gd::GDScript::-1::1685718196::0::1::::<>Area2D<>::
-fleet_1_bullet.tscn::PackedScene::5903378700265500678::1685722404::0::1::::<><>::res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.gd<>uid://1g2t65pqrrlb
+fleet_1_bullet.tscn::PackedScene::5903378700265500678::1687360434::0::1::::<><>::res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.gd<>uid://1g2t65pqrrlb
 ::res://scenes/projectiles/fleet_2_bullet/::1685718506
 fleet_2_bullet.gd::GDScript::-1::1685718196::0::1::::<>Area2D<>::
 fleet_2_bullet.tscn::PackedScene::781754566867284605::1685718506::0::1::::<><>::uid://ch88ogucioms4<>res://scenes/projectiles/fleet_2_bullet/fleet_2_bullet.gd
