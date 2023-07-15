@@ -2,10 +2,6 @@ res://worldtest.tscn
 res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.tscn
 res://scenes/fighter_base/fighter_base.tscn
 res://scenes/battlecruiser_base/battecruiser.tscn
-res://scenes/fighter_base/fighter_base.gd
-res://scenes/battlecruiser_base/battecruiser.gd
-res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.gd
-res://scenes/projectiles/fleet_2_bullet/fleet_2_bullet.gd
-res://scenes/projectiles/fleet_3_bullet/fleet_3_bullet.gd
 res://scenes/projectiles/fleet_2_bullet/fleet_2_bullet.tscn
 res://scenes/projectiles/fleet_3_bullet/fleet_3_bullet.tscn
+res://scenes/battlecruiser_base/battecruiser.gd

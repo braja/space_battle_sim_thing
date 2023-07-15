@@ -22,25 +22,25 @@ ship_type = "fighter"
 projectile = ExtResource("2_n2mj2")
 
 [node name="Fighter3" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(1211, -113)
+position = Vector2(1936, -170)
 faction = "fleet_2"
 ship_type = "fighter"
 projectile = ExtResource("3_5v76u")
 
 [node name="Fighter4" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(1244, 3)
+position = Vector2(1969, -54)
 faction = "fleet_2"
 ship_type = "fighter"
 projectile = ExtResource("3_5v76u")
 
 [node name="Fighter5" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(300, 14)
+position = Vector2(-362, -200)
 faction = "fleet_3"
 ship_type = "fighter"
 projectile = ExtResource("4_i8s8p")
 
 [node name="Fighter6" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(351, 21)
+position = Vector2(-311, -193)
 faction = "fleet_3"
 ship_type = "fighter"
 projectile = ExtResource("4_i8s8p")
@@ -58,25 +58,25 @@ ship_type = "fighter"
 projectile = ExtResource("2_n2mj2")
 
 [node name="Fighter9" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(1203, -159)
+position = Vector2(1928, -216)
 faction = "fleet_2"
 ship_type = "fighter"
 projectile = ExtResource("3_5v76u")
 
 [node name="Fighter10" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(1236, -43)
+position = Vector2(1961, -100)
 faction = "fleet_2"
 ship_type = "fighter"
 projectile = ExtResource("3_5v76u")
 
 [node name="Fighter11" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(292, -32)
+position = Vector2(-370, -246)
 faction = "fleet_3"
 ship_type = "fighter"
 projectile = ExtResource("4_i8s8p")
 
 [node name="Fighter12" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(343, -25)
+position = Vector2(-319, -239)
 faction = "fleet_3"
 ship_type = "fighter"
 projectile = ExtResource("4_i8s8p")
@@ -94,25 +94,25 @@ ship_type = "fighter"
 projectile = ExtResource("2_n2mj2")
 
 [node name="Fighter15" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(1102, -159)
+position = Vector2(1827, -216)
 faction = "fleet_2"
 ship_type = "fighter"
 projectile = ExtResource("3_5v76u")
 
 [node name="Fighter16" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(1135, -43)
+position = Vector2(1860, -100)
 faction = "fleet_2"
 ship_type = "fighter"
 projectile = ExtResource("3_5v76u")
 
 [node name="Fighter17" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(191, -32)
+position = Vector2(-471, -246)
 faction = "fleet_3"
 ship_type = "fighter"
 projectile = ExtResource("4_i8s8p")
 
 [node name="Fighter18" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(242, -25)
+position = Vector2(-420, -239)
 faction = "fleet_3"
 ship_type = "fighter"
 projectile = ExtResource("4_i8s8p")
@@ -178,121 +178,313 @@ ship_type = "fighter"
 projectile = ExtResource("2_n2mj2")
 
 [node name="Fighter21" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(1102, -94)
+position = Vector2(1827, -151)
 faction = "fleet_2"
 ship_type = "fighter"
 projectile = ExtResource("3_5v76u")
 
 [node name="Fighter22" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(1135, 22)
+position = Vector2(1860, -35)
 faction = "fleet_2"
 ship_type = "fighter"
 projectile = ExtResource("3_5v76u")
 
 [node name="Fighter33" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(1018, -88)
+position = Vector2(1743, -145)
 faction = "fleet_2"
 ship_type = "fighter"
 projectile = ExtResource("3_5v76u")
 
 [node name="Fighter34" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(1051, 28)
+position = Vector2(1776, -29)
 faction = "fleet_2"
 ship_type = "fighter"
 projectile = ExtResource("3_5v76u")
 
 [node name="Fighter35" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(1010, -134)
+position = Vector2(1735, -191)
 faction = "fleet_2"
 ship_type = "fighter"
 projectile = ExtResource("3_5v76u")
 
 [node name="Fighter36" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(1043, -18)
+position = Vector2(1768, -75)
 faction = "fleet_2"
 ship_type = "fighter"
 projectile = ExtResource("3_5v76u")
 
 [node name="Fighter37" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(909, -134)
+position = Vector2(1634, -191)
 faction = "fleet_2"
 ship_type = "fighter"
 projectile = ExtResource("3_5v76u")
 
 [node name="Fighter38" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(942, -18)
+position = Vector2(1667, -75)
 faction = "fleet_2"
 ship_type = "fighter"
 projectile = ExtResource("3_5v76u")
 
 [node name="Fighter39" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(909, -69)
+position = Vector2(1634, -126)
 faction = "fleet_2"
 ship_type = "fighter"
 projectile = ExtResource("3_5v76u")
 
 [node name="Fighter40" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(942, 47)
+position = Vector2(1667, -10)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter49" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(1712, -378)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter50" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(1745, -262)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter51" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(1704, -424)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter52" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(1737, -308)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter53" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(1603, -424)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter54" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(1636, -308)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter55" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(1603, -359)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter56" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(1636, -243)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter57" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(1519, -353)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter58" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(1552, -237)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter59" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(1511, -399)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter60" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(1544, -283)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter61" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(1410, -399)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter62" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(1443, -283)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter63" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(1410, -334)
+faction = "fleet_2"
+ship_type = "fighter"
+projectile = ExtResource("3_5v76u")
+
+[node name="Fighter64" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(1443, -218)
 faction = "fleet_2"
 ship_type = "fighter"
 projectile = ExtResource("3_5v76u")
 
 [node name="Fighter23" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(191, 33)
+position = Vector2(-471, -181)
 faction = "fleet_3"
 ship_type = "fighter"
 projectile = ExtResource("4_i8s8p")
 
 [node name="Fighter24" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(242, 40)
+position = Vector2(-420, -174)
 faction = "fleet_3"
 ship_type = "fighter"
 projectile = ExtResource("4_i8s8p")
 
 [node name="Fighter41" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(336, -122)
+position = Vector2(-326, -336)
 faction = "fleet_3"
 ship_type = "fighter"
 projectile = ExtResource("4_i8s8p")
 
 [node name="Fighter42" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(387, -115)
+position = Vector2(-275, -329)
 faction = "fleet_3"
 ship_type = "fighter"
 projectile = ExtResource("4_i8s8p")
 
 [node name="Fighter43" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(328, -168)
+position = Vector2(-334, -382)
 faction = "fleet_3"
 ship_type = "fighter"
 projectile = ExtResource("4_i8s8p")
 
 [node name="Fighter44" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(379, -161)
+position = Vector2(-283, -375)
 faction = "fleet_3"
 ship_type = "fighter"
 projectile = ExtResource("4_i8s8p")
 
 [node name="Fighter45" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(227, -168)
+position = Vector2(-435, -382)
 faction = "fleet_3"
 ship_type = "fighter"
 projectile = ExtResource("4_i8s8p")
 
 [node name="Fighter46" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(278, -161)
+position = Vector2(-384, -375)
 faction = "fleet_3"
 ship_type = "fighter"
 projectile = ExtResource("4_i8s8p")
 
 [node name="Fighter47" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(227, -103)
+position = Vector2(-435, -317)
 faction = "fleet_3"
 ship_type = "fighter"
 projectile = ExtResource("4_i8s8p")
 
 [node name="Fighter48" parent="." instance=ExtResource("1_t8euf")]
-position = Vector2(278, -96)
+position = Vector2(-384, -310)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Fighter65" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(-87, -240)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Fighter66" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(-36, -233)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Fighter67" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(-95, -286)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Fighter68" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(-44, -279)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Fighter69" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(-196, -286)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Fighter70" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(-145, -279)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Fighter71" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(-196, -221)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Fighter72" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(-145, -214)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Fighter73" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(-51, -376)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Fighter74" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(0, -369)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Fighter75" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(-59, -422)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Fighter76" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(-8, -415)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Fighter77" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(-160, -422)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Fighter78" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(-109, -415)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Fighter79" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(-160, -357)
+faction = "fleet_3"
+ship_type = "fighter"
+projectile = ExtResource("4_i8s8p")
+
+[node name="Fighter80" parent="." instance=ExtResource("1_t8euf")]
+position = Vector2(-109, -350)
 faction = "fleet_3"
 ship_type = "fighter"
 projectile = ExtResource("4_i8s8p")
