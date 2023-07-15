@@ -29,9 +29,17 @@ var nearby_allies : Array = []
 
 var attacking = false
 
+var wander_angle = 0.0
+var wander_range = 45.0
+
+var possible_obstacle = false
+
 func _ready():
+	var random_z_index = randi_range(-1, 1)
+	z_index = random_z_index
 	add_to_group(faction)
 	ship_sprite.texture = load("res://assets/" + faction + "/" + faction + "/Base/PNGs/" + ship_type + ".png")
+	wander_angle = randf() * PI * 2
 
 
 func _physics_process(_delta: float) -> void:
@@ -44,7 +52,7 @@ func _physics_process(_delta: float) -> void:
 		if distance_to_target <= flee_distance:
 			change_state(State.EVADING)
 			state_label.text = "evading"
-			evade(target_pos)  # Pass true for evade
+			evade(target_pos)
 		elif distance_to_target > flee_distance and distance_to_target <= attack_range:
 			change_state(State.ATTACKING)
 			state_label.text = "attacking"
@@ -68,17 +76,29 @@ func change_state(new_state: int) -> void:
 
 
 func wander():
-	var direction = Vector2(randi_range(-1, 1), randi_range(-1, 1)).normalized()
+	var direction = Vector2(cos(wander_angle), sin(wander_angle))
+	var target_angle = atan2(direction.y, direction.x)
+	rotate_to_target(target_angle)
+	apply_central_impulse(transform.x * acceleration)
+
+	# Randomly adjust the wander_angle by up to wander_range degrees per second
+	wander_angle += deg_to_rad(randf_range(-wander_range, wander_range) * get_process_delta_time())
+
+	# Keep wander_angle within the range of 0 to 2*PI
+	wander_angle = fmod(wander_angle, PI * 2)
+
+
+func move(target_position: Vector2) -> void:
+	var direction = (target_position - position).normalized()
 	var target_angle = atan2(direction.y, direction.x)
 	rotate_to_target(target_angle)
 	apply_central_impulse(transform.x * acceleration)
 
 
-func move(target_position: Vector2, evade: bool = false) -> void:
+func flank(target_position: Vector2) -> void:
 	var direction = (target_position - position).normalized()
-	if evade:
-		var random_angle = deg_to_rad(randi_range(-90, 90)) # Change this range for more drastic evasion
-		direction = Vector2(direction.x * cos(random_angle) - direction.y * sin(random_angle), direction.x * sin(random_angle) + direction.y * cos(random_angle))
+	var flanking_angle = deg_to_rad(randi_range(120, 240)) # Change this range for more drastic flanking
+	direction = Vector2(direction.x * cos(flanking_angle) - direction.y * sin(flanking_angle), direction.x * sin(flanking_angle) + direction.y * cos(flanking_angle))
 	var target_angle = atan2(direction.y, direction.x)
 	rotate_to_target(target_angle)
 	apply_central_impulse(transform.x * acceleration)
@@ -117,10 +137,13 @@ func rotate_to_target(target_angle: float) -> void:
 func attack():
 	if not projectile or not is_instance_valid(target):
 		return
+	if possible_obstacle and target.z_index != z_index and target.possible_obstacle == true:
+		return
 	if not attacking and currentState != State.EVADING:
 		var proj = projectile.instantiate()
 		var predicted_target_position = target.global_position + target.linear_velocity
 		var direction = (predicted_target_position - position).normalized()
+		proj.z_index = z_index
 		proj.global_transform = Transform2D(atan2(direction.y, direction.x), projectile_spawner.global_position)
 		owner.add_child(proj)
 		attacking = true
@@ -152,3 +175,13 @@ func _on_detection_body_exited(body):
 func _on_attack_timer_timeout():
 	attacking = false
 	attack()
+
+
+func _on_los_area_entered(area):
+	if area.is_in_group("line_of_sight"):
+		possible_obstacle = true
+
+
+func _on_los_area_exited(area):
+	if area.is_in_group("line_of_sight"):
+		possible_obstacle = false
