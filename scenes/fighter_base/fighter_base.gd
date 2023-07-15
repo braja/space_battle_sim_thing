@@ -56,7 +56,7 @@ func _physics_process(_delta: float) -> void:
 		elif distance_to_target > flee_distance and distance_to_target <= attack_range:
 			change_state(State.ATTACKING)
 			state_label.text = "attacking"
-			move(target_pos)
+			flank(target_pos)
 			attack()
 		else:
 			change_state(State.SEEKING)
@@ -102,6 +102,16 @@ func flank(target_position: Vector2) -> void:
 	var target_angle = atan2(direction.y, direction.x)
 	rotate_to_target(target_angle)
 	apply_central_impulse(transform.x * acceleration)
+
+
+func flank(target_position: Vector2) -> void:
+	var direction = (target_position - position).normalized()
+	var flanking_angle = deg_to_rad(randi_range(120, 240)) # Change this range for more drastic flanking
+	direction = Vector2(direction.x * cos(flanking_angle) - direction.y * sin(flanking_angle), direction.x * sin(flanking_angle) + direction.y * cos(flanking_angle))
+	var target_angle = atan2(direction.y, direction.x)
+	rotate_to_target(target_angle)
+	apply_central_impulse(transform.x * acceleration)
+
 
 
 func evade(target_position: Vector2) -> void:
