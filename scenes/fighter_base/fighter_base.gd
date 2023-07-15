@@ -56,7 +56,7 @@ func _physics_process(_delta: float) -> void:
 		elif distance_to_target > flee_distance and distance_to_target <= attack_range:
 			change_state(State.ATTACKING)
 			state_label.text = "attacking"
-			flank(target_pos)
+			move(target_pos)
 			attack()
 		else:
 			change_state(State.SEEKING)
@@ -104,16 +104,6 @@ func flank(target_position: Vector2) -> void:
 	apply_central_impulse(transform.x * acceleration)
 
 
-func flank(target_position: Vector2) -> void:
-	var direction = (target_position - position).normalized()
-	var flanking_angle = deg_to_rad(randi_range(120, 240)) # Change this range for more drastic flanking
-	direction = Vector2(direction.x * cos(flanking_angle) - direction.y * sin(flanking_angle), direction.x * sin(flanking_angle) + direction.y * cos(flanking_angle))
-	var target_angle = atan2(direction.y, direction.x)
-	rotate_to_target(target_angle)
-	apply_central_impulse(transform.x * acceleration)
-
-
-
 func evade(target_position: Vector2) -> void:
 	var direction = (position - target_position).normalized() 
 	var random_angle = deg_to_rad(randi_range(-45, 45)) # Random angle for variation in evasion
@@ -153,6 +143,7 @@ func attack():
 		var proj = projectile.instantiate()
 		var predicted_target_position = target.global_position + target.linear_velocity
 		var direction = (predicted_target_position - position).normalized()
+		proj.possible_obstacle = possible_obstacle
 		proj.z_index = z_index
 		proj.global_transform = Transform2D(atan2(direction.y, direction.x), projectile_spawner.global_position)
 		owner.add_child(proj)
