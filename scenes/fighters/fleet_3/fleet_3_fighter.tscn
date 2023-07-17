@@ -1,0 +1,175 @@
+[gd_scene load_steps=14 format=3 uid="uid://cr0ra0d4050yj"]
+
+[ext_resource type="Script" path="res://scenes/fighters/fighter.gd" id="1_ptbpq"]
+[ext_resource type="PackedScene" uid="uid://b11qc6i3s4pem" path="res://scenes/projectiles/fleet_3_bullet/fleet_3_bullet.tscn" id="2_hmcdo"]
+[ext_resource type="PackedScene" uid="uid://dpl8ts6bmfoiw" path="res://scenes/utility/explosion/explosion.tscn" id="3_2nr2t"]
+[ext_resource type="Texture2D" uid="uid://c80p3xs60b5m5" path="res://assets/fleet_3/fleet_3/Base/PNGs/fighter.png" id="3_ajs87"]
+[ext_resource type="Texture2D" uid="uid://28tss7y7s5wi" path="res://assets/fleet_3/fleet_3/Engine Effects/PNGs/Nautolan Ship - Fighter - Engine Effect.png" id="4_m7ixl"]
+[ext_resource type="Texture2D" uid="uid://crjlg3wemip5u" path="res://assets/fleet_3/fleet_3/Weapons/PNGs/Nautolan Ship - Fighter - Weapons.png" id="5_4oye2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y0qgd"]
+radius = 11.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2wpvi"]
+radius = 0.01
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5fg4d"]
+radius = 34.1321
+
+[sub_resource type="Animation" id="Animation_6tjfp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Engine:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_syhch"]
+resource_name = "engine"
+length = 0.333338
+loop_mode = 1
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Engine:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.208333, 0.25, 0.291667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_rl3tw"]
+resource_name = "weapon"
+length = 0.375004
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.208333, 0.25, 0.291667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0j5qd"]
+_data = {
+"RESET": SubResource("Animation_6tjfp"),
+"engine": SubResource("Animation_syhch"),
+"weapon": SubResource("Animation_rl3tw")
+}
+
+[node name="fleet_3_fighter" type="RigidBody2D" groups=["fleet_3", "group"]]
+mass = 14.0
+gravity_scale = 0.0
+max_contacts_reported = 2
+contact_monitor = true
+script = ExtResource("1_ptbpq")
+projectile = ExtResource("2_hmcdo")
+explosion = ExtResource("3_2nr2t")
+health = 200
+max_speed = 400.0
+acceleration = 40.0
+flee_distance = 125.0
+attack_range = 425.0
+torque = 3.5
+
+[node name="Engine" type="Sprite2D" parent="."]
+modulate = Color(1.1, 1.1, 1.1, 1)
+rotation = 1.5708
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_m7ixl")
+hframes = 8
+
+[node name="Weapon" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("5_4oye2")
+hframes = 9
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("3_ajs87")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y0qgd")
+
+[node name="Detection" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+shape = SubResource("CircleShape2D_2wpvi")
+
+[node name="LOS" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LOS"]
+shape = SubResource("CircleShape2D_5fg4d")
+
+[node name="StateLabel" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.5
+offset_top = -26.5
+offset_right = 12.5
+offset_bottom = -9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+text = "state"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ProjectileSpawner" type="Marker2D" parent="."]
+position = Vector2(15, 0)
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.75
+one_shot = true
+
+[node name="InvicibleTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0j5qd")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_crash"]
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
+[connection signal="area_entered" from="LOS" to="." method="_on_los_area_entered"]
+[connection signal="area_exited" from="LOS" to="." method="_on_los_area_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="InvicibleTimer" to="." method="_on_invicible_timer_timeout"]

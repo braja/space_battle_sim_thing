@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6ikysofyqktu"]
+
+[ext_resource type="Texture2D" uid="uid://cnoixq1paeem0" path="res://assets/fleet_1/fleet_1/Base/PNGs/Kla'ed - Frigate - Base.png" id="1_500lw"]
+
+[node name="fleet_1_frigate" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_500lw")

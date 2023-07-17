@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6tlur8uki4ew"]
+
+[ext_resource type="Texture2D" uid="uid://d0ht5ggrcpi55" path="res://assets/space/Dynamic Space Background FREE/Nebula Blue.png" id="1_laoi0"]
+[ext_resource type="Texture2D" uid="uid://biet4f7tun0i5" path="res://assets/space/Dynamic Space Background FREE/Stars-Big_1_1_PC.png" id="2_vvrt6"]
+[ext_resource type="Texture2D" uid="uid://c4rfdwyxeajfr" path="res://assets/space/Dynamic Space Background FREE/Stars Small_1.png" id="3_tbtuy"]
+
+[node name="Bg" type="ParallaxBackground"]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(4098, 4098)
+
+[node name="NebulaBlue" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("1_laoi0")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+visible = false
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(4098, 4098)
+
+[node name="Stars-big11Pc" type="Sprite2D" parent="ParallaxLayer2"]
+texture = ExtResource("2_vvrt6")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+visible = false
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(4098, 4098)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+texture = ExtResource("3_tbtuy")

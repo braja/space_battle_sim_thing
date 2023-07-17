@@ -1,22 +1,29 @@
 extends Camera2D
 
-@export var zoom_speed: float = 0.07
+signal zoom_changed
+
+@export var zoom_speed: float = 0.25
 @export var pan_speed: float = 500.0
-@export var max_zoom: float = 3.0
-@export var min_zoom: float = 0.25
+@export var max_zoom: float = 5.0
+@export var min_zoom: float = 0.5
+
+var origin = Vector2(572, 311)
 
 func _physics_process(delta):
 	var direction = Vector2.ZERO
 
 	if Input.is_action_pressed("ui_left"):
-		direction.x -= 1
+		direction.x -= 5
 	if Input.is_action_pressed("ui_right"):
-		direction.x += 1
+		direction.x += 5
 	if Input.is_action_pressed("ui_up"):
-		direction.y -= 1
+		direction.y -= 5
 	if Input.is_action_pressed("ui_down"):
-		direction.y += 1
-
+		direction.y += 5
+	if Input.is_action_pressed("reset_camera"):
+		position = origin
+		return
+		
 	position += direction.normalized() * pan_speed * delta
 
 func _input(event):
@@ -39,3 +46,4 @@ func _input(event):
 		# clamp zoom levels
 		zoom.x = clamp(zoom.x, min_zoom, max_zoom)
 		zoom.y = clamp(zoom.y, min_zoom, max_zoom)
+		emit_signal("zoom_changed", zoom)

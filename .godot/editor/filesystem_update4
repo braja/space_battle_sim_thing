@@ -1,7 +1,9 @@
 res://worldtest.tscn
-res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.tscn
-res://scenes/fighter_base/fighter_base.tscn
+res://scenes/fighters/fighter.gd
+res://scenes/fighters/fleet_1/fleet_1_fighter.gdshader
 res://scenes/battlecruiser_base/battecruiser.tscn
-res://scenes/projectiles/fleet_2_bullet/fleet_2_bullet.tscn
-res://scenes/projectiles/fleet_3_bullet/fleet_3_bullet.tscn
-res://scenes/battlecruiser_base/battecruiser.gd
+res://scenes/fighters/fleet_1/fleet_1_fighter.tscn
+res://scenes/fighters/fleet_2/fleet_2_fighter.tscn
+res://scenes/fighters/fleet_3/fleet_3_fighter.tscn
+res://scenes/main.tscn
+res://scenes/frigates/fleet_1/fleet_1_frigate.tscn

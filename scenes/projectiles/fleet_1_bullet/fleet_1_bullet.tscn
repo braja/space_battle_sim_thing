@@ -48,6 +48,8 @@ radius = 1.41421
 script = ExtResource("1_jpjwt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1.1, 1.1, 1.1, 1)
+rotation = 1.5708
 texture = ExtResource("1_o4x5j")
 hframes = 4
 
@@ -59,4 +61,10 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_admmn")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
