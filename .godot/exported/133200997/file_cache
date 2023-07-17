@@ -1,0 +1,13 @@
+res://scenes/battlecruiser_base/battecruiser.tscn::a06754bb53b8b69c5b56666d96ddd211::1689606196::res://.godot/exported/133200997/export-7e714ac59b4466ae51cd9462ed6cf06f-battecruiser.scn
+res://scenes/fighters/fleet_1/fleet_1_fighter.tscn::074c16d31aa139b152f5461991f12fbe::1689606196::res://.godot/exported/133200997/export-f1ca2d99262d87c2868de8ed8030c259-fleet_1_fighter.scn
+res://scenes/fighters/fleet_2/fleet_2_fighter.tscn::1c4d6989d06d39447242971ce31ab914::1689606196::res://.godot/exported/133200997/export-8d4cde8d51e4144b844c5f025a3195d8-fleet_2_fighter.scn
+res://scenes/fighters/fleet_3/fleet_3_fighter.tscn::a5a3b21cf024a85427a888c0856526b7::1689606196::res://.godot/exported/133200997/export-986e54ab3de377f0b8847815a97bc3cf-fleet_3_fighter.scn
+res://scenes/fighter_base/fighter_base.tscn::3933881695b293021e1d18543c4b4bad::1689454413::res://.godot/exported/133200997/export-dd628eacac8361adbd3eb205c763255b-fighter_base.scn
+res://scenes/frigates/fleet_1/fleet_1_frigate.tscn::f3eb8fb323d661ba334b1c9bf1673676::1689606197::res://.godot/exported/133200997/export-fd3107b736c0a1ae1155717129f69407-fleet_1_frigate.scn
+res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.tscn::7975dedcb77c28015e648ec61a6437e4::1689490228::res://.godot/exported/133200997/export-fb19a2797ce35f13ecdbd7a8ce4ef715-fleet_1_bullet.scn
+res://scenes/projectiles/fleet_2_bullet/fleet_2_bullet.tscn::2ab50e8f792a3076a344919839c1c82f::1689490228::res://.godot/exported/133200997/export-054b17ad5469828997a4115f8462a232-fleet_2_bullet.scn
+res://scenes/projectiles/fleet_3_bullet/fleet_3_bullet.tscn::9e855ba715189e75e97b9478dbfafcb1::1689520784::res://.godot/exported/133200997/export-9ae0d412d77f0c8fb06a8c4dc6a2cdce-fleet_3_bullet.scn
+res://scenes/utility/bg/bg.tscn::af88690404d4e8b4a18b8263d00b5e6e::1689485999::res://.godot/exported/133200997/export-d2575f521cf3e9b6f5311d382fef0fb8-bg.scn
+res://scenes/utility/explosion/explosion.tscn::6f9b178574c46625905a67a20c6e48bf::1689520784::res://.godot/exported/133200997/export-aeaa234e0da36346e1b82d7d4dcc3bf5-explosion.scn
+res://scenes/main.tscn::fba8600a27606bb94cd0170d0454cb05::1689606197::res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn
+res://worldtest.tscn::8ea89da7becd2af19acbde2a302d781f::1689606196::res://.godot/exported/133200997/export-98afe527274245b3c50b35787c68e83c-worldtest.scn
