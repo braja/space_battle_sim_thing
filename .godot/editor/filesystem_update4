@@ -7,3 +7,4 @@ res://scenes/fighters/fleet_2/fleet_2_fighter.tscn
 res://scenes/fighters/fleet_3/fleet_3_fighter.tscn
 res://scenes/main.tscn
 res://scenes/frigates/fleet_1/fleet_1_frigate.tscn
+res://scenes/main.gd

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c0jwd6o758hy5" path="res://scenes/battlecruiser_base/battecruiser.tscn" id="6_xd3yn"]
 [ext_resource type="PackedScene" uid="uid://6egvrx5d1252" path="res://scenes/fighters/fleet_1/fleet_1_fighter.tscn" id="7_wjd74"]
 
-[node name="Node2D" type="Node2D"]
+[node name="World" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
 
 [node name="Battecruiser" parent="." instance=ExtResource("6_xd3yn")]
