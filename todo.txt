@@ -1,0 +1,4 @@
+evade further when enemy numbers are higher than ally numbers
+put leash on capital ships/points of interest
+
+make a ship class

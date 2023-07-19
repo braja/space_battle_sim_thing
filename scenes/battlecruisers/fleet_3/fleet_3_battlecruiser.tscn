@@ -1,0 +1,116 @@
+[gd_scene load_steps=11 format=3 uid="uid://jmomxgy8w5uc"]
+
+[ext_resource type="Script" path="res://scenes/battlecruisers/battecruiser.gd" id="1_rtoeb"]
+[ext_resource type="Texture2D" uid="uid://x7acntsyb1yy" path="res://assets/fleet_3/fleet_3/Engine Effects/PNGs/Nautolan Ship - Battlecruiser - Engine Effect.png" id="2_dqe8s"]
+[ext_resource type="PackedScene" uid="uid://cr0ra0d4050yj" path="res://scenes/fighters/fleet_3/fleet_3_fighter.tscn" id="2_sj62k"]
+[ext_resource type="Texture2D" uid="uid://fo26xih0ekbb" path="res://assets/fleet_3/fleet_3/Base/PNGs/Nautolan Ship - Battlecruiser - Base.png" id="3_jwebb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8uu08"]
+radius = 48.0
+height = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cn6xs"]
+radius = 4000.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_av00j"]
+radius = 309.0
+height = 834.0
+
+[sub_resource type="Animation" id="Animation_23wk4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Engine:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_d32cb"]
+resource_name = "engine"
+length = 2.00003
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Engine:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y5082"]
+_data = {
+"RESET": SubResource("Animation_23wk4"),
+"engine": SubResource("Animation_d32cb")
+}
+
+[node name="fleet_3_battlecruiser" type="RigidBody2D" groups=["fleet_3", "mothership", "ship"]]
+mass = 2500.0
+gravity_scale = 0.0
+script = ExtResource("1_rtoeb")
+fighter = ExtResource("2_sj62k")
+
+[node name="Engine" type="Sprite2D" parent="."]
+modulate = Color(1.5, 1.5, 1.5, 1)
+position = Vector2(0, -64)
+scale = Vector2(7, 7)
+texture = ExtResource("2_dqe8s")
+hframes = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(7, 7)
+texture = ExtResource("3_jwebb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 110)
+shape = SubResource("CapsuleShape2D_8uu08")
+
+[node name="Detection" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+shape = SubResource("CircleShape2D_cn6xs")
+
+[node name="LOS" type="Area2D" parent="." groups=["line_of_sight"]]
+visible = false
+position = Vector2(0, -26)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LOS"]
+shape = SubResource("CapsuleShape2D_av00j")
+
+[node name="RightSpawn" type="Node2D" parent="."]
+position = Vector2(82, -100)
+
+[node name="LeftSpawn" type="Node2D" parent="."]
+position = Vector2(-77, -95)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+autostart = true
+
+[node name="UpdateMinimapPosition" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y5082")
+}
+
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="UpdateMinimapPosition" to="." method="_on_update_minimap_position_timeout"]

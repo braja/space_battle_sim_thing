@@ -45,6 +45,8 @@ _data = {
 }
 
 [node name="fleet_3_bullet" type="Area2D"]
+collision_layer = 0
+monitorable = false
 script = ExtResource("1_n2iyd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -63,7 +65,7 @@ texture = ExtResource("1_qstjq")
 hframes = 8
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 one_shot = true
 autostart = true
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://c0jwd6o758hy5"]
 
-[ext_resource type="Script" path="res://scenes/battlecruiser_base/battecruiser.gd" id="1_giolm"]
-[ext_resource type="Texture2D" uid="uid://dma3pyw3yv7h6" path="res://assets/fleet_1/fleet_1/Base/PNGs/Kla'ed - Battlecruiser - Base.png" id="1_xgpcn"]
-[ext_resource type="PackedScene" uid="uid://6egvrx5d1252" path="res://scenes/fighters/fleet_1/fleet_1_fighter.tscn" id="2_7bcf5"]
-[ext_resource type="Texture2D" uid="uid://dkivkrs3dbikr" path="res://assets/fleet_1/fleet_1/Engine/PNGs/Kla'ed - Battlecruiser - Engine.png" id="3_3ccxs"]
+[ext_resource type="Script" path="res://scenes/battlecruisers/battecruiser.gd" id="1_jwnm8"]
+[ext_resource type="PackedScene" uid="uid://6egvrx5d1252" path="res://scenes/fighters/fleet_1/fleet_1_fighter.tscn" id="2_rmnaq"]
+[ext_resource type="Texture2D" uid="uid://dkivkrs3dbikr" path="res://assets/fleet_1/fleet_1/Engine/PNGs/Kla'ed - Battlecruiser - Engine.png" id="3_lnwlh"]
+[ext_resource type="Texture2D" uid="uid://dma3pyw3yv7h6" path="res://assets/fleet_1/fleet_1/Base/PNGs/Kla'ed - Battlecruiser - Base.png" id="4_7xaqv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_24mro"]
 radius = 48.0
@@ -55,23 +55,23 @@ _data = {
 "engine": SubResource("Animation_s0qav")
 }
 
-[node name="Battecruiser" type="RigidBody2D" groups=["mothership", "ship"]]
+[node name="fleet_1_battlecruiser" type="RigidBody2D" groups=["fleet_1", "mothership", "ship"]]
 mass = 2500.0
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 75)
 gravity_scale = 0.0
-script = ExtResource("1_giolm")
-fighter = ExtResource("2_7bcf5")
+script = ExtResource("1_jwnm8")
+fighter = ExtResource("2_rmnaq")
 
 [node name="Engine" type="Sprite2D" parent="."]
 modulate = Color(1.5, 1.5, 1.5, 1)
 scale = Vector2(7, 7)
-texture = ExtResource("3_3ccxs")
+texture = ExtResource("3_lnwlh")
 hframes = 12
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(7, 7)
-texture = ExtResource("1_xgpcn")
+texture = ExtResource("4_7xaqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 110)
@@ -97,7 +97,7 @@ position = Vector2(82, -100)
 position = Vector2(-77, -95)
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 8.0
 one_shot = true
 autostart = true
 
@@ -106,6 +106,12 @@ libraries = {
 "": SubResource("AnimationLibrary_e8g7t")
 }
 
+[node name="UpdateMinimapPosition" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="UpdateMinimapPosition" to="." method="_on_update_minimap_position_timeout"]

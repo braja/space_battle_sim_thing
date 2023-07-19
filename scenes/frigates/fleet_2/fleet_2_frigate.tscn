@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://db18o4qbu6x4b"]
+
+[ext_resource type="Script" path="res://scenes/frigates/frigate.gd" id="1_f1evb"]
+[ext_resource type="Texture2D" uid="uid://di17xwm3d44ee" path="res://assets/fleet_2/fleet_2/Base/PNGs/Nairan - Frigate - Base.png" id="2_q33qa"]
+[ext_resource type="PackedScene" uid="uid://bjaqk8hmcjnmv" path="res://scenes/projectiles/fleet_2_bullet/fleet_2_rocket.tscn" id="2_xpvg3"]
+[ext_resource type="PackedScene" uid="uid://dpl8ts6bmfoiw" path="res://scenes/utility/explosion/explosion.tscn" id="3_t4mpq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_imyyr"]
+radius = 17.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_idf56"]
+radius = 0.01
+
+[node name="fleet_2_frigate" type="RigidBody2D" groups=["fleet_2", "frigate", "ship"]]
+mass = 65.0
+gravity_scale = 0.0
+script = ExtResource("1_f1evb")
+projectile = ExtResource("2_xpvg3")
+explosion = ExtResource("3_t4mpq")
+health = 500
+max_speed = 325.0
+acceleration = 40.0
+flee_distance = 200.0
+attack_range = 700.0
+torque = 2.0
+attack_cooldown = 4.0
+invincible_cooldown = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_imyyr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_q33qa")
+
+[node name="Detection" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+shape = SubResource("CircleShape2D_idf56")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4sy2poeioshk"]
+
+[ext_resource type="Script" path="res://fleet_3_missile.gd" id="1_x87pp"]
+[ext_resource type="PackedScene" uid="uid://d3ri2aoud4rq5" path="res://scenes/utility/explosion/missile_explosion_3.tscn" id="2_fyuio"]
+[ext_resource type="Texture2D" uid="uid://c1tfi2w717ufs" path="res://assets/fleet_3/fleet_3/Weapon Effects - Projectiles/PNGs/Nautolan - Rocket.png" id="3_t2w8n"]
+
+[sub_resource type="Animation" id="Animation_4gmr0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_kmufi"]
+resource_name = "bullet"
+length = 0.500008
+loop_mode = 1
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y4taw"]
+_data = {
+"RESET": SubResource("Animation_4gmr0"),
+"bullet": SubResource("Animation_kmufi")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rin2t"]
+radius = 0.01
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y2q4c"]
+radius = 3.0
+height = 20.0
+
+[node name="fleet_3_missile" type="Area2D"]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_x87pp")
+explosion = ExtResource("2_fyuio")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1.5, 1.5, 1.5, 1)
+rotation = 1.5708
+texture = ExtResource("3_t2w8n")
+hframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y4taw")
+}
+
+[node name="Boom" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boom"]
+shape = SubResource("CircleShape2D_rin2t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_y2q4c")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

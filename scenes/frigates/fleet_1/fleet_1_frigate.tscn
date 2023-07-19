@@ -1,10 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6ikysofyqktu"]
+[gd_scene load_steps=7 format=3 uid="uid://c6ikysofyqktu"]
 
 [ext_resource type="Texture2D" uid="uid://cnoixq1paeem0" path="res://assets/fleet_1/fleet_1/Base/PNGs/Kla'ed - Frigate - Base.png" id="1_500lw"]
+[ext_resource type="Script" path="res://scenes/frigates/frigate.gd" id="1_epfp6"]
+[ext_resource type="PackedScene" uid="uid://dpl8ts6bmfoiw" path="res://scenes/utility/explosion/explosion.tscn" id="2_7xhtt"]
+[ext_resource type="PackedScene" uid="uid://c16xt0k5cvkw3" path="res://scenes/projectiles/fleet_1_bullet/homing_missile.tscn" id="2_cv1gk"]
 
-[node name="fleet_1_frigate" type="RigidBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_s5jn5"]
+radius = 17.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4x8wv"]
+radius = 0.01
+
+[node name="fleet_1_frigate" type="RigidBody2D" groups=["fleet_1", "frigate", "ship"]]
+mass = 50.0
 gravity_scale = 0.0
+script = ExtResource("1_epfp6")
+projectile = ExtResource("2_cv1gk")
+explosion = ExtResource("2_7xhtt")
+health = 600
+max_speed = 250.0
+acceleration = 30.0
+flee_distance = 100.0
+attack_range = 1000.0
+torque = 2.0
+attack_cooldown = 6.0
+invincible_cooldown = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_s5jn5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_500lw")
+
+[node name="Detection" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+shape = SubResource("CircleShape2D_4x8wv")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

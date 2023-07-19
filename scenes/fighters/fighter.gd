@@ -1,5 +1,8 @@
 extends RigidBody2D
 
+#signal update_minimap_position
+
+#@onready var minimap = get_tree().get_first_node_in_group("minimap")
 @onready var state_label = $StateLabel
 @onready var sprite = $Sprite2D
 @onready var engine = $Engine
@@ -11,6 +14,7 @@ extends RigidBody2D
 @onready var my_faction = self.get_groups()[0]
 @onready var detection_area = $Detection
 @onready var detection_collision = $Detection/CollisionShape2D
+@onready var minimap_update_timer = $UpdateMinimapPosition
 
 @export var projectile : PackedScene
 @export var explosion : PackedScene
@@ -173,7 +177,6 @@ func find_closest_enemy() -> Node2D:
 
 func rotate_to_target(target_angle: float) -> void:
 	var shortest_angle = fmod((target_angle - rotation + PI), (2 * PI)) - PI
-
 	if abs(shortest_angle) > 0.01:
 		var rotation_direction = shortest_angle / abs(shortest_angle)
 		angular_velocity = rotation_direction * torque
@@ -187,8 +190,6 @@ func attack():
 	if possible_obstacle and target.z_index != z_index and target.possible_obstacle == true:
 		return
 	if not attacking and currentState != State.EVADING:
-		#weapon.visible = true
-		#anim.play("weapon")
 		var proj = projectile.instantiate()
 		var predicted_target_position = target.global_position + target.linear_velocity
 		var direction = (predicted_target_position - position).normalized()
@@ -207,7 +208,7 @@ func stop_attack():
 
 
 func _on_detection_body_entered(body):
-	if body.is_in_group("mothership"):
+	if body.is_in_group("mothership") && not  body.get_groups().any(is_enemy_faction):
 		mothership = body
 	if body.get_groups().any(is_enemy_faction):
 		if not nearby_enemies.has(body):
@@ -268,7 +269,14 @@ func _on_crash(body):
 
 
 func die():
+	remove_from_group("ship")
 	var new_explosion = explosion.instantiate()
 	new_explosion.global_position = global_position
 	get_tree().get_root().add_child(new_explosion)	
 	queue_free()
+
+
+func _on_update_minimap_position_timeout():
+	pass
+	#emit_signal("update_minimap_position", global_position)
+	#minimap_update_timer.start()

@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://c16xt0k5cvkw3"]
+
+[ext_resource type="Script" path="res://scenes/projectiles/fleet_1_bullet/homing_missile.gd" id="1_b1lpb"]
+[ext_resource type="Texture2D" uid="uid://x7kgtn1t8ktc" path="res://assets/fleet_1/fleet_1/Projectiles/PNGs/Kla'ed - Torpedo.png" id="1_xwpj1"]
+[ext_resource type="PackedScene" uid="uid://cg7ipads1nknp" path="res://scenes/utility/explosion/missile_explosion.tscn" id="2_eur20"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sbagi"]
+radius = 3.0
+height = 18.0
+
+[sub_resource type="Animation" id="Animation_o565d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ewi66"]
+resource_name = "bullet"
+length = 0.250008
+loop_mode = 1
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xb3u8"]
+_data = {
+"RESET": SubResource("Animation_o565d"),
+"bullet": SubResource("Animation_ewi66")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bm538"]
+radius = 202.121
+
+[node name="homing_missile" type="Area2D"]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_b1lpb")
+explosion = ExtResource("2_eur20")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_sbagi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1.5, 1.5, 1.5, 1)
+rotation = 1.5708
+texture = ExtResource("1_xwpj1")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xb3u8")
+}
+
+[node name="Boom" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boom"]
+shape = SubResource("CircleShape2D_bm538")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

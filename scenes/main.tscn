@@ -9,9 +9,9 @@
 background_mode = 3
 glow_enabled = true
 glow_intensity = 2.0
-glow_bloom = 0.1
+glow_bloom = 0.05
 glow_blend_mode = 1
-glow_hdr_threshold = 0.03
+glow_hdr_threshold = 0.08
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_l8c41")
@@ -21,7 +21,9 @@ level = ExtResource("1_uji1i")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(572, 311)
+zoom = Vector2(0.25, 0.25)
 script = ExtResource("2_2ku6s")
+zoom_speed = 0.1
 
 [node name="World" parent="." instance=ExtResource("1_uji1i")]
 

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://27c78qre8bty"]
+
+[ext_resource type="Texture2D" uid="uid://b00rxv8s283a4" path="res://assets/radar/green_pixel_2x2.png" id="1_8h1qk"]
+
+[node name="GreenRadarPixel" type="Sprite2D"]
+texture = ExtResource("1_8h1qk")
