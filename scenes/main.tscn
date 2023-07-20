@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpue3jdhke2s4"]
+[gd_scene load_steps=8 format=3 uid="uid://bpue3jdhke2s4"]
 
 [ext_resource type="PackedScene" uid="uid://c6tlur8uki4ew" path="res://scenes/utility/bg/bg.tscn" id="1_grfiy"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_l8c41"]
 [ext_resource type="PackedScene" uid="uid://bhg7g7ur6iemx" path="res://worldtest.tscn" id="1_uji1i"]
 [ext_resource type="Script" path="res://scenes/utility/MainCamera.gd" id="2_2ku6s"]
 [ext_resource type="PackedScene" uid="uid://bd43qix4581u0" path="res://scenes/utility/ship_creator/ship_creator.tscn" id="5_euqcd"]
+[ext_resource type="PackedScene" uid="uid://o4rebyx8o55a" path="res://scenes/utility/bullet_pool/bullet_pool.tscn" id="6_hya4r"]
 
 [sub_resource type="Environment" id="Environment_etgs8"]
 background_mode = 3
@@ -30,6 +31,8 @@ zoom_speed = 0.1
 world_node = NodePath("../World")
 
 [node name="World" parent="." instance=ExtResource("1_uji1i")]
+
+[node name="BulletPool" parent="World" instance=ExtResource("6_hya4r")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_etgs8")

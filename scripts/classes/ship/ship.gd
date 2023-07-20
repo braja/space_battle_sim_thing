@@ -77,6 +77,8 @@ func _init():
 func change_state(new_state: int) -> void:
 	currentState = new_state
 
+func friendly(node):
+	return node == faction
 
 func is_enemy_faction(group):
 	if factions.has(group):
@@ -186,13 +188,18 @@ func attack():
 	if possible_obstacle and target.z_index != z_index and target.possible_obstacle == true:
 		return
 	if not attacking and currentState != State.EVADING:
-		var proj = projectile.instantiate()
+		var proj = BulletPool.request_bullet()
 		var predicted_target_position = target.global_position + target.linear_velocity
 		var direction = (predicted_target_position - position).normalized()
+		proj.faction = faction
 		proj.possible_obstacle = possible_obstacle
 		proj.z_index = z_index
+		proj.global_position = global_position
 		proj.global_transform = Transform2D(atan2(direction.y, direction.x), global_position)
-		get_parent().add_child(proj)
+		proj.show()
+		proj.set_physics_process(true)
+		proj.set_process(true)
+		proj.timer.start()
 		attacking = true
 		attack_timer.start()
 

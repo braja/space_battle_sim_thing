@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 MainCamera="*res://scenes/utility/MainCamera.gd"
+BulletPool="*res://scenes/utility/bullet_pool/bullet_pool.gd"
 
 [display]
 
