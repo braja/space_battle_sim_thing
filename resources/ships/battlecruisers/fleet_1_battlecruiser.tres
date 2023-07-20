@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://dpebi42s7qbmw"]
+
+[ext_resource type="Texture2D" uid="uid://dkivkrs3dbikr" path="res://assets/fleet_1/fleet_1/Engine/PNGs/Kla'ed - Battlecruiser - Engine.png" id="1_fwtm5"]
+[ext_resource type="Texture2D" uid="uid://dma3pyw3yv7h6" path="res://assets/fleet_1/fleet_1/Base/PNGs/Kla'ed - Battlecruiser - Base.png" id="2_euxsw"]
+[ext_resource type="Script" path="res://resources/ships/fighters/fleet_1_fighter.gd" id="3_84ycn"]
+[ext_resource type="Script" path="res://scripts/classes/ship/battlecruiser/battecruiser.gd" id="4_b5g04"]
+
+[resource]
+script = ExtResource("3_84ycn")
+ship_script = ExtResource("4_b5g04")
+ship_type = "Battlecruiser"
+faction = "fleet_1"
+ship_weight = 3500.0
+collision_radius = 16
+center_of_mass_offset = Vector2(0, 0)
+gravity_scale = 0.0
+hull_texture = ExtResource("2_euxsw")
+engine_texture = ExtResource("1_fwtm5")
+engine_hframes = 12
+invincibility_wait_time = 0.25
+attack_wait_time = 0.5
+engine_hide_threshold = 10
+health = 100000
+max_speed = 500.0
+acceleration = 100.0
+flee_distance = 0.0
+attack_range = 550.0
+torque = 0.05

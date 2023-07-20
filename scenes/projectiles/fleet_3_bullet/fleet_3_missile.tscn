@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://b4sy2poeioshk"]
 
-[ext_resource type="Script" path="res://fleet_3_missile.gd" id="1_x87pp"]
+[ext_resource type="Script" path="res://scenes/projectiles/fleet_3_bullet/fleet_3_missile.gd" id="1_x87pp"]
 [ext_resource type="PackedScene" uid="uid://d3ri2aoud4rq5" path="res://scenes/utility/explosion/missile_explosion_3.tscn" id="2_fyuio"]
 [ext_resource type="Texture2D" uid="uid://c1tfi2w717ufs" path="res://assets/fleet_3/fleet_3/Weapon Effects - Projectiles/PNGs/Nautolan - Rocket.png" id="3_t2w8n"]
 

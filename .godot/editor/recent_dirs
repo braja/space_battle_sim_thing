@@ -1,3 +1,9 @@
+res://resources/ships/fighters
+res://resources/ships/battlecruisers
+res://scenes/utility/ship_creator
+res://scenes/ships/modules/battlecruiser_module
+res://scripts/classes/ship
+res://scenes/ships/ship_base
 res://scenes/utility/explosion
 res://scenes/frigates/fleet_3
 res://scenes/frigates
@@ -9,13 +15,6 @@ res://scripts/classes/ship/fighter
 C:/Users/Nico/code/godot_projects/space_battle
 C:/Users/Nico/code/godot_projects/space_battle/exports/windows
 res://scenes/battlecruisers
-res://scenes/radar
 res://scenes/frigates/fleet_1
 res://scenes/utility/bg
 res://scenes
-res://scenes/fighters
-res://
-res://assets/fleet_1/fleet_1/Shield/PNGs
-res://assets/fleet_1/fleet_1/Engine/PNGs
-res://assets/fleet_1/fleet_1/Destruction/PNGs
-res://scenes/fighter_base

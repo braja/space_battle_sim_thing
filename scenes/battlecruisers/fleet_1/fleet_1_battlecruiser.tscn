@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0jwd6o758hy5"]
+[gd_scene load_steps=12 format=3 uid="uid://c0jwd6o758hy5"]
 
-[ext_resource type="Script" path="res://scenes/battlecruisers/battecruiser.gd" id="1_jwnm8"]
+[ext_resource type="Script" path="res://scripts/classes/ship/battlecruiser/battecruiser.gd" id="1_g4kc0"]
 [ext_resource type="PackedScene" uid="uid://6egvrx5d1252" path="res://scenes/fighters/fleet_1/fleet_1_fighter.tscn" id="2_rmnaq"]
 [ext_resource type="Texture2D" uid="uid://dkivkrs3dbikr" path="res://assets/fleet_1/fleet_1/Engine/PNGs/Kla'ed - Battlecruiser - Engine.png" id="3_lnwlh"]
 [ext_resource type="Texture2D" uid="uid://dma3pyw3yv7h6" path="res://assets/fleet_1/fleet_1/Base/PNGs/Kla'ed - Battlecruiser - Base.png" id="4_7xaqv"]
+[ext_resource type="PackedScene" uid="uid://svlyalwfmbxa" path="res://scenes/ships/modules/battlecruiser_module/battlecruiser_module.tscn" id="5_kgbt4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_24mro"]
 radius = 48.0
@@ -60,21 +61,23 @@ mass = 2500.0
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 75)
 gravity_scale = 0.0
-script = ExtResource("1_jwnm8")
+script = ExtResource("1_g4kc0")
 fighter = ExtResource("2_rmnaq")
 
 [node name="Engine" type="Sprite2D" parent="."]
 modulate = Color(1.5, 1.5, 1.5, 1)
+rotation = 1.5708
 scale = Vector2(7, 7)
 texture = ExtResource("3_lnwlh")
 hframes = 12
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
 scale = Vector2(7, 7)
 texture = ExtResource("4_7xaqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 110)
+position = Vector2(-114, -1)
 shape = SubResource("CapsuleShape2D_24mro")
 
 [node name="Detection" type="Area2D" parent="."]
@@ -90,17 +93,6 @@ position = Vector2(0, -26)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LOS"]
 shape = SubResource("CapsuleShape2D_1qns1")
 
-[node name="RightSpawn" type="Node2D" parent="."]
-position = Vector2(82, -100)
-
-[node name="LeftSpawn" type="Node2D" parent="."]
-position = Vector2(-77, -95)
-
-[node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 8.0
-one_shot = true
-autostart = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_e8g7t")
@@ -111,7 +103,10 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
+[node name="battlecruiser_module" parent="." instance=ExtResource("5_kgbt4")]
+
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="UpdateMinimapPosition" to="." method="_on_update_minimap_position_timeout"]
+
+[editable path="battlecruiser_module"]

@@ -1,0 +1,31 @@
+[gd_resource type="Resource" load_steps=7 format=3 uid="uid://dlq56e02jkmyv"]
+
+[ext_resource type="Texture2D" uid="uid://cvopmefaofthb" path="res://assets/fleet_2/fleet_2/Engine Effects/PNGs/Nairan - Fighter - Engine.png" id="1_noywt"]
+[ext_resource type="PackedScene" uid="uid://dpl8ts6bmfoiw" path="res://scenes/utility/explosion/explosion.tscn" id="2_m8wmy"]
+[ext_resource type="Texture2D" uid="uid://bx5qoj0c8k7d6" path="res://assets/fleet_2/fleet_2/Base/PNGs/fighter.png" id="3_8adrd"]
+[ext_resource type="PackedScene" uid="uid://lexnbldtkhnh" path="res://scenes/projectiles/fleet_2_bullet/fleet_2_bullet.tscn" id="4_i6nmf"]
+[ext_resource type="Script" path="res://resources/ships/fighters/fleet_1_fighter.gd" id="5_c3hr5"]
+[ext_resource type="Script" path="res://scripts/classes/ship/fighter/fighter.gd" id="6_isxie"]
+
+[resource]
+script = ExtResource("5_c3hr5")
+ship_script = ExtResource("6_isxie")
+ship_type = "Fighter"
+faction = "fleet_2"
+ship_weight = 12.0
+collision_radius = 11
+center_of_mass_offset = Vector2(-5, 0)
+gravity_scale = 0.0
+hull_texture = ExtResource("3_8adrd")
+engine_texture = ExtResource("1_noywt")
+engine_hframes = 8
+projectile = ExtResource("4_i6nmf")
+explosion = ExtResource("2_m8wmy")
+invincibility_wait_time = 0.25
+attack_wait_time = 1.0
+health = 175
+max_speed = 500.0
+acceleration = 48.0
+flee_distance = 225.0
+attack_range = 475.0
+torque = 4.0

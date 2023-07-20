@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://dr5efhvegec6k"]
+
+[ext_resource type="Script" path="res://scripts/classes/ship/ship.gd" id="1_1w0aa"]
+[ext_resource type="PackedScene" uid="uid://svlyalwfmbxa" path="res://scenes/ships/modules/battlecruiser_module/battlecruiser_module.tscn" id="2_1qkiv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3la58"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_52rof"]
+radius = 0.01
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3g383"]
+radius = 34.1321
+
+[node name="Ship" type="RigidBody2D" groups=["ship"]]
+collision_mask = 0
+center_of_mass_mode = 1
+script = ExtResource("1_1w0aa")
+ship_type = "Fighter"
+faction = "fleet_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3la58")
+
+[node name="Engine" type="Sprite2D" parent="."]
+modulate = Color(2, 2, 2, 1)
+rotation = 1.5708
+
+[node name="Hull" type="Sprite2D" parent="."]
+rotation = 1.5708
+
+[node name="Detection" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+shape = SubResource("CircleShape2D_52rof")
+
+[node name="LOS" type="Area2D" parent="." groups=["line_of_sight"]]
+visible = false
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LOS"]
+shape = SubResource("CircleShape2D_3g383")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[node name="InvicibilityTimer" type="Timer" parent="."]
+
+[node name="battlecruiser_module" parent="." instance=ExtResource("2_1qkiv")]
+
+[node name="AnimationTimer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
+[connection signal="area_entered" from="LOS" to="." method="_on_los_area_entered"]
+[connection signal="area_exited" from="LOS" to="." method="_on_los_area_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="InvicibilityTimer" to="." method="_on_invicibility_timer_timeout"]
+[connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]

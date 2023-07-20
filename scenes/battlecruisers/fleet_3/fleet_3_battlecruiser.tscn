@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://jmomxgy8w5uc"]
 
-[ext_resource type="Script" path="res://scenes/battlecruisers/battecruiser.gd" id="1_rtoeb"]
+[ext_resource type="Script" path="res://scripts/classes/ship/battlecruiser/battecruiser.gd" id="1_rtoeb"]
 [ext_resource type="Texture2D" uid="uid://x7acntsyb1yy" path="res://assets/fleet_3/fleet_3/Engine Effects/PNGs/Nautolan Ship - Battlecruiser - Engine Effect.png" id="2_dqe8s"]
 [ext_resource type="PackedScene" uid="uid://cr0ra0d4050yj" path="res://scenes/fighters/fleet_3/fleet_3_fighter.tscn" id="2_sj62k"]
 [ext_resource type="Texture2D" uid="uid://fo26xih0ekbb" path="res://assets/fleet_3/fleet_3/Base/PNGs/Nautolan Ship - Battlecruiser - Base.png" id="3_jwebb"]

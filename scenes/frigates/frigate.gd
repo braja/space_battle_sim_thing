@@ -1,9 +1,6 @@
 extends Ship
 
 
-@onready var attack_timer = $AttackTimer
-@onready var detection_collision = $Detection/CollisionShape2D
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var tween = get_tree().create_tween()
@@ -56,22 +53,3 @@ func attack():
 		add_child(proj)
 		attacking = true
 		attack_timer.start()
-
-
-func _on_detection_body_entered(body):
-	if body.get_groups().any(is_enemy_faction):
-		if not nearby_enemies.has(body):
-			nearby_enemies.append(body)
-
-
-func _on_detection_body_exited(body):
-	if nearby_enemies.has(body):
-		nearby_enemies.erase(body)
-		if target == body:
-			target = null
-
-
-func _on_attack_timer_timeout():
-	attacking = false
-
-

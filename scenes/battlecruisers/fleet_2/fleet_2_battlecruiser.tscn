@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bdw8xqkimvt5a"]
 
-[ext_resource type="Script" path="res://scenes/battlecruisers/battecruiser.gd" id="1_s275w"]
+[ext_resource type="Script" path="res://scripts/classes/ship/battlecruiser/battecruiser.gd" id="1_s275w"]
 [ext_resource type="PackedScene" uid="uid://w6uwnkso28wq" path="res://scenes/fighters/fleet_2/fleet_2_fighter.tscn" id="2_3y8tc"]
 [ext_resource type="Texture2D" uid="uid://1ad2bfs64qv4" path="res://assets/fleet_2/fleet_2/Engine Effects/PNGs/Nairan - Battlecruiser - Engine.png" id="2_epd5e"]
 [ext_resource type="Texture2D" uid="uid://22e46usrldn7" path="res://assets/fleet_2/fleet_2/Base/PNGs/Nairan - Battlecruiser - Base.png" id="3_48j4x"]

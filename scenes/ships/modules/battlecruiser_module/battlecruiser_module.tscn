@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://svlyalwfmbxa"]
+
+[node name="battlecruiser_module" type="Node2D"]
+rotation = 1.5708
+
+[node name="RightSpawn" type="Node2D" parent="."]
+position = Vector2(82, -100)
+
+[node name="LeftSpawn" type="Node2D" parent="."]
+position = Vector2(-77, -95)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true

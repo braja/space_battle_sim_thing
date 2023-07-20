@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd43qix4581u0"]
+
+[ext_resource type="Script" path="res://scenes/utility/ship_creator/ship_creator.gd" id="1_8hg6s"]
+
+[node name="ship_creator" type="Node2D"]
+script = ExtResource("1_8hg6s")

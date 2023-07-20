@@ -27,6 +27,7 @@ var shake_strength: float = 0.0
 var origin = Vector2(572, 311)
 
 func _ready() -> void:
+	zoom = Vector2(.25, .25)
 	rand.randomize()
 	# Randomize the generated noise
 	noise.seed = rand.randi()
