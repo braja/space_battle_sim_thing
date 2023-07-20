@@ -174,10 +174,10 @@ func orbit_mothership(target_position: Vector2, distance):
 		accelerate(true)
 
 
-func _on_crash(body):
-	if body.is_in_group("ship"):
-		if abs(linear_velocity.x + body.linear_velocity.x) >= 275 or abs(linear_velocity.y + body.linear_velocity.y) >= 275:
-			die()
+#func _on_crash(body):
+#	if body.is_in_group("ship"):
+#		if abs(linear_velocity.x + body.linear_velocity.x) >= 275 or abs(linear_velocity.y + body.linear_velocity.y) >= 275:
+#			die()
 
 
 func attack():
@@ -204,8 +204,8 @@ func take_damage(amount):
 		die()
 	else:
 		invincibility_timer.start()
-		var tween = get_tree().create_tween()
-		tween.tween_property(self, "modulate", Color(5.0, 5.0, 5.0, 5.0), .125)
+#		var tween = get_tree().create_tween()
+#		tween.tween_property(self, "modulate", Color(5.0, 5.0, 5.0, 5.0), .125)
 		health -= amount
 		invincible = true
 
@@ -244,8 +244,8 @@ func _on_los_area_exited(area):
 
 
 func _on_invicibility_timer_timeout():
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 1.0), .125)
+#	var tween = get_tree().create_tween()
+#	tween.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 1.0), .125)
 	invincible = false
 
 

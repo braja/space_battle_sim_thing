@@ -2,10 +2,4 @@ res://scenes/main.tscn
 res://worldtest.tscn
 res://scenes/ships/ship_base/ship.tscn
 res://scenes/utility/ship_creator/ship_creator.tscn
-res://scripts/classes/ship/fighter/fighter.gd
-res://resources/ships/battlecruisers/fleet_1_battlecruiser.tres
-res://scenes/utility/ship_creator/ship_creator.gd
-res://scripts/classes/ship/battlecruiser/battecruiser.gd
 res://scripts/classes/ship/ship.gd
-res://resources/ships/battlecruisers/fleet_2_battlecruiser.tres
-res://resources/ships/fighters/fleet_1_fighter.gd
