@@ -4,12 +4,8 @@ res://scenes/ships/ship_base/ship.tscn
 res://scenes/utility/ship_creator/ship_creator.tscn
 res://scenes/utility/bullet_pool/bullet_pool.tscn
 res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.tscn
-res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.gd
 res://scenes/utility/fighter_pool/fighter_pool.tscn
-res://scenes/utility/fighter_pool/fighter_pool.gd
-res://scenes/utility/ship_creator/ship_creator.gd
-res://resources/ships/fighters/fleet_1_fighter.tres
+res://scripts/classes/ship/fighter/fighter.gd
 res://scripts/classes/ship/ship.gd
 res://scenes/utility/bullet_pool/bullet_pool.gd
-res://scripts/classes/ship/fighter/fighter.gd
-res://scripts/classes/ship/battlecruiser/battecruiser.gd
+res://scenes/utility/fighter_pool/fighter_pool.gd

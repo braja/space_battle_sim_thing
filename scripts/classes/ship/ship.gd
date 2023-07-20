@@ -219,8 +219,19 @@ func take_damage(amount):
 
 
 func die():
-	print("base die")
-	
+	var new_explosion = explosion.instantiate()
+	new_explosion.global_position = global_position
+	get_tree().get_root().add_child(new_explosion)	
+	visible = false
+	set_deferred("set_process", false)
+	set_deferred("set_physics_process", false)
+	call_deferred("toggle_collision")
+	if ship_type == "Fighter":
+		FighterPool.return_to_pool(self)
+
+
+func toggle_collision():
+	collision.disabled = !collision.disabled
 
 
 func _on_detection_body_entered(body):

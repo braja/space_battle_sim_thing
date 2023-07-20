@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var bullet = load("res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.tscn")
 
-@export var pool_size: int = 1500
+@export var pool_size: int = 2500
 
 var bullet_pool = []
 # Called when the node enters the scene tree for the first time.

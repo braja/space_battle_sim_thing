@@ -60,13 +60,4 @@ func _physics_process(_delta: float) -> void:
 #	if linear_velocity.length() > max_speed:
 #		linear_velocity = linear_velocity.normalized() * max_speed
 
-func die():
-	print("fighter die")
-	var new_explosion = explosion.instantiate()
-	new_explosion.global_position = global_position
-	get_tree().get_root().add_child(new_explosion)	
-	visible = false
-	set_deferred("set_process", false)
-	set_deferred("set_physics_process", false)
-	set_deferred("CollisionShape2D:disabled", true)
-	FighterPool.return_to_pool(self)
+

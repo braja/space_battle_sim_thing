@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@export var pool_size: int = 100
+@export var pool_size: int = 300
 
 var fighter_pool = []
 
