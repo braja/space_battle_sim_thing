@@ -1,9 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1689830491
+::res://::1689834790
 export_presets.cfg::TextFile::-1::1689646887::0::1::::<><>::
 icon.svg::CompressedTexture2D::828541556056723239::1684905297::1689830493::1::::<><>::
 todo.txt::TextFile::-1::1689820606::0::1::::<><>::
-worldtest.tscn::PackedScene::2892084226673083663::1689828736::0::1::::<><>::
+worldtest.tscn::PackedScene::2892084226673083663::1689834134::0::1::::<><>::
 ::res://assets/::1689641334
 ::res://assets/fleet_1/::1684987888
 Kla'ed - Ships Preview.png::CompressedTexture2D::185943598473238332::1646904948::1684905425::1::::<><>::
@@ -256,72 +256,75 @@ Stars-Big_1_2_PC.png::CompressedTexture2D::6719224359411082690::1513166737::1689
 ::res://resources/::1689809294
 ::res://resources/ships/::1689821039
 ::res://resources/ships/battlecruisers/::1689824555
-fleet_1_battlecruiser.tres::Resource::8220428785758137906::1689823797::0::1::::<><>::uid://dkivkrs3dbikr::::res://assets/fleet_1/fleet_1/Engine/PNGs/Kla'ed - Battlecruiser - Engine.png<>uid://dma3pyw3yv7h6::::res://assets/fleet_1/fleet_1/Base/PNGs/Kla'ed - Battlecruiser - Base.png<>res://resources/ships/fighters/fleet_1_fighter.gd<>res://scripts/classes/ship/battlecruiser/battecruiser.gd
-fleet_2_battlecruiser.tres::Resource::9041449794830492522::1689824555::0::1::::<><>::res://resources/ships/fighters/fleet_1_fighter.gd<>uid://1ad2bfs64qv4::::res://assets/fleet_2/fleet_2/Engine Effects/PNGs/Nairan - Battlecruiser - Engine.png<>uid://22e46usrldn7::::res://assets/fleet_2/fleet_2/Base/PNGs/Nairan - Battlecruiser - Base.png<>res://scripts/classes/ship/battlecruiser/battecruiser.gd
+fleet_1_battlecruiser.tres::Resource::8220428785758137906::1689823797::0::1::::<><>::uid://dkivkrs3dbikr
+fleet_2_battlecruiser.tres::Resource::9041449794830492522::1689824555::0::1::::<><>::res://resources/ships/fighters/fleet_1_fighter.gd<>uid://1ad2bfs64qv4
 fleet_3_battlecruiser.tres::Resource::8185526766100827970::1689821110::0::1::::<><>::
 ::res://resources/ships/fighters/::1689823766
 fleet_1_fighter.gd::GDScript::-1::1689823766::0::1::::<>Resource<>::
-fleet_1_fighter.tres::Resource::3833122159926186079::1689816086::0::1::::<><>::res://resources/ships/fighters/fleet_1_fighter.gd<>uid://dmfpgd2ioi0fw::::res://assets/fleet_1/fleet_1/Engine/PNGs/Kla'ed - Fighter - Engine.png<>uid://dpl8ts6bmfoiw::::res://scenes/utility/explosion/explosion.tscn<>uid://dnwhs0cyjsi1s::::res://assets/fleet_1/fleet_1/Base/PNGs/fighter.png<>uid://cqdv1xd2pscgs::::res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.tscn<>res://scripts/classes/ship/fighter/fighter.gd
-fleet_2_fighter.tres::Resource::7966246494509363701::1689816086::0::1::::<><>::uid://cvopmefaofthb::::res://assets/fleet_2/fleet_2/Engine Effects/PNGs/Nairan - Fighter - Engine.png<>uid://dpl8ts6bmfoiw::::res://scenes/utility/explosion/explosion.tscn<>uid://bx5qoj0c8k7d6::::res://assets/fleet_2/fleet_2/Base/PNGs/fighter.png<>uid://lexnbldtkhnh::::res://scenes/projectiles/fleet_2_bullet/fleet_2_bullet.tscn<>res://resources/ships/fighters/fleet_1_fighter.gd<>res://scripts/classes/ship/fighter/fighter.gd
-fleet_3_fighter.tres::Resource::6867904305653673490::1689817749::0::1::::<><>::res://resources/ships/fighters/fleet_1_fighter.gd<>uid://28tss7y7s5wi::::res://assets/fleet_3/fleet_3/Engine Effects/PNGs/Nautolan Ship - Fighter - Engine Effect.png<>uid://dpl8ts6bmfoiw::::res://scenes/utility/explosion/explosion.tscn<>uid://c80p3xs60b5m5::::res://assets/fleet_3/fleet_3/Base/PNGs/fighter.png<>uid://b11qc6i3s4pem::::res://scenes/projectiles/fleet_3_bullet/fleet_3_bullet.tscn<>res://scripts/classes/ship/fighter/fighter.gd
-::res://scenes/::1689828977
+fleet_1_fighter.tres::Resource::3833122159926186079::1689816086::0::1::::<><>::res://resources/ships/fighters/fleet_1_fighter.gd<>uid://dmfpgd2ioi0fw
+fleet_2_fighter.tres::Resource::7966246494509363701::1689816086::0::1::::<><>::uid://cvopmefaofthb
+fleet_3_fighter.tres::Resource::6867904305653673490::1689817749::0::1::::<><>::res://resources/ships/fighters/fleet_1_fighter.gd<>uid://28tss7y7s5wi
+::res://scenes/::1689834133
 main.gd::GDScript::-1::1689606111::0::1::::<>Node2D<>::
-main.tscn::PackedScene::3480834241221350221::1689828977::0::1::::<><>::uid://c6tlur8uki4ew::::res://scenes/utility/bg/bg.tscn<>res://scenes/main.gd<>uid://bhg7g7ur6iemx::::res://worldtest.tscn<>res://scenes/utility/MainCamera.gd<>uid://bd43qix4581u0::::res://scenes/utility/ship_creator/ship_creator.tscn
+main.tscn::PackedScene::3480834241221350221::1689834133::0::1::::<><>::uid://c6tlur8uki4ew::::res://scenes/utility/bg/bg.tscn<>res://scenes/main.gd<>uid://bhg7g7ur6iemx::::res://worldtest.tscn<>res://scenes/utility/MainCamera.gd<>uid://bd43qix4581u0::::res://scenes/utility/ship_creator/ship_creator.tscn<>uid://o4rebyx8o55a::::res://scenes/utility/bullet_pool/bullet_pool.tscn
 ::res://scenes/battlecruisers/::1689805539
 ::res://scenes/battlecruisers/fleet_1/::1689815788
-fleet_1_battlecruiser.tscn::PackedScene::6547484640692572498::1689815788::0::1::::<><>::res://scripts/classes/ship/battlecruiser/battecruiser.gd<>uid://6egvrx5d1252::::res://scenes/fighters/fleet_1/fleet_1_fighter.tscn<>uid://dkivkrs3dbikr::::res://assets/fleet_1/fleet_1/Engine/PNGs/Kla'ed - Battlecruiser - Engine.png<>uid://dma3pyw3yv7h6::::res://assets/fleet_1/fleet_1/Base/PNGs/Kla'ed - Battlecruiser - Base.png<>uid://svlyalwfmbxa::::res://scenes/ships/modules/battlecruiser_module/battlecruiser_module.tscn
+fleet_1_battlecruiser.tscn::PackedScene::6547484640692572498::1689815788::0::1::::<><>::res://scripts/classes/ship/battlecruiser/battecruiser.gd<>uid://6egvrx5d1252
 ::res://scenes/battlecruisers/fleet_2/::1689805539
-fleet_2_battlecruiser.tscn::PackedScene::2644449115419633456::1689805539::0::1::::<><>::res://scripts/classes/ship/battlecruiser/battecruiser.gd<>uid://w6uwnkso28wq::::res://scenes/fighters/fleet_2/fleet_2_fighter.tscn<>uid://1ad2bfs64qv4::::res://assets/fleet_2/fleet_2/Engine Effects/PNGs/Nairan - Battlecruiser - Engine.png<>uid://22e46usrldn7::::res://assets/fleet_2/fleet_2/Base/PNGs/Nairan - Battlecruiser - Base.png
+fleet_2_battlecruiser.tscn::PackedScene::2644449115419633456::1689805539::0::1::::<><>::res://scripts/classes/ship/battlecruiser/battecruiser.gd<>uid://w6uwnkso28wq
 ::res://scenes/battlecruisers/fleet_3/::1689805539
-fleet_3_battlecruiser.tscn::PackedScene::657344811657927138::1689805539::0::1::::<><>::res://scripts/classes/ship/battlecruiser/battecruiser.gd<>uid://x7acntsyb1yy::::res://assets/fleet_3/fleet_3/Engine Effects/PNGs/Nautolan Ship - Battlecruiser - Engine Effect.png<>uid://cr0ra0d4050yj::::res://scenes/fighters/fleet_3/fleet_3_fighter.tscn<>uid://fo26xih0ekbb::::res://assets/fleet_3/fleet_3/Base/PNGs/Nautolan Ship - Battlecruiser - Base.png
+fleet_3_battlecruiser.tscn::PackedScene::657344811657927138::1689805539::0::1::::<><>::res://scripts/classes/ship/battlecruiser/battecruiser.gd<>uid://x7acntsyb1yy
 ::res://scenes/frigates/::1689816718
 frigate.gd::GDScript::-1::1689816718::0::1::::<>Ship<>::
 ::res://scenes/frigates/fleet_1/::1689747395
-fleet_1_frigate.tscn::PackedScene::6965861538486521058::1689747395::0::1::::<><>::uid://cnoixq1paeem0::::res://assets/fleet_1/fleet_1/Base/PNGs/Kla'ed - Frigate - Base.png<>res://scenes/frigates/frigate.gd<>uid://dpl8ts6bmfoiw::::res://scenes/utility/explosion/explosion.tscn<>uid://c16xt0k5cvkw3::::res://scenes/projectiles/fleet_1_bullet/homing_missile.tscn
+fleet_1_frigate.tscn::PackedScene::6965861538486521058::1689747395::0::1::::<><>::uid://cnoixq1paeem0
 ::res://scenes/frigates/fleet_2/::1689747395
-fleet_2_frigate.tscn::PackedScene::7285154926166284559::1689747395::0::1::::<><>::res://scenes/frigates/frigate.gd<>uid://di17xwm3d44ee::::res://assets/fleet_2/fleet_2/Base/PNGs/Nairan - Frigate - Base.png<>uid://bjaqk8hmcjnmv::::res://scenes/projectiles/fleet_2_bullet/fleet_2_rocket.tscn<>uid://dpl8ts6bmfoiw::::res://scenes/utility/explosion/explosion.tscn
+fleet_2_frigate.tscn::PackedScene::7285154926166284559::1689747395::0::1::::<><>::res://scenes/frigates/frigate.gd<>uid://di17xwm3d44ee
 ::res://scenes/frigates/fleet_3/::1689747395
-fleet_3_frigate.tscn::PackedScene::4153379970353306097::1689747395::0::1::::<><>::res://scenes/frigates/frigate.gd<>uid://b4sy2poeioshk::::res://scenes/projectiles/fleet_3_bullet/fleet_3_missile.tscn<>uid://dpl8ts6bmfoiw::::res://scenes/utility/explosion/explosion.tscn<>uid://bgox0uoohtjrv::::res://assets/fleet_3/fleet_3/Base/PNGs/Nautolan Ship - Frigate - Base.png
+fleet_3_frigate.tscn::PackedScene::4153379970353306097::1689747395::0::1::::<><>::res://scenes/frigates/frigate.gd<>uid://b4sy2poeioshk
 ::res://scenes/projectiles/::1685149623
-::res://scenes/projectiles/fleet_1_bullet/::1689745946
-fleet_1_bullet.gd::GDScript::-1::1689471587::0::1::::<>Area2D<>::
-fleet_1_bullet.tscn::PackedScene::5903378700265500678::1689656928::0::1::::<><>::res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.gd<>uid://1g2t65pqrrlb::::res://assets/fleet_1/fleet_1/Projectiles/PNGs/Kla'ed - Bullet.png
+::res://scenes/projectiles/fleet_1_bullet/::1689834134
+fleet_1_bullet.gd::GDScript::-1::1689834100::0::1::::<>Area2D<>::
+fleet_1_bullet.tscn::PackedScene::5903378700265500678::1689834134::0::1::::<><>::res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.gd<>uid://1g2t65pqrrlb::::res://assets/fleet_1/fleet_1/Projectiles/PNGs/Kla'ed - Bullet.png
 homing_missile.gd::GDScript::-1::1689745946::0::1::::<>Area2D<>::
-homing_missile.tscn::PackedScene::6663178763167089720::1689738196::0::1::::<><>::res://scenes/projectiles/fleet_1_bullet/homing_missile.gd<>uid://x7kgtn1t8ktc::::res://assets/fleet_1/fleet_1/Projectiles/PNGs/Kla'ed - Torpedo.png<>uid://cg7ipads1nknp::::res://scenes/utility/explosion/missile_explosion.tscn
+homing_missile.tscn::PackedScene::6663178763167089720::1689738196::0::1::::<><>::res://scenes/projectiles/fleet_1_bullet/homing_missile.gd<>uid://x7kgtn1t8ktc
 ::res://scenes/projectiles/fleet_2_bullet/::1689745142
 fleet_2_bullet.gd::GDScript::-1::1689471608::0::1::::<>Area2D<>::
-fleet_2_bullet.tscn::PackedScene::781754566867284605::1689656928::0::1::::<><>::uid://ch88ogucioms4::::res://assets/fleet_2/fleet_2/Weapon Effects - Projectiles/PNGs/Nairan - Bolt.png<>res://scenes/projectiles/fleet_2_bullet/fleet_2_bullet.gd
+fleet_2_bullet.tscn::PackedScene::781754566867284605::1689656928::0::1::::<><>::uid://ch88ogucioms4
 fleet_2_rocket.gd::GDScript::-1::1689742360::0::1::::<>Area2D<>::
-fleet_2_rocket.tscn::PackedScene::3019111350891157513::1689745142::0::1::::<><>::res://scenes/projectiles/fleet_2_bullet/fleet_2_rocket.gd<>uid://dxyqffklq2lp8::::res://assets/fleet_2/fleet_2/Weapon Effects - Projectiles/PNGs/Nairan - Rocket.png<>uid://cnafrkm6cptiy::::res://scenes/utility/explosion/missile_explosion_2.tscn
+fleet_2_rocket.tscn::PackedScene::3019111350891157513::1689745142::0::1::::<><>::res://scenes/projectiles/fleet_2_bullet/fleet_2_rocket.gd<>uid://dxyqffklq2lp8
 ::res://scenes/projectiles/fleet_3_bullet/::1689820585
 fleet_3_bullet.gd::GDScript::-1::1689471645::0::1::::<>Area2D<>::
-fleet_3_bullet.tscn::PackedScene::4265981125239263448::1689656928::0::1::::<><>::res://scenes/projectiles/fleet_3_bullet/fleet_3_bullet.gd<>uid://dpj1yqsqn1yf8::::res://assets/fleet_3/fleet_3/Weapon Effects - Projectiles/PNGs/Nautolan - Bullet.png
+fleet_3_bullet.tscn::PackedScene::4265981125239263448::1689656928::0::1::::<><>::res://scenes/projectiles/fleet_3_bullet/fleet_3_bullet.gd<>uid://dpj1yqsqn1yf8
 fleet_3_missile.gd::GDScript::-1::1689746038::0::1::::<>Area2D<>::
-fleet_3_missile.tscn::PackedScene::4460562182701461168::1689820585::0::1::::<><>::res://scenes/projectiles/fleet_3_bullet/fleet_3_missile.gd<>uid://d3ri2aoud4rq5::::res://scenes/utility/explosion/missile_explosion_3.tscn<>uid://c1tfi2w717ufs::::res://assets/fleet_3/fleet_3/Weapon Effects - Projectiles/PNGs/Nautolan - Rocket.png
+fleet_3_missile.tscn::PackedScene::4460562182701461168::1689820585::0::1::::<><>::res://scenes/projectiles/fleet_3_bullet/fleet_3_missile.gd<>uid://d3ri2aoud4rq5
 ::res://scenes/ships/::1689805853
 ::res://scenes/ships/modules/::1689805859
 ::res://scenes/ships/modules/battlecruiser_module/::1689815788
 battlecruiser_module.tscn::PackedScene::1307461882293569986::1689815788::0::1::::<><>::
-::res://scenes/ships/ship_base/::1689828736
-ship.tscn::PackedScene::8414655922782501360::1689828736::0::1::::<><>::res://scripts/classes/ship/ship.gd<>uid://svlyalwfmbxa::::res://scenes/ships/modules/battlecruiser_module/battlecruiser_module.tscn
-::res://scenes/utility/::1689820551
+::res://scenes/ships/ship_base/::1689834134
+ship.tscn::PackedScene::8414655922782501360::1689834134::0::1::::<><>::res://scripts/classes/ship/ship.gd<>uid://svlyalwfmbxa::::res://scenes/ships/modules/battlecruiser_module/battlecruiser_module.tscn
+::res://scenes/utility/::1689831068
 MainCamera.gd::GDScript::-1::1689747395::0::1::::<>Camera2D<>::
 ::res://scenes/utility/bg/::1689485999
 bg.gd::GDScript::-1::1689475033::0::1::::<>ParallaxBackground<>::
-bg.tscn::PackedScene::6988623245088788914::1689485999::0::1::::<><>::uid://d0ht5ggrcpi55::::res://assets/space/Dynamic Space Background FREE/Nebula Blue.png<>uid://biet4f7tun0i5::::res://assets/space/Dynamic Space Background FREE/Stars-Big_1_1_PC.png<>uid://c4rfdwyxeajfr::::res://assets/space/Dynamic Space Background FREE/Stars Small_1.png
+bg.tscn::PackedScene::6988623245088788914::1689485999::0::1::::<><>::uid://d0ht5ggrcpi55
+::res://scenes/utility/bullet_pool/::1689834134
+bullet_pool.gd::GDScript::-1::1689834133::0::1::::<>Node2D<>::
+bullet_pool.tscn::PackedScene::1043550188541192276::1689834134::0::1::::<><>::res://scenes/utility/bullet_pool/bullet_pool.gd
 ::res://scenes/utility/explosion/::1689747395
 Explosion.gd::GDScript::-1::1689740001::0::1::::<>CPUParticles2D<>::
-explosion.tscn::PackedScene::8236841445160856742::1689740054::0::1::::<><>::uid://bli65hoa7stif::::res://assets/particles/orange_pixel.png<>res://scenes/utility/explosion/Explosion.gd
-missile_explosion.tscn::PackedScene::5260547045682532985::1689740054::0::1::::<><>::uid://b5lq7sah6mufv::::res://assets/radar/orange_puff.png<>res://scenes/utility/explosion/Explosion.gd
-missile_explosion_2.tscn::PackedScene::5685630823323775724::1689745142::0::1::::<><>::uid://b5lq7sah6mufv::::res://assets/radar/orange_puff.png<>res://scenes/utility/explosion/Explosion.gd
-missile_explosion_3.tscn::PackedScene::9160178069681929370::1689747395::0::1::::<><>::uid://1coc1y6ry6a4::::res://assets/radar/blue_puff.png<>res://scenes/utility/explosion/Explosion.gd
-::res://scenes/utility/ship_creator/::1689828736
+explosion.tscn::PackedScene::8236841445160856742::1689740054::0::1::::<><>::uid://bli65hoa7stif
+missile_explosion.tscn::PackedScene::5260547045682532985::1689740054::0::1::::<><>::uid://b5lq7sah6mufv
+missile_explosion_2.tscn::PackedScene::5685630823323775724::1689745142::0::1::::<><>::uid://b5lq7sah6mufv
+missile_explosion_3.tscn::PackedScene::9160178069681929370::1689747395::0::1::::<><>::uid://1coc1y6ry6a4
+::res://scenes/utility/ship_creator/::1689834134
 ship_creator.gd::GDScript::-1::1689827405::0::1::::<>Node2D<>::
-ship_creator.tscn::PackedScene::2658583275051218929::1689828736::0::1::::<><>::res://scenes/utility/ship_creator/ship_creator.gd
+ship_creator.tscn::PackedScene::2658583275051218929::1689834134::0::1::::<><>::res://scenes/utility/ship_creator/ship_creator.gd
 ::res://scripts/::1689694537
 ::res://scripts/classes/::1689694543
-::res://scripts/classes/ship/::1689830424
-ship.gd::GDScript::-1::1689830424::0::1::::Ship<>RigidBody2D<>::
+::res://scripts/classes/ship/::1689833852
+ship.gd::GDScript::-1::1689833852::0::1::::Ship<>RigidBody2D<>::
 ::res://scripts/classes/ship/battlecruiser/::1689827967
 battecruiser.gd::GDScript::-1::1689827967::0::1::::Battlecruiser<>Ship<>::
 ::res://scripts/classes/ship/fighter/::1689828977

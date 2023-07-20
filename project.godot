@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 MainCamera="*res://scenes/utility/MainCamera.gd"
 BulletPool="*res://scenes/utility/bullet_pool/bullet_pool.gd"
+FighterPool="*res://scenes/utility/fighter_pool/fighter_pool.gd"
 
 [display]
 

@@ -18,16 +18,22 @@ extends Node2D
 	"fleet_3": fleet_3_fighter
 }
 
+func _ready():
+	for i in range(FighterPool.pool_size):
+		call_deferred("create_ship", fleet_1_fighter, Vector2.ZERO)
+		call_deferred("create_ship", fleet_2_fighter, Vector2.ZERO)
+		call_deferred("create_ship", fleet_3_fighter, Vector2.ZERO)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+ #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("1"):
 		create_ship(fleet_1_battlecruiser, get_global_mouse_position())
 	if Input.is_action_just_pressed("2"):
 		create_ship(fleet_2_battlecruiser, get_global_mouse_position())
 	if Input.is_action_just_pressed("3"):
-		create_ship(fleet_3_fighter, get_global_mouse_position())
+		create_ship(fleet_3_battlecruiser, get_global_mouse_position())
+
 
 func create_ship(ship, ship_position):
 	var new_ship = Ship.instantiate()
@@ -56,8 +62,17 @@ func create_ship(ship, ship_position):
 		new_ship.spawner = self
 		new_ship.hull.scale = Vector2(7, 7)
 		new_ship.engine.scale = Vector2(7, 7)
+	if ship.ship_type == "Fighter":
+		new_ship.visible = false
+		new_ship.set_process(false)
+		new_ship.set_physics_process(false)
+		new_ship.collision.disabled = true
+		FighterPool.fighter_pool.append(new_ship)
+		
 	new_ship.hull.texture = ship.hull_texture
 	new_ship.engine.texture = ship.engine_texture
 	new_ship.engine.hframes = ship.engine_hframes
 	new_ship.animation_timer.start()
 	new_ship.collision_shape.radius = ship.collision_radius
+
+

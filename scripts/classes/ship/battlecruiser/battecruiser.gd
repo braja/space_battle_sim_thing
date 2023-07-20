@@ -43,10 +43,10 @@ func spawn():
 	#if get_tree().get_nodes_in_group("ship").size() < 128:
 	for i in spawn_pool:
 		if spawn_right:
-			spawner.create_ship(fighter, right_spawn.global_position)
+			FighterPool.request_ship(faction, right_spawn.global_position)
 			spawn_right = false
 		else:
-			spawner.create_ship(fighter, left_spawn.global_position)
+			FighterPool.request_ship(faction, left_spawn.global_position)
 			spawn_right = true
 	spawn_timer.start()
 

@@ -8,19 +8,23 @@
 [ext_resource type="Script" path="res://scripts/classes/ship/fighter/fighter.gd" id="6_srf8r"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_8m0fw")
 ship_script = ExtResource("6_srf8r")
 ship_type = "Fighter"
 faction = "fleet_1"
 ship_weight = 16.0
+collision_radius = 14
 center_of_mass_offset = Vector2(5, 0)
 gravity_scale = 0.0
 hull_texture = ExtResource("3_oksi1")
 engine_texture = ExtResource("1_t1iam")
+engine_hframes = 10
 projectile = ExtResource("4_nbfqk")
 explosion = ExtResource("2_gi7xh")
 invincibility_wait_time = 0.25
 attack_wait_time = 0.5
+engine_hide_threshold = 125
 health = 250
 max_speed = 300.0
 acceleration = 36.0

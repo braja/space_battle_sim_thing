@@ -1,7 +1,8 @@
+res://scenes/utility/fighter_pool
+res://scenes/utility/ship_creator
 res://scenes/utility/bullet_pool
 res://resources/ships/fighters
 res://resources/ships/battlecruisers
-res://scenes/utility/ship_creator
 res://scenes/ships/modules/battlecruiser_module
 res://scripts/classes/ship
 res://scenes/ships/ship_base

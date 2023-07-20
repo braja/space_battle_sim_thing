@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://by8ausj2g4sit"]
+
+[ext_resource type="Script" path="res://scenes/utility/fighter_pool/fighter_pool.gd" id="1_r7yib"]
+
+[node name="fighter_pool" type="Node2D"]
+script = ExtResource("1_r7yib")

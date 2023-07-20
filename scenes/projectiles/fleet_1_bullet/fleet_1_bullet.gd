@@ -1,15 +1,15 @@
 extends Area2D
 
-@onready var anim = $AnimationPlayer
 @onready var timer = $Timer
 var possible_obstacle = false
 var speed = 550
 var damage = 125
 var faction
-
-# Called when the node enters the scene tree for the first time.
+var collision_object_rid
 func _ready():
-	anim.play("bullet")
+	collision_object_rid = get_rid()
+	
+
 
 func add_to_pool():
 	visible = false

@@ -6,6 +6,7 @@ const PI_TWO: float = 2 * PI
 @onready var fighter_script = load("res://scripts/classes/ship/fighter/fighter.gd")
 @onready var engine = $Engine
 @onready var hull = $Hull
+@onready var collision = $CollisionShape2D
 @onready var collision_shape = $CollisionShape2D.shape
 @onready var detection_area = $Detection
 @onready var detection_collision = $Detection/CollisionShape2D
@@ -218,11 +219,8 @@ func take_damage(amount):
 
 
 func die():
-	remove_from_group("ship")
-	var new_explosion = explosion.instantiate()
-	new_explosion.global_position = global_position
-	get_tree().get_root().add_child(new_explosion)	
-	queue_free()
+	print("base die")
+	
 
 
 func _on_detection_body_entered(body):
