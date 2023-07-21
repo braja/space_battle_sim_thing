@@ -1,10 +1,5 @@
 extends Ship
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	var tween = get_tree().create_tween()
-	tween.tween_property(detection_collision.shape, "radius", 2600.0, 1)
+class_name Frigate
 
  
 func _physics_process(_delta: float) -> void:

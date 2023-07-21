@@ -68,6 +68,7 @@ var wander_range = 45.0
 var possible_obstacle = false
 
 func _ready():
+	attack_timer.wait_time = attack_cooldown
 	add_to_group(ship_type)
 	add_to_group(faction)
 	var tween = get_tree().create_tween()

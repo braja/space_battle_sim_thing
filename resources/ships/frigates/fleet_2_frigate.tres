@@ -1,0 +1,33 @@
+[gd_resource type="Resource" load_steps=7 format=3 uid="uid://cxrqold0kehck"]
+
+[ext_resource type="Texture2D" uid="uid://bmkjpu1wxre4d" path="res://assets/fleet_2/fleet_2/Engine Effects/PNGs/Nairan - Frigate - Engine.png" id="1_6cis5"]
+[ext_resource type="PackedScene" uid="uid://dpl8ts6bmfoiw" path="res://scenes/utility/explosion/explosion.tscn" id="2_p73ya"]
+[ext_resource type="Texture2D" uid="uid://di17xwm3d44ee" path="res://assets/fleet_2/fleet_2/Base/PNGs/Nairan - Frigate - Base.png" id="3_qlkvl"]
+[ext_resource type="PackedScene" uid="uid://bjaqk8hmcjnmv" path="res://scenes/projectiles/fleet_2_bullet/fleet_2_rocket.tscn" id="4_korgd"]
+[ext_resource type="Script" path="res://resources/ships/fighters/fleet_1_fighter.gd" id="5_4ejkh"]
+[ext_resource type="Script" path="res://scripts/classes/ship/frigate/frigate.gd" id="6_n1tii"]
+
+[resource]
+script = ExtResource("5_4ejkh")
+ship_script = ExtResource("6_n1tii")
+ship_type = "Frigate"
+faction = "fleet_2"
+ship_weight = 53.0
+collision_radius = 14
+center_of_mass_offset = Vector2(0, 0)
+gravity_scale = 0.0
+hull_texture = ExtResource("3_qlkvl")
+engine_texture = ExtResource("1_6cis5")
+engine_hframes = 8
+projectile = ExtResource("4_korgd")
+explosion = ExtResource("2_p73ya")
+invincibility_wait_time = 0.25
+attack_wait_time = 6.0
+engine_hide_threshold = 80
+health = 2200
+max_speed = 425.0
+acceleration = 22.0
+leash_distance = 400.0
+flee_distance = 0.0
+attack_range = 700.0
+torque = 0.3

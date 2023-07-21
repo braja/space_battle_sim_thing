@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://db18o4qbu6x4b"]
 
-[ext_resource type="Script" path="res://scenes/frigates/frigate.gd" id="1_f1evb"]
+[ext_resource type="Script" path="res://scripts/classes/ship/frigate/frigate.gd" id="1_f1evb"]
 [ext_resource type="Texture2D" uid="uid://di17xwm3d44ee" path="res://assets/fleet_2/fleet_2/Base/PNGs/Nairan - Frigate - Base.png" id="2_q33qa"]
 [ext_resource type="PackedScene" uid="uid://bjaqk8hmcjnmv" path="res://scenes/projectiles/fleet_2_bullet/fleet_2_rocket.tscn" id="2_xpvg3"]
 [ext_resource type="PackedScene" uid="uid://dpl8ts6bmfoiw" path="res://scenes/utility/explosion/explosion.tscn" id="3_t4mpq"]

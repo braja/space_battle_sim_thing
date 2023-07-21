@@ -1,0 +1,33 @@
+[gd_resource type="Resource" load_steps=7 format=3 uid="uid://dwpftgqkxdc6n"]
+
+[ext_resource type="Texture2D" uid="uid://iklhpld36oub" path="res://assets/fleet_3/fleet_3/Engine Effects/PNGs/Nautolan Ship - Frigate - Engine Effect.png" id="1_2f7qg"]
+[ext_resource type="PackedScene" uid="uid://dpl8ts6bmfoiw" path="res://scenes/utility/explosion/explosion.tscn" id="2_svg33"]
+[ext_resource type="Texture2D" uid="uid://bgox0uoohtjrv" path="res://assets/fleet_3/fleet_3/Base/PNGs/Nautolan Ship - Frigate - Base.png" id="3_n6nnb"]
+[ext_resource type="PackedScene" uid="uid://b4sy2poeioshk" path="res://scenes/projectiles/fleet_3_bullet/fleet_3_missile.tscn" id="4_y0iap"]
+[ext_resource type="Script" path="res://resources/ships/fighters/fleet_1_fighter.gd" id="5_od0kr"]
+[ext_resource type="Script" path="res://scripts/classes/ship/frigate/frigate.gd" id="6_g0cku"]
+
+[resource]
+script = ExtResource("5_od0kr")
+ship_script = ExtResource("6_g0cku")
+ship_type = "Frigate"
+faction = "fleet_3"
+ship_weight = 65.0
+collision_radius = 14
+center_of_mass_offset = Vector2(8, 0)
+gravity_scale = 0.0
+hull_texture = ExtResource("3_n6nnb")
+engine_texture = ExtResource("1_2f7qg")
+engine_hframes = 8
+projectile = ExtResource("4_y0iap")
+explosion = ExtResource("2_svg33")
+invincibility_wait_time = 0.25
+attack_wait_time = 8.0
+engine_hide_threshold = 90
+health = 2500
+max_speed = 450.0
+acceleration = 20.0
+leash_distance = 400.0
+flee_distance = 0.0
+attack_range = 600.0
+torque = 0.22

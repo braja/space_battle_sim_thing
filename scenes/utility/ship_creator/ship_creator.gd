@@ -10,6 +10,10 @@ extends Node2D
 @onready var fleet_2_battlecruiser: Resource = load("res://resources/ships/battlecruisers/fleet_2_battlecruiser.tres")
 @onready var fleet_3_battlecruiser: Resource = load("res://resources/ships/battlecruisers/fleet_3_battlecruiser.tres")
 
+@onready var fleet_1_frigate: Resource = load("res://resources/ships/frigates/fleet_1_frigate.tres")
+@onready var fleet_2_frigate: Resource = load("res://resources/ships/frigates/fleet_2_frigate.tres")
+@onready var fleet_3_frigate: Resource = load("res://resources/ships/frigates/fleet_3_frigate.tres")
+
 @export var world_node: Node2D
 
 @onready var faction_to_fighter = {
@@ -33,8 +37,19 @@ func _process(delta):
 		create_ship(fleet_2_battlecruiser, get_global_mouse_position())
 	if Input.is_action_just_pressed("3"):
 		create_ship(fleet_3_battlecruiser, get_global_mouse_position())
-
-
+	if Input.is_action_just_pressed("q"):
+		create_ship(fleet_1_frigate, get_global_mouse_position())
+	if Input.is_action_just_pressed("w"):
+		create_ship(fleet_2_frigate, get_global_mouse_position())
+	if Input.is_action_just_pressed("e"):
+		create_ship(fleet_3_frigate, get_global_mouse_position())
+	if Input.is_action_just_pressed("a"):
+		FighterPool.request_ship("fleet_1", get_global_mouse_position())
+	if Input.is_action_just_pressed("s"):
+		FighterPool.request_ship("fleet_2", get_global_mouse_position())
+	if Input.is_action_just_pressed("d"):
+		FighterPool.request_ship("fleet_3", get_global_mouse_position())
+		
 func create_ship(ship, ship_position):
 	var new_ship = Ship.instantiate()
 	new_ship.set_script(ship.ship_script)
@@ -67,6 +82,9 @@ func create_ship(ship, ship_position):
 	if ship.ship_type == "Fighter":
 		new_ship.toggle_physics()
 		FighterPool.fighter_pool.append(new_ship)
+	if ship.ship_type == "Frigate":
+		new_ship.hull.scale = Vector2(2.5, 2.5)
+		new_ship.engine.scale = Vector2(2.5, 2.5)
 		
 	new_ship.hull.texture = ship.hull_texture
 	new_ship.engine.texture = ship.engine_texture

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b0f6tc4fepcnx"]
 
-[ext_resource type="Script" path="res://scenes/frigates/frigate.gd" id="1_l3ysx"]
+[ext_resource type="Script" path="res://scripts/classes/ship/frigate/frigate.gd" id="1_l3ysx"]
 [ext_resource type="PackedScene" uid="uid://b4sy2poeioshk" path="res://scenes/projectiles/fleet_3_bullet/fleet_3_missile.tscn" id="2_4q28y"]
 [ext_resource type="PackedScene" uid="uid://dpl8ts6bmfoiw" path="res://scenes/utility/explosion/explosion.tscn" id="3_1ffl0"]
 [ext_resource type="Texture2D" uid="uid://bgox0uoohtjrv" path="res://assets/fleet_3/fleet_3/Base/PNGs/Nautolan Ship - Frigate - Base.png" id="4_7kpwa"]

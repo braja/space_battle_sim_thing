@@ -16,3 +16,15 @@ res://scripts/classes/ship/fighter/fighter.gd
 res://resources/ships/bullet/bullet.gd
 res://scenes/main.gd
 res://scripts/classes/ship/battlecruiser/battecruiser.gd
+res://scenes/ships/modules/battlecruiser_module/battlecruiser_module.tscn
+res://resources/ships/battlecruisers/fleet_3_battlecruiser.tres
+res://resources/ships/frigates/fleet_1_frigate.tres
+res://scripts/classes/ship/frigate/frigate.gd
+res://scenes/projectiles/fleet_1_bullet/homing_missile.gd
+res://scenes/projectiles/fleet_1_bullet/homing_missile.tscn
+res://resources/ships/frigates/fleet_2_frigate.tres
+res://scenes/projectiles/fleet_2_bullet/fleet_2_rocket.gd
+res://scenes/projectiles/fleet_2_bullet/fleet_2_rocket.tscn
+res://scenes/projectiles/fleet_3_bullet/fleet_3_missile.gd
+res://scenes/projectiles/fleet_3_bullet/fleet_3_missile.tscn
+res://resources/ships/frigates/fleet_3_frigate.tres

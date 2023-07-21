@@ -1,9 +1,9 @@
+Timer
 CollisionShape2D
 Node2D
 Node
 Area2D
 MultiMeshInstance2D
-Timer
 AnimationPlayer
 Sprite2D
 RigidBody2D
