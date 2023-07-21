@@ -10,11 +10,14 @@ const PI_TWO: float = 2 * PI
 @onready var collision_shape = $CollisionShape2D.shape
 @onready var detection_area = $Detection
 @onready var detection_collision = $Detection/CollisionShape2D
+@onready var los_area = $LOS
+@onready var los_collision = $LOS/CollisionShape2D
 @onready var anim = $AnimationPlayer
 @onready var invincibility_timer = $InvicibilityTimer
 @onready var attack_timer = $AttackTimer
 @onready var animation_timer = $AnimationTimer
-
+@onready var BulletPool = get_tree().get_first_node_in_group("bullet_pool")
+@onready var origin = $Origin
 #@onready var my_faction = self.get_groups()[0]
 
 @export var ship_type: String
@@ -31,6 +34,7 @@ const PI_TWO: float = 2 * PI
 @export var health: int
 @export var max_speed: float
 @export var acceleration: float
+@export var leash_distance: float
 @export var flee_distance: float
 @export var attack_range: float
 @export var attack_cooldown: float
@@ -146,7 +150,7 @@ func wander():
 	# Randomly adjust the wander_angle by up to wander_range degrees per second
 	wander_angle += deg_to_rad(randf_range(-wander_range, wander_range) * get_process_delta_time())
 	# Keep wander_angle within the range of 0 to 2*PI
-	wander_angle = fmod(wander_angle, PI * 2)
+	wander_angle = fmod(wander_angle, PI_TWO)
 
 
 func evade(target_position: Vector2) -> void:
@@ -197,9 +201,7 @@ func attack():
 		proj.z_index = z_index
 		proj.global_position = global_position
 		proj.global_transform = Transform2D(atan2(direction.y, direction.x), global_position)
-		proj.show()
-		proj.set_physics_process(true)
-		proj.set_process(true)
+		#proj.toggle_physics()
 		proj.timer.start()
 		attacking = true
 		attack_timer.start()
@@ -212,8 +214,8 @@ func take_damage(amount):
 		die()
 	else:
 		invincibility_timer.start()
-#		var tween = get_tree().create_tween()
-#		tween.tween_property(self, "modulate", Color(5.0, 5.0, 5.0, 5.0), .125)
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "modulate", Color(5.0, 5.0, 5.0, 5.0), .125)
 		health -= amount
 		invincible = true
 
@@ -222,17 +224,20 @@ func die():
 	var new_explosion = explosion.instantiate()
 	new_explosion.global_position = global_position
 	get_tree().get_root().add_child(new_explosion)	
-	visible = false
-	set_deferred("set_process", false)
-	set_deferred("set_physics_process", false)
-	call_deferred("toggle_collision")
+	call_deferred("toggle_physics")
 	if ship_type == "Fighter":
 		FighterPool.return_to_pool(self)
 
 
-func toggle_collision():
+func toggle_physics():
+	visible = !visible
 	collision.disabled = !collision.disabled
-
+	detection_area.monitoring = !detection_area.monitoring
+	los_area.monitoring = !los_area.monitoring
+	detection_collision.disabled = !detection_collision.disabled
+	los_collision.disabled = !los_collision.disabled
+	set_physics_process(!is_physics_processing())
+	set_process(!is_processing())
 
 func _on_detection_body_entered(body):
 	if body.is_in_group("mothership") && not  body.get_groups().any(is_enemy_faction):
@@ -260,8 +265,8 @@ func _on_los_area_exited(area):
 
 
 func _on_invicibility_timer_timeout():
-#	var tween = get_tree().create_tween()
-#	tween.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 1.0), .125)
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 1.0), .125)
 	invincible = false
 
 

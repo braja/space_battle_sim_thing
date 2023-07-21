@@ -51,6 +51,7 @@ func create_ship(ship, ship_position):
 	new_ship.health = ship.health
 	new_ship.max_speed = ship.max_speed
 	new_ship.acceleration = ship.acceleration
+	new_ship.leash_distance = ship.leash_distance
 	new_ship.flee_distance = ship.flee_distance
 	new_ship.attack_range = ship.attack_range
 	new_ship.torque = ship.torque
@@ -58,15 +59,13 @@ func create_ship(ship, ship_position):
 	new_ship.global_position = ship_position
 	world_node.add_child(new_ship)
 	if ship.ship_type == "Battlecruiser":
+		new_ship.add_to_group("mothership")
 		new_ship.fighter = faction_to_fighter[ship.faction]
 		new_ship.spawner = self
 		new_ship.hull.scale = Vector2(7, 7)
 		new_ship.engine.scale = Vector2(7, 7)
 	if ship.ship_type == "Fighter":
-		new_ship.visible = false
-		new_ship.set_process(false)
-		new_ship.set_physics_process(false)
-		new_ship.collision.disabled = true
+		new_ship.toggle_physics()
 		FighterPool.fighter_pool.append(new_ship)
 		
 	new_ship.hull.texture = ship.hull_texture

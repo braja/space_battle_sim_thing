@@ -21,6 +21,9 @@ func _physics_process(_delta: float) -> void:
 			change_state(State.ATTACKING)
 			flank(target_pos)
 			attack()
+		elif mothership and leash_distance > position.distance_to(mothership.global_position):
+			change_state(State.MOTHERSHIP)
+			move(mothership.global_position)
 		else:
 			change_state(State.SEEKING)
 			move(target_pos)

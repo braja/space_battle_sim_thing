@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.gd" id="1_jpjwt"]
 [ext_resource type="Texture2D" uid="uid://1g2t65pqrrlb" path="res://assets/fleet_1/fleet_1/Projectiles/PNGs/Kla'ed - Bullet.png" id="1_o4x5j"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8yjsl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_horfi"]
 size = Vector2(9, 2)
 
 [node name="fleet_1_bullet" type="Area2D"]
@@ -17,13 +17,13 @@ rotation = 1.5708
 texture = ExtResource("1_o4x5j")
 hframes = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_8yjsl")
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_horfi")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

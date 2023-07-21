@@ -27,6 +27,7 @@ extends Resource
 @export var health: int = 250
 @export var max_speed: float = 300.0
 @export var acceleration: float = 36.0
+@export var leash_distance: float = 800.0
 @export var flee_distance: float = 175.0
 @export var attack_range: float = 550.0
 @export var torque: float = 2.8

@@ -36,3 +36,9 @@ world_node = NodePath("../World")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_etgs8")
+
+[node name="BottomRight" type="Node2D" parent="."]
+position = Vector2(6087, 6042)
+
+[node name="TopLeft" type="Node2D" parent="."]
+position = Vector2(-2014, -1946)

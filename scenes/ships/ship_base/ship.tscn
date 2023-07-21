@@ -56,6 +56,9 @@ shape = SubResource("CircleShape2D_3g383")
 wait_time = 0.15
 one_shot = true
 
+[node name="Origin" type="Node2D" parent="."]
+position = Vector2(15, 0)
+
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
 [connection signal="area_entered" from="LOS" to="." method="_on_los_area_entered"]

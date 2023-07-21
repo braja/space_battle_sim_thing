@@ -41,13 +41,15 @@ func _physics_process(_delta: float) -> void:
 
 func spawn():
 	#if get_tree().get_nodes_in_group("ship").size() < 128:
+	var n = Vector2.ZERO
 	for i in spawn_pool:
 		if spawn_right:
-			FighterPool.request_ship(faction, right_spawn.global_position)
+			FighterPool.request_ship(faction, right_spawn.global_position + (n * 3))
 			spawn_right = false
 		else:
-			FighterPool.request_ship(faction, left_spawn.global_position)
+			FighterPool.request_ship(faction, left_spawn.global_position + (n * 3))
 			spawn_right = true
+		n += Vector2(1, 1)
 	spawn_timer.start()
 
 

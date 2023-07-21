@@ -1,11 +1,12 @@
-MultiMeshInstance2D
+CollisionShape2D
 Node2D
+Node
+Area2D
+MultiMeshInstance2D
 Timer
 AnimationPlayer
-CollisionShape2D
 Sprite2D
 RigidBody2D
-Area2D
 CPUParticles2D
 SubViewport
 SubViewportContainer
@@ -18,7 +19,6 @@ CanvasLayer
 GPUParticles2D
 Label
 ProgressBar
-Node
 PinJoint2D
 GrooveJoint2D
 StaticBody2D

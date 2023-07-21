@@ -1,11 +1,19 @@
 extends Node2D
 
+@onready var BulletPool = $World/BulletPool
+
 @export var level : PackedScene
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
+var boundary_rect: Rect2
+
+#func _ready() -> void:
+	# Here we register the boundary
+#	boundary_rect = Rect2(
+#		get_node("TopLeft").position,
+#		get_node("BottomRight").position - get_node("TopLeft").position
+#	)
+#	BulletPool.set_bounding_box(boundary_rect)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

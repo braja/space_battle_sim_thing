@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 MainCamera="*res://scenes/utility/MainCamera.gd"
-BulletPool="*res://scenes/utility/bullet_pool/bullet_pool.gd"
 FighterPool="*res://scenes/utility/fighter_pool/fighter_pool.gd"
 
 [display]
@@ -27,6 +26,7 @@ window/size/viewport_width=1680
 window/size/viewport_height=960
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [input]
 
