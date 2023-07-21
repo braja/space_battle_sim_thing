@@ -1,8 +1,9 @@
-[gd_resource type="Resource" load_steps=5 format=3 uid="uid://d120me4mobj2i"]
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://d120me4mobj2i"]
 
 [ext_resource type="Script" path="res://resources/ships/fighters/fleet_1_fighter.gd" id="1_jlkwo"]
 [ext_resource type="Texture2D" uid="uid://1ad2bfs64qv4" path="res://assets/fleet_2/fleet_2/Engine Effects/PNGs/Nairan - Battlecruiser - Engine.png" id="1_r6tkq"]
 [ext_resource type="Texture2D" uid="uid://22e46usrldn7" path="res://assets/fleet_2/fleet_2/Base/PNGs/Nairan - Battlecruiser - Base.png" id="2_do6w1"]
+[ext_resource type="PackedScene" uid="uid://cywsq16ppacsy" path="res://scenes/projectiles/laser/laser.tscn" id="3_a0y4x"]
 [ext_resource type="Script" path="res://scripts/classes/ship/battlecruiser/battecruiser.gd" id="4_mfaa4"]
 
 [resource]
@@ -17,12 +18,14 @@ gravity_scale = 0.0
 hull_texture = ExtResource("2_do6w1")
 engine_texture = ExtResource("1_r6tkq")
 engine_hframes = 8
+projectile = ExtResource("3_a0y4x")
 invincibility_wait_time = 0.25
-attack_wait_time = 0.5
+attack_wait_time = 12.0
 engine_hide_threshold = 15
 health = 100000
 max_speed = 600.0
 acceleration = 90.0
+leash_distance = 800.0
 flee_distance = 0.0
-attack_range = 550.0
+attack_range = 1500.0
 torque = 0.02

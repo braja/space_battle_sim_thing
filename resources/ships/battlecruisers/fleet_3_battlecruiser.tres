@@ -1,8 +1,9 @@
-[gd_resource type="Resource" load_steps=5 format=3 uid="uid://doveou8p5xgwg"]
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://doveou8p5xgwg"]
 
 [ext_resource type="Texture2D" uid="uid://x7acntsyb1yy" path="res://assets/fleet_3/fleet_3/Engine Effects/PNGs/Nautolan Ship - Battlecruiser - Engine Effect.png" id="1_tu4bc"]
 [ext_resource type="Texture2D" uid="uid://fo26xih0ekbb" path="res://assets/fleet_3/fleet_3/Base/PNGs/Nautolan Ship - Battlecruiser - Base.png" id="2_fiqms"]
 [ext_resource type="Script" path="res://resources/ships/fighters/fleet_1_fighter.gd" id="3_4he6a"]
+[ext_resource type="PackedScene" uid="uid://cywsq16ppacsy" path="res://scenes/projectiles/laser/laser.tscn" id="3_5l3ey"]
 [ext_resource type="Script" path="res://scripts/classes/ship/battlecruiser/battecruiser.gd" id="4_yk826"]
 
 [resource]
@@ -17,13 +18,14 @@ gravity_scale = 0.0
 hull_texture = ExtResource("2_fiqms")
 engine_texture = ExtResource("1_tu4bc")
 engine_hframes = 8
+projectile = ExtResource("3_5l3ey")
 invincibility_wait_time = 0.25
-attack_wait_time = 0.5
+attack_wait_time = 12.0
 engine_hide_threshold = 18
 health = 100000
 max_speed = 450.0
 acceleration = 100.0
 leash_distance = 0.0
 flee_distance = 0.0
-attack_range = 550.0
+attack_range = 1500.0
 torque = 0.02

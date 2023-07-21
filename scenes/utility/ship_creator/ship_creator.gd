@@ -85,7 +85,8 @@ func create_ship(ship, ship_position):
 	if ship.ship_type == "Frigate":
 		new_ship.hull.scale = Vector2(2.5, 2.5)
 		new_ship.engine.scale = Vector2(2.5, 2.5)
-		
+	new_ship.add_to_group(ship.ship_type)
+	new_ship.add_to_group(ship.faction)
 	new_ship.hull.texture = ship.hull_texture
 	new_ship.engine.texture = ship.engine_texture
 	new_ship.engine.hframes = ship.engine_hframes

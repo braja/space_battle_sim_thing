@@ -12,7 +12,7 @@ monitorable = false
 script = ExtResource("1_jpjwt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1.1, 1.1, 1.1, 1)
+modulate = Color(2, 2, 2, 1)
 rotation = 1.5708
 texture = ExtResource("1_o4x5j")
 hframes = 4

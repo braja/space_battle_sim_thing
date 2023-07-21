@@ -7,7 +7,9 @@ func _physics_process(_delta: float) -> void:
 	if target:
 		var target_pos = target.global_position
 		var distance_to_target = position.distance_to(target_pos)
-		
+		if mothership and leash_distance < position.distance_to(mothership.global_position):
+			change_state(State.MOTHERSHIP)
+			move(mothership.global_position)
 		if distance_to_target <= flee_distance:
 			change_state(State.EVADING)
 			evade(target_pos)

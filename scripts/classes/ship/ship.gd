@@ -69,8 +69,6 @@ var possible_obstacle = false
 
 func _ready():
 	attack_timer.wait_time = attack_cooldown
-	add_to_group(ship_type)
-	add_to_group(faction)
 	var tween = get_tree().create_tween()
 	tween.tween_property(detection_collision.shape, "radius", 2600.0, 1)
 	_init()

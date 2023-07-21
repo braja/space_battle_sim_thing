@@ -10,14 +10,20 @@ var fighter
 var spawner
 var spawn_pool = 8
 var spawn_right = true
-
+var laser
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("battlecruiser intialized")
+	attack_timer.wait_time = attack_cooldown
 	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
 	spawn_timer.start()
+	laser = projectile.instantiate()
+	laser.faction = faction
+	add_child(laser)
+	var tween = get_tree().create_tween()
+	tween.tween_property(detection_collision.shape, "radius", 2600.0, 1)
 	#anim.play("engine")
 
 
@@ -51,6 +57,18 @@ func spawn():
 			spawn_right = true
 		n += Vector2(1, 1)
 	spawn_timer.start()
+
+
+func attack():
+	if not projectile or not is_instance_valid(target):
+		return
+	if possible_obstacle and target.z_index != z_index and target.possible_obstacle == true:
+		return
+	if not attacking and currentState != State.EVADING:
+		laser.set_is_casting(true)
+		attacking = true
+		attack_timer.start()
+
 
 
 func take_damage(amount):

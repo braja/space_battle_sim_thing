@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://resources/ships/fighters/fleet_1_fighter.gd" id="1_0i06j"]
 [ext_resource type="Texture2D" uid="uid://dmfpgd2ioi0fw" path="res://assets/fleet_1/fleet_1/Engine/PNGs/Kla'ed - Fighter - Engine.png" id="1_0imf4"]
-[ext_resource type="PackedScene" uid="uid://dpl8ts6bmfoiw" path="res://scenes/utility/explosion/explosion.tscn" id="2_ome7t"]
+[ext_resource type="PackedScene" uid="uid://cg7ipads1nknp" path="res://scenes/utility/explosion/missile_explosion.tscn" id="2_l516e"]
 [ext_resource type="Texture2D" uid="uid://cnoixq1paeem0" path="res://assets/fleet_1/fleet_1/Base/PNGs/Kla'ed - Frigate - Base.png" id="2_pmi23"]
 [ext_resource type="PackedScene" uid="uid://c16xt0k5cvkw3" path="res://scenes/projectiles/fleet_1_bullet/homing_missile.tscn" id="3_l7psb"]
 [ext_resource type="Script" path="res://scripts/classes/ship/frigate/frigate.gd" id="5_rqeoy"]
@@ -20,7 +20,7 @@ hull_texture = ExtResource("2_pmi23")
 engine_texture = ExtResource("1_0imf4")
 engine_hframes = 10
 projectile = ExtResource("3_l7psb")
-explosion = ExtResource("2_ome7t")
+explosion = ExtResource("2_l516e")
 invincibility_wait_time = 0.25
 attack_wait_time = 6.0
 engine_hide_threshold = 80

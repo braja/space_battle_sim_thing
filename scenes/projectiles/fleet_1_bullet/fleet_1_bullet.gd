@@ -4,7 +4,7 @@ extends Area2D
 @onready var timer = $Timer
 #@onready var collision = $CollisionShape2D
 var possible_obstacle = false
-var speed = 550
+var speed = 1250
 var damage = 125
 var faction
 

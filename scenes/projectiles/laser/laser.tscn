@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cywsq16ppacsy"]
+
+[ext_resource type="Script" path="res://scenes/projectiles/laser/laser.gd" id="1_secy6"]
+
+[node name="Laser" type="RayCast2D" groups=["laser"]]
+target_position = Vector2(6000, 0)
+script = ExtResource("1_secy6")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(-1, 0, 41, 0)
+width = 0.0
+default_color = Color(0.164706, 1, 1, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

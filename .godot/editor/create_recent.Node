@@ -1,4 +1,6 @@
 Timer
+Line2D
+RayCast2D
 CollisionShape2D
 Node2D
 Node
