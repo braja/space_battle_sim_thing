@@ -3,12 +3,18 @@ extends RayCast2D
 @onready var beam = $Line2D
 @onready var timer = $Timer
 
-var damage = 9999
+@export var color: Color
+@export var beam_width: int
+@export var damage = 9999
 var is_casting := false
 var faction
+var _target
 
 func _ready():
 	beam.points[1] = Vector2.ZERO
+	beam.width = beam_width
+	beam.default_color = color
+	print(color, beam.default_color)
 	set_physics_process(false)
 
 func _unhandled_input(event):
@@ -33,6 +39,7 @@ func _physics_process(delta):
 
 
 func set_is_casting(cast):
+	#z_index = _target.z_index
 	is_casting = cast
 	timer.start()
 	if is_casting:

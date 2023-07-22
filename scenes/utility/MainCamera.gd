@@ -2,7 +2,7 @@ extends Camera2D
 
 signal zoom_changed
 
-@export var zoom_speed: float = 0.25
+@export var zoom_speed: float = 0.01
 @export var pan_speed: float = 500.0
 @export var max_zoom: float = 4.0
 @export var min_zoom: float = 0.25

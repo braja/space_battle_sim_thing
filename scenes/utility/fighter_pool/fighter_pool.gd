@@ -6,7 +6,7 @@ extends Node2D
 var fighter_pool = []
 
 
-func request_ship(faction, location):
+func request_ship(faction, ship_rotation, location):
 	var i = -1
 	#print("fighter q: ", fighter_pool.size())
 	for fighter in fighter_pool:
@@ -14,6 +14,7 @@ func request_ship(faction, location):
 		if fighter.faction == faction:
 			var new_fighter = fighter_pool[i]
 			new_fighter.global_position = location
+			new_fighter.rotation -= ship_rotation
 			new_fighter.toggle_physics()
 			return fighter_pool.pop_at(i)
 

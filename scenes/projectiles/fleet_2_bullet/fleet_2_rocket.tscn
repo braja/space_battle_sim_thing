@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://scenes/projectiles/fleet_2_bullet/fleet_2_rocket.gd" id="1_qyf22"]
 [ext_resource type="Texture2D" uid="uid://dxyqffklq2lp8" path="res://assets/fleet_2/fleet_2/Weapon Effects - Projectiles/PNGs/Nairan - Rocket.png" id="1_t843r"]
-[ext_resource type="PackedScene" uid="uid://cnafrkm6cptiy" path="res://scenes/utility/explosion/missile_explosion_2.tscn" id="2_2eb63"]
+[ext_resource type="PackedScene" uid="uid://cxxqx7ocebiox" path="res://scenes/utility/explosion/swoop_explosion.tscn" id="2_isk06"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dur2v"]
 radius = 4.0
 height = 10.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fv5vh"]
-radius = 20.0
+radius = 175.0
 
 [sub_resource type="Animation" id="Animation_ec67b"]
 length = 0.001
@@ -54,7 +54,7 @@ _data = {
 collision_layer = 0
 monitorable = false
 script = ExtResource("1_qyf22")
-explosion = ExtResource("2_2eb63")
+explosion = ExtResource("2_isk06")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

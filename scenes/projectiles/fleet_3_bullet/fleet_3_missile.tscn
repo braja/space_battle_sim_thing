@@ -44,7 +44,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rin2t"]
-radius = 0.01
+radius = 175.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y2q4c"]
 radius = 3.0

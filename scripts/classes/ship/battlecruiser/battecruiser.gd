@@ -9,6 +9,7 @@ var fighter
 
 var spawner
 var spawn_pool = 8
+var max_spawns = 2
 var spawn_right = true
 var laser
 
@@ -20,10 +21,12 @@ func _ready():
 	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
 	spawn_timer.start()
 	laser = projectile.instantiate()
-	laser.faction = faction
 	add_child(laser)
+	laser.faction = faction
+	laser.beam.default_color = beam_color
+	laser.beam.width = beam_width
 	var tween = get_tree().create_tween()
-	tween.tween_property(detection_collision.shape, "radius", 2600.0, 1)
+	tween.tween_property(detection_collision.shape, "radius", 5600.0, 1)
 	#anim.play("engine")
 
 
@@ -48,14 +51,16 @@ func _physics_process(_delta: float) -> void:
 func spawn():
 	#if get_tree().get_nodes_in_group("ship").size() < 128:
 	var n = Vector2.ZERO
-	for i in spawn_pool:
-		if spawn_right:
-			FighterPool.request_ship(faction, right_spawn.global_position + (n * 3))
-			spawn_right = false
-		else:
-			FighterPool.request_ship(faction, left_spawn.global_position + (n * 3))
-			spawn_right = true
-		n += Vector2(1, 1)
+	if max_spawns > 0:
+		for i in spawn_pool:
+			if spawn_right:
+				FighterPool.request_ship(faction, 0, right_spawn.global_position + (n * 3))
+				spawn_right = false
+			else:
+				FighterPool.request_ship(faction, 0, left_spawn.global_position + (n * 3))
+				spawn_right = true
+			n += Vector2(1, 1)
+		max_spawns -= 1
 	spawn_timer.start()
 
 
@@ -65,14 +70,32 @@ func attack():
 	if possible_obstacle and target.z_index != z_index and target.possible_obstacle == true:
 		return
 	if not attacking and currentState != State.EVADING:
-		laser.set_is_casting(true)
-		attacking = true
-		attack_timer.start()
+		# Get the ship's facing direction
+		var ship_direction: Vector2 = Vector2(cos(rotation), sin(rotation))
+
+		# Calculate the direction to the target
+		var target_direction: Vector2 = (target.global_position - global_position).normalized()
+
+		# Calculate the angle difference in degrees
+		var angle_difference: float = ship_direction.angle_to(target_direction) * PI180
+
+		# Only attack if the target is within a 35 degree angle in front of the ship
+		if abs(angle_difference) <= 20:
+			laser._target = target
+			laser.set_is_casting(true)
+			attacking = true
+			attack_timer.start()
 
 
 
 func take_damage(amount):
-	pass
+	if invincible:
+		return
+	if health - amount <= 0:
+		die()
+	else:
+		health -= amount
+		#invincible = true
 
 
 func _on_spawn_timer_timeout():

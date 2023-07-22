@@ -1,6 +1,7 @@
-[gd_resource type="Resource" load_steps=6 format=3 uid="uid://dpebi42s7qbmw"]
+[gd_resource type="Resource" load_steps=7 format=3 uid="uid://dpebi42s7qbmw"]
 
 [ext_resource type="Texture2D" uid="uid://dkivkrs3dbikr" path="res://assets/fleet_1/fleet_1/Engine/PNGs/Kla'ed - Battlecruiser - Engine.png" id="1_fwtm5"]
+[ext_resource type="PackedScene" uid="uid://cnafrkm6cptiy" path="res://scenes/utility/explosion/missile_explosion_2.tscn" id="2_68fap"]
 [ext_resource type="Texture2D" uid="uid://dma3pyw3yv7h6" path="res://assets/fleet_1/fleet_1/Base/PNGs/Kla'ed - Battlecruiser - Base.png" id="2_euxsw"]
 [ext_resource type="Script" path="res://resources/ships/fighters/fleet_1_fighter.gd" id="3_84ycn"]
 [ext_resource type="PackedScene" uid="uid://cywsq16ppacsy" path="res://scenes/projectiles/laser/laser.tscn" id="3_aw0yt"]
@@ -19,10 +20,13 @@ hull_texture = ExtResource("2_euxsw")
 engine_texture = ExtResource("1_fwtm5")
 engine_hframes = 12
 projectile = ExtResource("3_aw0yt")
+explosion = ExtResource("2_68fap")
+beam_color = Color(0.992157, 0.113725, 0.0941176, 1)
+beam_width = 25
 invincibility_wait_time = 0.25
 attack_wait_time = 12.0
 engine_hide_threshold = 10
-health = 100000
+health = 20000
 max_speed = 500.0
 acceleration = 100.0
 leash_distance = 800.0

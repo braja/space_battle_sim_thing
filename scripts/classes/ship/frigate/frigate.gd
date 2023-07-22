@@ -10,7 +10,7 @@ func _physics_process(_delta: float) -> void:
 		if mothership and leash_distance < position.distance_to(mothership.global_position):
 			change_state(State.MOTHERSHIP)
 			move(mothership.global_position)
-		if distance_to_target <= flee_distance:
+		elif distance_to_target <= flee_distance:
 			change_state(State.EVADING)
 			evade(target_pos)
 		elif distance_to_target > flee_distance and distance_to_target <= attack_range:

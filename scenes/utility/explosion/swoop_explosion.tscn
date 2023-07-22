@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxxqx7ocebiox"]
+
+[ext_resource type="Texture2D" uid="uid://dw3o45q0naaoe" path="res://assets/radar/whiteswoop.png" id="1_mf3in"]
+[ext_resource type="Script" path="res://scenes/utility/explosion/Explosion.gd" id="2_dqc0v"]
+
+[sub_resource type="Curve" id="Curve_2gfe5"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.0106952, 360), 0.0, 0.0, 0, 0, Vector2(1, -360), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_2xda0"]
+offsets = PackedFloat32Array(0.128205, 0.326923, 0.519231, 0.75641, 0.871795, 1)
+colors = PackedColorArray(0.982814, 0.842077, 0.807189, 1, 0.911197, 0.661093, 0.602523, 1, 0.841889, 0.485948, 0.404459, 1, 0.75641, 0.269935, 0.160181, 1, 0.871795, 0.311111, 0.184615, 1, 1, 0.356863, 0.211765, 1)
+
+[sub_resource type="Curve" id="Curve_cnal8"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.973262, -1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="swoop_explosion" type="CPUParticles2D"]
+emitting = false
+amount = 100
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("1_mf3in")
+emission_shape = 1
+emission_sphere_radius = 8.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 500.0
+angular_velocity_min = 1.0
+angular_velocity_max = 250.0
+angular_velocity_curve = SubResource("Curve_2gfe5")
+scale_amount_min = 0.25
+scale_amount_max = 8.0
+color_ramp = SubResource("Gradient_2xda0")
+hue_variation_min = 0.1
+hue_variation_max = 0.2
+hue_variation_curve = SubResource("Curve_cnal8")
+script = ExtResource("2_dqc0v")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.1
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

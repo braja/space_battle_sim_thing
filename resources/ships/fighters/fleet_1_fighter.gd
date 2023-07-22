@@ -19,6 +19,8 @@ extends Resource
 @export var engine_hframes : int = 10
 @export var projectile : PackedScene
 @export var explosion : PackedScene
+@export var beam_color: Color
+@export var beam_width: int
 @export var invincibility_wait_time: float = .25
 @export var attack_wait_time: float = .5
 @export var engine_hide_threshold: int = 125

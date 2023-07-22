@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd43qix4581u0"]
+[gd_scene load_steps=3 format=3 uid="uid://bd43qix4581u0"]
 
 [ext_resource type="Script" path="res://scenes/utility/ship_creator/ship_creator.gd" id="1_8hg6s"]
+[ext_resource type="PackedScene" uid="uid://cflyub5xkcc46" path="res://scenes/utility/ship_creator/ghost_ship/ghost_ship.tscn" id="2_n5pr7"]
 
 [node name="ship_creator" type="Node2D"]
 script = ExtResource("1_8hg6s")
+
+[node name="GhostShip" parent="." instance=ExtResource("2_n5pr7")]
+modulate = Color(2, 2, 2, 1)
+top_level = true
+z_index = 100
+rotation = 1.5708

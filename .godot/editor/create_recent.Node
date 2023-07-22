@@ -1,15 +1,19 @@
 Timer
+CPUParticles2D
+TextureButton
+TextureRect
+HBoxContainer
+CanvasLayer
+Node2D
+Sprite2D
 Line2D
 RayCast2D
 CollisionShape2D
-Node2D
 Node
 Area2D
 MultiMeshInstance2D
 AnimationPlayer
-Sprite2D
 RigidBody2D
-CPUParticles2D
 SubViewport
 SubViewportContainer
 MarginContainer
@@ -17,7 +21,6 @@ WorldEnvironment
 ParallaxLayer
 ParallaxBackground
 ColorRect
-CanvasLayer
 GPUParticles2D
 Label
 ProgressBar
@@ -27,5 +30,3 @@ StaticBody2D
 Camera2D
 AnimationTree
 Marker2D
-Path2D
-CharacterBody2D

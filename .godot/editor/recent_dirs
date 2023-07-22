@@ -1,5 +1,8 @@
-res://scenes/projectiles/laser
 C:/Users/Nico/code/godot_projects/space_battle/exports/windows
+res://scenes/utility/explosion
+res://scenes/UI
+res://scenes/utility/ship_creator/ghost_ship
+res://scenes/projectiles/laser
 res://resources/ships/fighters
 res://resources/ships/frigates
 res://scripts/classes/ship/battlecruiser
@@ -10,7 +13,6 @@ res://scenes/utility/bullet_pool
 res://scenes/ships/modules/battlecruiser_module
 res://scripts/classes/ship
 res://scenes/ships/ship_base
-res://scenes/utility/explosion
 res://scenes/frigates/fleet_3
 res://scenes/frigates
 res://scenes/projectiles/fleet_3_bullet
@@ -18,5 +20,3 @@ res://scenes/utility
 res://scenes/projectiles/fleet_1_bullet
 res://scenes/projectiles/fleet_2_bullet
 res://scripts/classes/ship/fighter
-C:/Users/Nico/code/godot_projects/space_battle
-res://scenes/battlecruisers

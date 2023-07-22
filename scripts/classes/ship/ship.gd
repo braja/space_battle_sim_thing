@@ -2,6 +2,7 @@ extends RigidBody2D
 
 class_name Ship
 const PI_TWO: float = 2 * PI
+const PI180: float = 180 / PI
 @onready var battlecruiser_script = load("res://scripts/classes/ship/battlecruiser/battecruiser.gd")
 @onready var fighter_script = load("res://scripts/classes/ship/fighter/fighter.gd")
 @onready var engine = $Engine
@@ -27,6 +28,8 @@ const PI_TWO: float = 2 * PI
 @export var engine_texture : CompressedTexture2D
 @export var projectile : PackedScene
 @export var explosion : PackedScene
+@onready var beam_color : Color
+@onready var beam_width: int
 @export var engine_hide_threshold : int
 @export var ship_weight : float
 @export var center_of_mass_offset : Vector2
@@ -70,7 +73,7 @@ var possible_obstacle = false
 func _ready():
 	attack_timer.wait_time = attack_cooldown
 	var tween = get_tree().create_tween()
-	tween.tween_property(detection_collision.shape, "radius", 2600.0, 1)
+	tween.tween_property(detection_collision.shape, "radius", 5600.0, 1)
 	_init()
 
 
@@ -186,24 +189,37 @@ func orbit_mothership(target_position: Vector2, distance):
 #			die()
 
 
-func attack():
+func attack() -> void:
 	if not projectile or not is_instance_valid(target):
 		return
+
 	if possible_obstacle and target.z_index != z_index and target.possible_obstacle == true:
 		return
+
 	if not attacking and currentState != State.EVADING:
-		var proj = BulletPool.request_bullet()
-		var predicted_target_position = target.global_position + target.linear_velocity
-		var direction = (predicted_target_position - position).normalized()
-		proj.faction = faction
-		proj.possible_obstacle = possible_obstacle
-		proj.z_index = z_index
-		proj.global_position = global_position
-		proj.global_transform = Transform2D(atan2(direction.y, direction.x), global_position)
-		#proj.toggle_physics()
-		proj.timer.start()
-		attacking = true
-		attack_timer.start()
+		# Get the ship's facing direction
+		var ship_direction: Vector2 = Vector2(cos(rotation), sin(rotation))
+
+		# Calculate the direction to the target
+		var target_direction: Vector2 = (target.global_position - global_position).normalized()
+
+		# Calculate the angle difference in degrees
+		var angle_difference: float = ship_direction.angle_to(target_direction) * PI180
+
+		# Only attack if the target is within a 35 degree angle in front of the ship
+		if abs(angle_difference) <= 360:
+			var proj = BulletPool.request_bullet()
+			var predicted_target_position = target.global_position + target.linear_velocity
+			var direction = (predicted_target_position - position).normalized()
+			proj.faction = faction
+			proj.possible_obstacle = possible_obstacle
+			proj.z_index = z_index
+			proj.global_position = global_position
+			proj.global_transform = Transform2D(atan2(direction.y, direction.x), global_position)
+			proj.timer.start()
+			attacking = true
+			attack_timer.start()
+
 
 
 func take_damage(amount):
@@ -214,7 +230,7 @@ func take_damage(amount):
 	else:
 		invincibility_timer.start()
 		var tween = get_tree().create_tween()
-		tween.tween_property(self, "modulate", Color(5.0, 5.0, 5.0, 5.0), .125)
+		tween.tween_property(hull, "modulate", Color(5.0, 5.0, 5.0, 5.0), .125)
 		health -= amount
 		invincible = true
 
@@ -265,13 +281,13 @@ func _on_los_area_exited(area):
 
 func _on_invicibility_timer_timeout():
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 1.0), .125)
+	tween.tween_property(hull, "modulate", Color(1.0, 1.0, 1.0, 1.0), .125)
 	invincible = false
 
 
 func _on_attack_timer_timeout():
 	attacking = false
-	attack()
+	#attack()
 
 
 func _on_animation_timer_timeout():

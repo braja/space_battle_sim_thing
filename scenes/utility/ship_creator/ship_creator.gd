@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var Ship : PackedScene = load("res://scenes/ships/ship_base/ship.tscn")
+@onready var ghost_ship = $GhostShip
 
 @onready var fleet_1_fighter: Resource = load("res://resources/ships/fighters/fleet_1_fighter.tres")
 @onready var fleet_2_fighter: Resource = load("res://resources/ships/fighters/fleet_2_fighter.tres")
@@ -22,35 +23,75 @@ extends Node2D
 	"fleet_3": fleet_3_fighter
 }
 
+var creating_ship = false
+var to_be_created
+var to_be_requested = false
+
 func _ready():
 	for i in range(FighterPool.pool_size):
-		call_deferred("create_ship", fleet_1_fighter, Vector2.ZERO)
-		call_deferred("create_ship", fleet_2_fighter, Vector2.ZERO)
-		call_deferred("create_ship", fleet_3_fighter, Vector2.ZERO)
+		call_deferred("create_ship", fleet_1_fighter, 0, Vector2.ZERO)
+		call_deferred("create_ship", fleet_2_fighter, 0, Vector2.ZERO)
+		call_deferred("create_ship", fleet_3_fighter, 0, Vector2.ZERO)
 
 
  #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("1"):
-		create_ship(fleet_1_battlecruiser, get_global_mouse_position())
-	if Input.is_action_just_pressed("2"):
-		create_ship(fleet_2_battlecruiser, get_global_mouse_position())
-	if Input.is_action_just_pressed("3"):
-		create_ship(fleet_3_battlecruiser, get_global_mouse_position())
-	if Input.is_action_just_pressed("q"):
-		create_ship(fleet_1_frigate, get_global_mouse_position())
-	if Input.is_action_just_pressed("w"):
-		create_ship(fleet_2_frigate, get_global_mouse_position())
-	if Input.is_action_just_pressed("e"):
-		create_ship(fleet_3_frigate, get_global_mouse_position())
-	if Input.is_action_just_pressed("a"):
-		FighterPool.request_ship("fleet_1", get_global_mouse_position())
-	if Input.is_action_just_pressed("s"):
-		FighterPool.request_ship("fleet_2", get_global_mouse_position())
-	if Input.is_action_just_pressed("d"):
-		FighterPool.request_ship("fleet_3", get_global_mouse_position())
+	if creating_ship:
+		ghost_ship.visible = true
+		ghost_ship.position = get_global_mouse_position()
+	else:
+		ghost_ship.visible = false
 		
-func create_ship(ship, ship_position):
+	if Input.is_action_just_pressed("1"):
+		pre_creation(fleet_1_battlecruiser, false)
+	if Input.is_action_just_pressed("2"):
+		pre_creation(fleet_2_battlecruiser, false)
+	if Input.is_action_just_pressed("3"):
+		pre_creation(fleet_3_battlecruiser, false)
+	if Input.is_action_just_pressed("q"):
+		pre_creation(fleet_1_frigate, false)
+	if Input.is_action_just_pressed("w"):
+		pre_creation(fleet_2_frigate, false)
+	if Input.is_action_just_pressed("e"):
+		pre_creation(fleet_3_frigate, false)
+	if Input.is_action_just_pressed("a"):
+		pre_creation(fleet_1_fighter, true)
+	if Input.is_action_just_pressed("s"):
+		pre_creation(fleet_2_fighter, true)
+	if Input.is_action_just_pressed("d"):
+		pre_creation(fleet_3_fighter, true)
+	
+	if creating_ship:
+		if Input.is_action_pressed("z"):
+			ghost_ship.rotation += -1 * delta
+		if Input.is_action_pressed("x"):
+			ghost_ship.rotation += 1 * delta
+		if Input.is_action_just_pressed("left_click"):
+			if to_be_requested:
+				FighterPool.request_ship(to_be_created.faction, ghost_ship.rotation_degrees, get_global_mouse_position())
+			else:
+				print(ghost_ship.rotation, " | ", ghost_ship.rotation_degrees)
+				create_ship(to_be_created, ghost_ship.rotation_degrees, get_global_mouse_position())
+			#ghost_ship.set_global_rotation(90.0)
+			to_be_requested = false
+			to_be_created = null
+			creating_ship = false
+			
+
+func pre_creation(ship, is_request):
+	creating_ship = true
+	ghost_ship.visible = true
+	ghost_ship.scale = Vector2(1, 1)
+	ghost_ship.texture = ship.hull_texture
+	if ship.ship_type == "Battlecruiser":
+		ghost_ship.scale = Vector2(7, 7)
+	if ship.ship_type == "Frigate":
+		ghost_ship.scale = Vector2(2.5, 2.5)
+	to_be_created = ship
+	to_be_requested = is_request
+
+
+func create_ship(ship, ship_rotation, ship_position):
 	var new_ship = Ship.instantiate()
 	new_ship.set_script(ship.ship_script)
 	new_ship.ship_type = ship.ship_type
@@ -72,13 +113,17 @@ func create_ship(ship, ship_position):
 	new_ship.torque = ship.torque
 	new_ship.engine_hide_threshold = ship.engine_hide_threshold
 	new_ship.global_position = ship_position
-	world_node.add_child(new_ship)
+	new_ship.set_rotation_degrees(ship_rotation - 90)
+	add_child(new_ship)
 	if ship.ship_type == "Battlecruiser":
 		new_ship.add_to_group("mothership")
 		new_ship.fighter = faction_to_fighter[ship.faction]
 		new_ship.spawner = self
 		new_ship.hull.scale = Vector2(7, 7)
 		new_ship.engine.scale = Vector2(7, 7)
+		new_ship.laser.beam.width = ship.beam_width
+		new_ship.laser.beam.default_color = ship.beam_color
+		print(ship.beam_color)
 	if ship.ship_type == "Fighter":
 		new_ship.toggle_physics()
 		FighterPool.fighter_pool.append(new_ship)

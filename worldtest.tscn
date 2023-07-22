@@ -1,4 +1,12 @@
-[gd_scene format=3 uid="uid://bhg7g7ur6iemx"]
+[gd_scene load_steps=3 format=3 uid="uid://bhg7g7ur6iemx"]
+
+[ext_resource type="PackedScene" uid="uid://o4rebyx8o55a" path="res://scenes/utility/bullet_pool/bullet_pool.tscn" id="1_vkfip"]
+[ext_resource type="PackedScene" uid="uid://bd43qix4581u0" path="res://scenes/utility/ship_creator/ship_creator.tscn" id="2_eds2a"]
 
 [node name="World" type="Node2D" groups=["world"]]
 metadata/_edit_horizontal_guides_ = []
+
+[node name="BulletPool" parent="." instance=ExtResource("1_vkfip")]
+
+[node name="ship_creator" parent="." node_paths=PackedStringArray("world_node") instance=ExtResource("2_eds2a")]
+world_node = NodePath("..")
