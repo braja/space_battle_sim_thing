@@ -129,6 +129,7 @@ extends Node2D
 var bullet_pool = []
 ## Called when the node enters the scene tree for the first time.
 func _ready():
+	clear_pool()
 	for i in range(pool_size):
 		var projectile = bullet.instantiate()
 		#projectile.toggle_physics()
@@ -144,3 +145,6 @@ func request_bullet():
 
 func return_to_pool(node):
 	bullet_pool.append(node)
+
+func clear_pool():
+	bullet_pool.clear()

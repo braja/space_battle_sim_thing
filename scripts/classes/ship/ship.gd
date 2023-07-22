@@ -210,6 +210,7 @@ func attack() -> void:
 
 		# Only attack if the target is within a 35 degree angle in front of the ship
 		if abs(angle_difference) <= 90:
+			var BulletPool = get_tree().get_first_node_in_group("bullet_pool")
 			var proj = BulletPool.request_bullet()
 			var predicted_target_position = target.global_position + target.linear_velocity
 			var direction = (predicted_target_position - position).normalized()

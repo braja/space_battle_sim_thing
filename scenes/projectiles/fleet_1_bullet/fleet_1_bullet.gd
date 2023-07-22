@@ -22,6 +22,7 @@ func is_bullet():
 
 func add_to_pool():
 	toggle_physics()
+	var BulletPool = get_tree().get_first_node_in_group("bullet_pool")
 	BulletPool.return_to_pool(self)
 
 
