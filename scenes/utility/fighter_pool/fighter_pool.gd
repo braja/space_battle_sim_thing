@@ -5,6 +5,8 @@ extends Node2D
 
 var fighter_pool = []
 
+func clear_pool():
+	fighter_pool.clear()
 
 func request_ship(faction, ship_rotation, location):
 	var i = -1
@@ -15,6 +17,7 @@ func request_ship(faction, ship_rotation, location):
 			var new_fighter = fighter_pool[i]
 			new_fighter.global_position = location
 			new_fighter.rotation -= ship_rotation
+			new_fighter.clickable_area.visible = true
 			new_fighter.toggle_physics()
 			return fighter_pool.pop_at(i)
 

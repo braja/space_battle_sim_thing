@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c6tlur8uki4ew" path="res://scenes/utility/bg/bg.tscn" id="1_grfiy"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_l8c41"]
 [ext_resource type="PackedScene" uid="uid://bhg7g7ur6iemx" path="res://worldtest.tscn" id="1_uji1i"]
-[ext_resource type="Script" path="res://scenes/utility/MainCamera.gd" id="2_2ku6s"]
+[ext_resource type="PackedScene" uid="uid://dylcb2mn6v2qb" path="res://scenes/UI/ui.tscn" id="4_80to5"]
 
 [sub_resource type="Environment" id="Environment_etgs8"]
 background_mode = 3
@@ -14,18 +14,15 @@ glow_blend_mode = 1
 glow_hdr_threshold = 0.08
 
 [node name="Main" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_l8c41")
 level = ExtResource("1_uji1i")
 
 [node name="Bg" parent="." instance=ExtResource("1_grfiy")]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(572, 311)
-zoom = Vector2(0.25, 0.25)
-script = ExtResource("2_2ku6s")
-zoom_speed = 0.1
+process_mode = 3
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+process_mode = 3
 environment = SubResource("Environment_etgs8")
 
 [node name="BottomRight" type="Node2D" parent="."]
@@ -35,3 +32,5 @@ position = Vector2(6087, 6042)
 position = Vector2(-2014, -1946)
 
 [node name="World" parent="." instance=ExtResource("1_uji1i")]
+
+[node name="UI" parent="." instance=ExtResource("4_80to5")]

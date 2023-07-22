@@ -27,6 +27,7 @@ var shake_strength: float = 0.0
 var origin = Vector2(572, 311)
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	zoom = Vector2(.25, .25)
 	rand.randomize()
 	# Randomize the generated noise
@@ -68,10 +69,8 @@ func _physics_process(delta):
 		direction.y -= 5
 	if Input.is_action_pressed("ui_down"):
 		direction.y += 5
-	if Input.is_action_pressed("reset_camera"):
-		position = origin
-		return
-		
+
+
 	position += direction.normalized() * pan_speed * delta
 
 func _input(event):
@@ -95,3 +94,4 @@ func _input(event):
 		zoom.x = clamp(zoom.x, min_zoom, max_zoom)
 		zoom.y = clamp(zoom.y, min_zoom, max_zoom)
 		emit_signal("zoom_changed", zoom)
+

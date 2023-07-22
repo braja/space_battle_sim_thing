@@ -31,5 +31,5 @@ max_speed = 500.0
 acceleration = 100.0
 leash_distance = 800.0
 flee_distance = 0.0
-attack_range = 1500.0
+attack_range = 5000.0
 torque = 0.05

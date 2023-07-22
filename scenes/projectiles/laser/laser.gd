@@ -17,10 +17,6 @@ func _ready():
 	print(color, beam.default_color)
 	set_physics_process(false)
 
-func _unhandled_input(event):
-	if event is InputEventMouseButton:
-		set_is_casting(event.pressed) 
-		
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):

@@ -28,6 +28,7 @@ var to_be_created
 var to_be_requested = false
 
 func _ready():
+	FighterPool.clear_pool()
 	for i in range(FighterPool.pool_size):
 		call_deferred("create_ship", fleet_1_fighter, 0, Vector2.ZERO)
 		call_deferred("create_ship", fleet_2_fighter, 0, Vector2.ZERO)
@@ -121,15 +122,18 @@ func create_ship(ship, ship_rotation, ship_position):
 		new_ship.spawner = self
 		new_ship.hull.scale = Vector2(7, 7)
 		new_ship.engine.scale = Vector2(7, 7)
+		new_ship.clickable_area.scale = Vector2(7, 7)
 		new_ship.laser.beam.width = ship.beam_width
 		new_ship.laser.beam.default_color = ship.beam_color
 		print(ship.beam_color)
 	if ship.ship_type == "Fighter":
+		new_ship.clickable_area.visible = false
 		new_ship.toggle_physics()
 		FighterPool.fighter_pool.append(new_ship)
 	if ship.ship_type == "Frigate":
 		new_ship.hull.scale = Vector2(2.5, 2.5)
 		new_ship.engine.scale = Vector2(2.5, 2.5)
+		new_ship.clickable_area.scale = Vector2(2.5, 2.5)
 	new_ship.add_to_group(ship.ship_type)
 	new_ship.add_to_group(ship.faction)
 	new_ship.hull.texture = ship.hull_texture

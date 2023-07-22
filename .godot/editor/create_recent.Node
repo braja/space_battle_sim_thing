@@ -1,7 +1,9 @@
+RichTextLabel
+ColorRect
+TextureRect
 Timer
 CPUParticles2D
 TextureButton
-TextureRect
 HBoxContainer
 CanvasLayer
 Node2D
@@ -20,7 +22,6 @@ MarginContainer
 WorldEnvironment
 ParallaxLayer
 ParallaxBackground
-ColorRect
 GPUParticles2D
 Label
 ProgressBar

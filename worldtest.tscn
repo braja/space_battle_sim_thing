@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bd43qix4581u0" path="res://scenes/utility/ship_creator/ship_creator.tscn" id="2_eds2a"]
 
 [node name="World" type="Node2D" groups=["world"]]
+process_mode = 1
 metadata/_edit_horizontal_guides_ = []
 
 [node name="BulletPool" parent="." instance=ExtResource("1_vkfip")]

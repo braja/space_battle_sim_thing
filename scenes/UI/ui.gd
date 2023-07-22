@@ -1,15 +1,10 @@
 extends CanvasLayer
 
+@onready var tooltip = $Icon
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func show_tooltip(info):
+	print(info.ship_type)
+	tooltip.show()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-func _on_texture_rect_mouse_entered():
-	print("mouse_entered")
+func hide_tooltip():
+	tooltip.hide()

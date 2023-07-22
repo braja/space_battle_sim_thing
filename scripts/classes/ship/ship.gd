@@ -3,6 +3,7 @@ extends RigidBody2D
 class_name Ship
 const PI_TWO: float = 2 * PI
 const PI180: float = 180 / PI
+@onready var UI = get_tree().get_first_node_in_group("ui")
 @onready var battlecruiser_script = load("res://scripts/classes/ship/battlecruiser/battecruiser.gd")
 @onready var fighter_script = load("res://scripts/classes/ship/fighter/fighter.gd")
 @onready var engine = $Engine
@@ -19,6 +20,7 @@ const PI180: float = 180 / PI
 @onready var animation_timer = $AnimationTimer
 @onready var BulletPool = get_tree().get_first_node_in_group("bullet_pool")
 @onready var origin = $Origin
+@onready var clickable_area = $Clickable
 #@onready var my_faction = self.get_groups()[0]
 
 @export var ship_type: String
@@ -207,7 +209,7 @@ func attack() -> void:
 		var angle_difference: float = ship_direction.angle_to(target_direction) * PI180
 
 		# Only attack if the target is within a 35 degree angle in front of the ship
-		if abs(angle_difference) <= 360:
+		if abs(angle_difference) <= 90:
 			var proj = BulletPool.request_bullet()
 			var predicted_target_position = target.global_position + target.linear_velocity
 			var direction = (predicted_target_position - position).normalized()
@@ -246,6 +248,7 @@ func die():
 
 func toggle_physics():
 	visible = !visible
+	clickable_area.visible = !clickable_area.visible
 	collision.disabled = !collision.disabled
 	detection_area.monitoring = !detection_area.monitoring
 	los_area.monitoring = !los_area.monitoring
@@ -298,3 +301,20 @@ func _on_animation_timer_timeout():
 	else:
 		engine.frame = 0
 		animation_timer.start()
+
+
+func _on_texture_rect_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.pressed and event.button_index == 1:
+			print("clicked on", self.ship_type)
+			return
+	#	if Input.is_action_just_pressed("left_click"):
+	#		print("clicked on", self.ship_type)
+
+
+func _on_clickable_mouse_entered():
+	UI.show_tooltip(self)
+
+
+func _on_clickable_mouse_exited():
+	UI.hide_tooltip()
