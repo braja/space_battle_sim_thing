@@ -35,7 +35,6 @@ layout_mode = 2
 text = "State"
 
 [node name="PilotInfoSmall" type="Node2D" parent="."]
-visible = false
 position = Vector2(0, 832)
 
 [node name="BluePixel2x2" type="Sprite2D" parent="PilotInfoSmall"]
@@ -105,3 +104,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Experience"
 horizontal_alignment = 1
+
+[node name="Close" type="Button" parent="PilotInfoSmall"]
+offset_left = 512.0
+offset_right = 544.0
+offset_bottom = 31.0
+text = "X
+"
+
+[connection signal="pressed" from="PilotInfoSmall/Close" to="." method="_on_close_pressed"]
