@@ -1,12 +1,107 @@
-[gd_scene load_steps=3 format=3 uid="uid://dylcb2mn6v2qb"]
+[gd_scene load_steps=4 format=3 uid="uid://dylcb2mn6v2qb"]
 
 [ext_resource type="Script" path="res://scenes/UI/ui.gd" id="1_n60b4"]
+[ext_resource type="Texture2D" uid="uid://4301g7r64urh" path="res://assets/radar/blue_pixel_2x2.png" id="2_nuosf"]
 [ext_resource type="Texture2D" uid="uid://l2l7t5bpcsfv" path="res://icon.svg" id="2_wljmf"]
 
 [node name="UI" type="CanvasLayer" groups=["ui"]]
 process_mode = 3
 script = ExtResource("1_n60b4")
 
-[node name="Icon" type="Sprite2D" parent="."]
+[node name="Tooltip" type="Node2D" parent="."]
+visible = false
 position = Vector2(656, 608)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tooltip"]
+offset_left = 56.0
+offset_top = 56.0
+offset_right = 248.0
+offset_bottom = 328.0
+
+[node name="Faction" type="Label" parent="Tooltip/VBoxContainer"]
+layout_mode = 2
+text = "Faction"
+
+[node name="Type" type="Label" parent="Tooltip/VBoxContainer"]
+layout_mode = 2
+text = "Type"
+
+[node name="Health" type="Label" parent="Tooltip/VBoxContainer"]
+layout_mode = 2
+text = "Health"
+
+[node name="State" type="Label" parent="Tooltip/VBoxContainer"]
+layout_mode = 2
+text = "State"
+
+[node name="PilotInfoSmall" type="Node2D" parent="."]
+visible = false
+position = Vector2(0, 832)
+
+[node name="BluePixel2x2" type="Sprite2D" parent="PilotInfoSmall"]
+position = Vector2(272, 64)
+scale = Vector2(272, 64)
+texture = ExtResource("2_nuosf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PilotInfoSmall"]
+offset_right = 544.0
+offset_bottom = 128.0
+
+[node name="TextureRect" type="TextureRect" parent="PilotInfoSmall/HBoxContainer"]
+layout_mode = 2
 texture = ExtResource("2_wljmf")
+stretch_mode = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PilotInfoSmall/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Faction" type="Label" parent="PilotInfoSmall/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "PILOT NAME"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PilotInfoSmall/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Type" type="Label" parent="PilotInfoSmall/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Current Ship"
+horizontal_alignment = 1
+
+[node name="Health" type="Label" parent="PilotInfoSmall/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Persona1 + Persona2"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PilotInfoSmall/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="State" type="Label" parent="PilotInfoSmall/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Length of service"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="PilotInfoSmall/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Rank"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PilotInfoSmall/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="State" type="Label" parent="PilotInfoSmall/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Kills"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="PilotInfoSmall/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Experience"
+horizontal_alignment = 1

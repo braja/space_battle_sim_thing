@@ -307,7 +307,7 @@ func _on_animation_timer_timeout():
 func _on_texture_rect_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == 1:
-			print("clicked on", self.ship_type)
+			UI.show_pilot_info_small()
 			return
 	#	if Input.is_action_just_pressed("left_click"):
 	#		print("clicked on", self.ship_type)

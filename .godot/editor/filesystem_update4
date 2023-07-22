@@ -10,3 +10,6 @@ res://worldtest.tscn
 res://scenes/UI/ui.tscn
 res://scripts/classes/ship/ship.gd
 res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.gd
+res://scenes/UI/ui.gd
+res://scenes/utility/ship_creator/ship_creator.gd
+res://scenes/utility/fighter_pool/fighter_pool.gd

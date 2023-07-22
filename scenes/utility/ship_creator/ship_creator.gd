@@ -122,7 +122,8 @@ func create_ship(ship, ship_rotation, ship_position):
 		new_ship.spawner = self
 		new_ship.hull.scale = Vector2(7, 7)
 		new_ship.engine.scale = Vector2(7, 7)
-		new_ship.clickable_area.scale = Vector2(7, 7)
+		new_ship.clickable_area.size = new_ship.clickable_area.size * 7
+		new_ship.clickable_area.position = -new_ship.clickable_area.size / 2
 		new_ship.laser.beam.width = ship.beam_width
 		new_ship.laser.beam.default_color = ship.beam_color
 		print(ship.beam_color)
