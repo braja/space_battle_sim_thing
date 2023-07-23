@@ -44,6 +44,7 @@ func attack():
 		var predicted_target_position = target.global_position + target.linear_velocity
 		var direction = (predicted_target_position - position).normalized()
 		proj._target = target
+		proj.shooter = self
 		proj.possible_obstacle = possible_obstacle
 		proj.z_index = z_index
 		proj.global_transform = Transform2D(atan2(direction.y, direction.x), global_position)

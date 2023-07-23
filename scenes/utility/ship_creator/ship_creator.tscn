@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cflyub5xkcc46" path="res://scenes/utility/ship_creator/ghost_ship/ghost_ship.tscn" id="2_n5pr7"]
 
 [node name="ship_creator" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_8hg6s")
 
 [node name="GhostShip" parent="." instance=ExtResource("2_n5pr7")]

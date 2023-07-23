@@ -66,6 +66,7 @@ var orbit_distance = 600
 var invincible = false
 
 var attacking = false
+var kill_count = 0
 
 var wander_angle = 0.0
 var wander_range = 45.0
@@ -215,6 +216,7 @@ func attack() -> void:
 			var predicted_target_position = target.global_position + target.linear_velocity
 			var direction = (predicted_target_position - position).normalized()
 			proj.faction = faction
+			proj.shooter = self
 			proj.possible_obstacle = possible_obstacle
 			proj.z_index = z_index
 			proj.global_position = global_position
@@ -225,11 +227,11 @@ func attack() -> void:
 
 
 
-func take_damage(amount):
+func take_damage(amount, shooter):
 	if invincible:
 		return
 	if health - amount <= 0:
-		die()
+		die(shooter)
 	else:
 		invincibility_timer.start()
 		var tween = get_tree().create_tween()
@@ -238,9 +240,11 @@ func take_damage(amount):
 		invincible = true
 
 
-func die():
+func die(shooter):
 	var new_explosion = explosion.instantiate()
 	new_explosion.global_position = global_position
+	shooter.kill_count += 1
+	#killer.update_kills()
 	get_tree().get_root().add_child(new_explosion)	
 	call_deferred("toggle_physics")
 	if ship_type == "Fighter":
@@ -259,7 +263,7 @@ func toggle_physics():
 	set_process(!is_processing())
 
 func _on_detection_body_entered(body):
-	if body.is_in_group("mothership") && not  body.get_groups().any(is_enemy_faction):
+	if body.is_in_group("mothership") && not body.get_groups().any(is_enemy_faction):
 		mothership = body
 	if body.get_groups().any(is_enemy_faction):
 		if not nearby_enemies.has(body):

@@ -7,6 +7,7 @@ var possible_obstacle = false
 var speed = 1250
 var damage = 125
 var faction
+var shooter
 
 
 func toggle_physics():
@@ -36,7 +37,7 @@ func _on_body_entered(body):
 			return
 		if possible_obstacle and body.possible_obstacle and body.z_index != z_index:
 			return
-		body.take_damage(damage)
+		body.take_damage(damage, shooter)
 		call_deferred("add_to_pool")
 
 

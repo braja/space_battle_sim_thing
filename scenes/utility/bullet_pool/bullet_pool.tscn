@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://scenes/utility/bullet_pool/bullet_pool.gd" id="1_emvn5"]
 
 [node name="BulletPool" type="Node2D" groups=["bullet_pool"]]
+process_mode = 3
 script = ExtResource("1_emvn5")

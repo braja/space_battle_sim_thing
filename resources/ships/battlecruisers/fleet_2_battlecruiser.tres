@@ -32,4 +32,4 @@ acceleration = 90.0
 leash_distance = 800.0
 flee_distance = 0.0
 attack_range = 5000.0
-torque = 0.02
+torque = 0.16

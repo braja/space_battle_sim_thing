@@ -1,9 +1,9 @@
+Label
+Node2D
 Button
 ColorRect
-Label
 HBoxContainer
 TextureRect
-Node2D
 Node
 VBoxContainer
 RichTextLabel
@@ -30,4 +30,3 @@ ProgressBar
 PinJoint2D
 GrooveJoint2D
 StaticBody2D
-Camera2D

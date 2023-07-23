@@ -16,7 +16,7 @@ var drag_factor := 0.55
 var _target
 
 var _current_velocity := Vector2.ZERO
-
+var shooter
 
 var possible_obstacle = false
 var speed = 550
@@ -54,7 +54,7 @@ func boom():
 	new_explosion.global_position = global_position
 	get_tree().get_root().add_child(new_explosion)
 	for ship in boom_radius.get_overlapping_bodies():
-		ship.take_damage(damage)
+		ship.take_damage(damage, shooter)
 	queue_free()
 
 func _on_body_entered(body):
@@ -63,7 +63,7 @@ func _on_body_entered(body):
 	if body.is_in_group("fleet_1") || body.is_in_group("fleet_3"):
 		if possible_obstacle and body.possible_obstacle and body.z_index != z_index:
 			return
-		body.take_damage(damage)
+		body.take_damage(damage, shooter)
 	boom()
 
 

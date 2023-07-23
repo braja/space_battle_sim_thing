@@ -81,6 +81,7 @@ func attack():
 
 		# Only attack if the target is within a 35 degree angle in front of the ship
 		if abs(angle_difference) <= 20:
+			laser.shooter = self
 			laser._target = target
 			laser.set_is_casting(true)
 			attacking = true
@@ -88,11 +89,11 @@ func attack():
 
 
 
-func take_damage(amount):
+func take_damage(amount, shooter):
 	if invincible:
 		return
 	if health - amount <= 0:
-		die()
+		die(shooter)
 	else:
 		health -= amount
 		#invincible = true

@@ -5,10 +5,12 @@ extends RayCast2D
 
 @export var color: Color
 @export var beam_width: int
-@export var damage = 9999
+@export var damage = 2999
+
 var is_casting := false
 var faction
 var _target
+var shooter
 
 func _ready():
 	beam.points[1] = Vector2.ZERO
@@ -29,7 +31,7 @@ func _physics_process(delta):
 		if body.has_method("take_damage"):
 			if body.friendly(faction):
 				return
-			body.take_damage(damage)
+			body.take_damage(damage, shooter)
 	
 	beam.points[1] = cast_point
 
