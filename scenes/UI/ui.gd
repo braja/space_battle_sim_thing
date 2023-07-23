@@ -17,6 +17,7 @@ func show_tooltip(info):
 	ship_state.text = info.State.find_key(state)
 	tooltip.show()
 
+
 func hide_tooltip():
 	tooltip.hide()
 
@@ -24,8 +25,10 @@ func hide_tooltip():
 func show_pilot_info_small():
 	pilot_info_small.show()
 
+
 func hide_pilot_info_small():
 	pilot_info_small.hide()
+
 
 func _on_close_pressed():
 	pilot_info_small.hide()
