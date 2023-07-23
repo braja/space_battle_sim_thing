@@ -76,7 +76,7 @@ var possible_obstacle = false
 func _ready():
 	attack_timer.wait_time = attack_cooldown
 	var tween = get_tree().create_tween()
-	tween.tween_property(detection_collision.shape, "radius", 5600.0, 1)
+	tween.tween_property(detection_collision.shape, "radius", 25600.0, 1)
 	_init()
 
 

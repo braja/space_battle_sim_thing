@@ -142,5 +142,4 @@ func create_ship(ship, ship_rotation, ship_position):
 	new_ship.engine.hframes = ship.engine_hframes
 	new_ship.animation_timer.start()
 	new_ship.collision_shape.radius = ship.collision_radius
-
-
+	print(new_ship.linear_velocity)

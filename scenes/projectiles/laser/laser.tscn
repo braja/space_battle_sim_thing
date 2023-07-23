@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scenes/projectiles/laser/laser.gd" id="1_secy6"]
 
 [node name="Laser" type="RayCast2D" groups=["laser"]]
+process_mode = 1
 target_position = Vector2(6000, 0)
 script = ExtResource("1_secy6")
 

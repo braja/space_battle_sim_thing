@@ -6,7 +6,7 @@ extends CanvasLayer
 @onready var ship_state = $Tooltip/VBoxContainer/State
 @onready var faction = $Tooltip/VBoxContainer/Faction
 @onready var kills = $PilotInfoSmall/HBoxContainer/VBoxContainer2/HBoxContainer3/Kills
-
+@onready var patchnotes = $Patchtext
 @onready var pilot_info_small = $PilotInfoSmall
 @onready var pilot_info_hover = $PilotInfoSmall/PilotInfoHover
 
@@ -72,3 +72,27 @@ func _on_kills_mouse_entered():
 func _on_exp_mouse_entered():
 	pilot_info_hover.text = "Pilot's current experience points"
 	pilot_info_hover.show()
+
+
+func _on_play_pressed():
+	get_tree().paused = false
+
+
+func _on_pause_pressed():
+	get_tree().paused = true
+
+
+func _on_reset_pressed():
+	owner.handle_reset()
+
+
+func _on_patchnotes_pressed():
+	show_patch_notes()
+
+
+func show_patch_notes():
+	patchnotes.show()
+
+
+func _close_patch_notes():
+	patchnotes.hide()

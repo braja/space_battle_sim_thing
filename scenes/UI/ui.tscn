@@ -1,12 +1,64 @@
-[gd_scene load_steps=4 format=3 uid="uid://dylcb2mn6v2qb"]
+[gd_scene load_steps=19 format=3 uid="uid://dylcb2mn6v2qb"]
 
 [ext_resource type="Script" path="res://scenes/UI/ui.gd" id="1_n60b4"]
+[ext_resource type="Texture2D" uid="uid://dq2q0nwb26fx3" path="res://assets/ui/buttons/Play_Icon_01.png" id="2_npjwv"]
 [ext_resource type="Texture2D" uid="uid://4301g7r64urh" path="res://assets/radar/blue_pixel_2x2.png" id="2_nuosf"]
 [ext_resource type="Texture2D" uid="uid://l2l7t5bpcsfv" path="res://icon.svg" id="2_wljmf"]
+[ext_resource type="Texture2D" uid="uid://dea22uky12pms" path="res://assets/ui/buttons/Play_Icon_03.png" id="3_wqaac"]
+[ext_resource type="Texture2D" uid="uid://kuaxpehw0v37" path="res://assets/ui/buttons/Play_Icon_02.png" id="4_2fwvp"]
+[ext_resource type="Texture2D" uid="uid://btacvpjrn4abs" path="res://assets/ui/buttons/Pause_Icon_01.png" id="5_v0kay"]
+[ext_resource type="Texture2D" uid="uid://b2fg858wttkvq" path="res://assets/ui/buttons/Pause_Icon_03.png" id="6_ka4bb"]
+[ext_resource type="Texture2D" uid="uid://d3idekhd42kgk" path="res://assets/ui/buttons/Pause_Icon_02.png" id="7_mhlfv"]
+[ext_resource type="Texture2D" uid="uid://c625l1ye2ox2y" path="res://assets/ui/buttons/Skip_Icon_01.png" id="8_shfnt"]
+[ext_resource type="Texture2D" uid="uid://beiipr0sjdhsp" path="res://assets/ui/buttons/Skip_Icon_03.png" id="9_sagpi"]
+[ext_resource type="Texture2D" uid="uid://du5x201tya51x" path="res://assets/ui/buttons/Skip_Icon_02.png" id="10_ongi4"]
+[ext_resource type="Texture2D" uid="uid://im4do7n0cwer" path="res://assets/ui/buttons/Exit_Red_Button_01.png" id="10_w3i2k"]
+[ext_resource type="Texture2D" uid="uid://cefi7mv3tump6" path="res://assets/ui/buttons/Help_Icon_01.png" id="11_7tk6e"]
+[ext_resource type="Texture2D" uid="uid://dmf4hrh2vdby2" path="res://assets/ui/buttons/Exit_Red_Button_03.png" id="11_ga7vp"]
+[ext_resource type="Texture2D" uid="uid://d17qe7haacred" path="res://assets/ui/buttons/Help_Icon_03.png" id="12_o6oe8"]
+[ext_resource type="Texture2D" uid="uid://bijh1xv0h1w4x" path="res://assets/ui/buttons/Exit_Red_Button_02.png" id="12_qrrmf"]
+[ext_resource type="Texture2D" uid="uid://bln11myctt741" path="res://assets/ui/buttons/Help_Icon_02.png" id="13_mhqkq"]
 
 [node name="UI" type="CanvasLayer" groups=["ui"]]
 process_mode = 3
 script = ExtResource("1_n60b4")
+
+[node name="PlayPause" type="Node2D" parent="."]
+
+[node name="Play" type="TextureButton" parent="PlayPause"]
+offset_right = 64.0
+offset_bottom = 64.0
+texture_normal = ExtResource("2_npjwv")
+texture_pressed = ExtResource("3_wqaac")
+texture_hover = ExtResource("4_2fwvp")
+stretch_mode = 0
+
+[node name="Pause" type="TextureButton" parent="PlayPause"]
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+texture_normal = ExtResource("5_v0kay")
+texture_pressed = ExtResource("6_ka4bb")
+texture_hover = ExtResource("7_mhlfv")
+stretch_mode = 0
+
+[node name="Reset" type="TextureButton" parent="PlayPause"]
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+texture_normal = ExtResource("8_shfnt")
+texture_pressed = ExtResource("9_sagpi")
+texture_hover = ExtResource("10_ongi4")
+stretch_mode = 0
+
+[node name="Patchnotes" type="TextureButton" parent="PlayPause"]
+offset_left = 1616.0
+offset_right = 1680.0
+offset_bottom = 64.0
+texture_normal = ExtResource("11_7tk6e")
+texture_pressed = ExtResource("12_o6oe8")
+texture_hover = ExtResource("13_mhqkq")
+stretch_mode = 0
 
 [node name="Tooltip" type="Node2D" parent="."]
 visible = false
@@ -35,6 +87,7 @@ layout_mode = 2
 text = "State"
 
 [node name="PilotInfoSmall" type="Node2D" parent="."]
+visible = false
 position = Vector2(0, 832)
 
 [node name="BluePixel2x2" type="Sprite2D" parent="PilotInfoSmall"]
@@ -117,13 +170,14 @@ mouse_filter = 0
 text = "Exp: 375 / 694320"
 horizontal_alignment = 1
 
-[node name="Close" type="Button" parent="PilotInfoSmall"]
-offset_left = 569.0
-offset_top = -12.0
-offset_right = 601.0
-offset_bottom = 19.0
-text = "X
-"
+[node name="Close" type="TextureButton" parent="PilotInfoSmall"]
+offset_left = 572.0
+offset_top = -4.0
+offset_right = 604.0
+offset_bottom = 28.0
+texture_normal = ExtResource("10_w3i2k")
+texture_pressed = ExtResource("11_ga7vp")
+texture_hover = ExtResource("12_qrrmf")
 
 [node name="PilotInfoHover" type="Label" parent="PilotInfoSmall"]
 visible = false
@@ -134,8 +188,76 @@ text = "information"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Patchtext" type="Node2D" parent="."]
+visible = false
 
+[node name="BluePixel2x3" type="Sprite2D" parent="Patchtext"]
+position = Vector2(816, 400)
+scale = Vector2(300, 280)
+texture = ExtResource("2_nuosf")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Patchtext"]
+custom_minimum_size = Vector2(500, 500)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 560.0
+offset_top = 152.0
+offset_right = 1060.0
+offset_bottom = 652.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "alpha patch 0.0.1:
+	general:
+		- added play, pause, and reset ui buttons
+		- added in game patch note display
+		
+	all ships:
+		- ship detection range increased from 5600 -> 25600
+	fighters:
+		fleet_1:
+			- leash range increased from 800 -> 6600
+		fleet_2:
+			- leash range increased from 800 -> 7000
+		fleet_3:
+			- leash range increased from 800 -> 6750	
+	frigate:
+		fleet_1:
+			- leash range increased from 1600 -> 4600
+		fleet_2:
+			- leash range increased from 1400 -> 4100
+		fleet_3:
+			- leash range increased from 1200 -> 3900
+			
+	battlecruisers:
+		
+		- All battlecruisers health increased from 20000 -> 30000
+		
+		fleet_1:
+			- torque increased from .05 -> .13
+			- max_speed increased from 500 -> 750
+		
+		fleet_2:
+			- torque increased from .06 -> .16
+			- max_speed increased from 600 -> 900
+		
+		fleet_3:
+			- max_speed increased from 450 -> 850
+			- torque increased from .07 -> .14"
+
+[node name="Close" type="TextureButton" parent="Patchtext"]
+offset_left = 1088.0
+offset_top = 112.0
+offset_right = 1120.0
+offset_bottom = 144.0
+texture_normal = ExtResource("10_w3i2k")
+texture_pressed = ExtResource("11_ga7vp")
+texture_hover = ExtResource("12_qrrmf")
+
+[connection signal="pressed" from="PlayPause/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="PlayPause/Pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="PlayPause/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="PlayPause/Patchnotes" to="." method="_on_patchnotes_pressed"]
 [connection signal="mouse_entered" from="PilotInfoSmall/HBoxContainer/VBoxContainer2/Name" to="." method="_on_name_mouse_entered"]
 [connection signal="mouse_exited" from="PilotInfoSmall/HBoxContainer/VBoxContainer2/Name" to="." method="_pilot_info_hover_hide"]
 [connection signal="mouse_entered" from="PilotInfoSmall/HBoxContainer/VBoxContainer2/HBoxContainer/ShipName" to="." method="_on_ship_name_mouse_entered"]
@@ -151,3 +273,4 @@ vertical_alignment = 1
 [connection signal="mouse_entered" from="PilotInfoSmall/HBoxContainer/VBoxContainer2/HBoxContainer3/Exp" to="." method="_on_exp_mouse_entered"]
 [connection signal="mouse_exited" from="PilotInfoSmall/HBoxContainer/VBoxContainer2/HBoxContainer3/Exp" to="." method="_pilot_info_hover_hide"]
 [connection signal="pressed" from="PilotInfoSmall/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Patchtext/Close" to="." method="_close_patch_notes"]

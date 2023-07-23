@@ -51,6 +51,7 @@ _data = {
 }
 
 [node name="fleet_2_rocket" type="Area2D"]
+process_mode = 1
 collision_layer = 0
 monitorable = false
 script = ExtResource("1_qyf22")

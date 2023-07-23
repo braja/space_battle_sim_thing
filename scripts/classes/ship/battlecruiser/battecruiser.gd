@@ -26,7 +26,7 @@ func _ready():
 	laser.beam.default_color = beam_color
 	laser.beam.width = beam_width
 	var tween = get_tree().create_tween()
-	tween.tween_property(detection_collision.shape, "radius", 5600.0, 1)
+	tween.tween_property(detection_collision.shape, "radius", 25600.0, 1)
 	#anim.play("engine")
 
 

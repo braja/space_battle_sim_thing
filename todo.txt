@@ -1,5 +1,59 @@
+ui for placing ships
 
-place while paused
+add random pilot to each ship
+
+refactor projectiles to be a class
+	laser too
+
+overworld map
+	events that can be engaged
+
+player controlled char
+
+pre battle screen
+
+post battle screen
+
 
 evade further when enemy numbers are higher than ally numbers
 
+patch:
+	general:
+		- added play, pause, and reset ui buttons
+		- added in game patch note display
+		
+	all ships:
+		- ship detection range increased from 5600 -> 25600
+	fighters:
+		fleet_1:
+			- leash range increased from 800 -> 6600
+		fleet_2:
+			- leash range increased from 800 -> 7000
+		fleet_3:
+			- leash range increased from 800 -> 6750	
+	frigate:
+		fleet_1:
+			- leash range increased from 1600 -> 4600
+		fleet_2:
+			- leash range increased from 1400 -> 4100
+		fleet_3:
+			- leash range increased from 1200 -> 3900
+			
+	battlecruisers:
+		
+		- All battlecruisers health increased from 20000 -> 30000
+		
+		fleet_1:
+			- torque increased from .05 -> .13
+			- max_speed increased from 500 -> 750
+		
+		fleet_2:
+			- torque increased from .06 -> .16
+			- max_speed increased from 600 -> 900
+		
+		fleet_3:
+			- max_speed increased from 450 -> 850
+			- torque increased from .07 -> .14
+		
+		
+	

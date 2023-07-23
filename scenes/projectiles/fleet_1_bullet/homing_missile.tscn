@@ -51,6 +51,7 @@ _data = {
 radius = 202.121
 
 [node name="homing_missile" type="Area2D"]
+process_mode = 1
 collision_layer = 0
 monitorable = false
 script = ExtResource("1_b1lpb")

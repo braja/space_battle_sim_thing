@@ -29,3 +29,9 @@ res://scripts/classes/ship/battlecruiser/battecruiser.gd
 res://scenes/projectiles/fleet_1_bullet/homing_missile.gd
 res://scripts/classes/ship/frigate/frigate.gd
 res://scenes/utility/bullet_pool/bullet_pool.tscn
+res://scenes/projectiles/fleet_1_bullet/fleet_1_bullet.tscn
+res://scenes/utility/MainCamera.gd
+res://resources/ships/frigates/fleet_3_frigate.tres
+res://resources/ships/fighters/fleet_1_fighter.tres
+res://resources/ships/fighters/fleet_2_fighter.tres
+res://resources/ships/fighters/fleet_3_fighter.tres
